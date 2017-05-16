@@ -11,14 +11,24 @@ $(document).ready(function () {
 		// submit form
 	$('.form input').on("keypress", function(event){
 		if (event.which === 13) {
-			$text = $(this).val();
-			var res = $text.match(/^[\w\d]/);
+			var text = $(this).val();
+			var res = text.match(/^[\w\d]/);
+				// validate input
 			if (!res) {
-				$(this).parent().prepend("<p class='error'>Please input your To-Do</p>");
-				$('.error').slideUp(3000, function(){
-					//$(this).slideUp(2000);
+				$(this).parent().prepend("<p class='error'><span>Please input your To-Do</span></p>");
+				$('.error span').animate({opacity: 0}, 2500, function(){
+					$('.error').slideUp(400, function(){
+						$('.error').remove();
+					});
 				});
-			} else {console.log($text);}
+				// send POST request
+			} else {
+				var date = new Date();
+				var dataString = "name="+ text+"&start_date="+date;
+				$.post('data/functions.php', dataString, function(html){
+					$('.container ul').prepend(html);
+				});
+			}
 		$(this).val("");
 
 		}

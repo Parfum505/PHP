@@ -75,7 +75,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#31c1f9', end
 	text-decoration: line-through;
 }
 .error {
+	font-size: 1.5em;
 	color: red;
+	background: #2980b9;
+	padding: 0 10px 10px 20px;
 }
 .container li span {
 	display: inline-block;

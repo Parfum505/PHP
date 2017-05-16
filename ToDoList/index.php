@@ -1,3 +1,8 @@
+<?php
+	include_once "data/database.php";
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +14,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- <script src="js/lib/jquery-1.11.0.min.js"></script> -->
+	<script src="JS/script.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -22,7 +28,6 @@
 			<li><span><i class="fa fa-trash"></i></span>Learn CSS</li>
 		</ul>
 	</div>
-	<script src="JS/script.js"></script>
 </body>
 
 </html>
