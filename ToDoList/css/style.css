@@ -66,6 +66,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#31c1f9', end
 	color: #666;
 	font-size: 1.2em;
 	line-height: 2.2em;
+	overflow: hidden;
 }
 .container li:nth-child(odd) {
 	background: #fff;
@@ -80,7 +81,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#31c1f9', end
 	background: #2980b9;
 	padding: 0 10px 10px 20px;
 }
-.container li span {
+.container li .trash {
 	display: inline-block;
 	color: #fff;
 	width: 0;
@@ -90,8 +91,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#31c1f9', end
 	transition: all 0.5s;
 	opacity: 0;
 }
-.container li:hover span{
+.container li:hover .trash{
 	width: 2em;
 	opacity: 1;
+}
+.date {
+	font-size: 0.5em;
+	float: right;
+
+}
+.date p {
+	line-height: 2.2em;
 }
 

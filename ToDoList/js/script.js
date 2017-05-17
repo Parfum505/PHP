@@ -9,9 +9,8 @@ $(document).ready(function () {
 		});
 	});
 		// submit form
-	$('.form input').on("keypress", function(event){
-		if (event.which === 13) {
-			var text = $(this).val();
+	$('.form form').on("submit", function(){
+			var text = $('.form input').val();
 			var res = text.match(/^[\w\d]/);
 				// validate input
 			if (!res) {
@@ -21,18 +20,10 @@ $(document).ready(function () {
 						$('.error').remove();
 					});
 				});
-				// send POST request
+				return false;
 			} else {
-				var date = new Date();
-				var dataString = "name="+ text+"&start_date="+date;
-				$.post('data/functions.php', dataString, function(html){
-					$('.container ul').prepend(html);
-				});
+				return true;
 			}
-		$(this).val("");
-
-		}
-
 	});
 
 	// TO_DO LIST
@@ -42,10 +33,12 @@ $(document).ready(function () {
 		$(this).toggleClass('completed');
 	});
 		// delete list
-	$('.container li').on('click', 'span', function (event){
+	$('.container').on('click', 'li .trash', function (event){
 		$(this).parent().slideUp(500, function(){
 			$(this).remove();
 		});
+		var id = $(this).attr('id');
+		$.post('data/functions.php', 'id='+id);
 		event.stopPropagation();
 	});
 
