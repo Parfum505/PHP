@@ -50,10 +50,12 @@
 				<?=$value["name"]?>
 				<div class="date">
 					<p>added: <?=$value["start_date"]?></p>
-					<?php if (isset($value["done"])) {
-						echo '<p>done: '.$value["done"].'</p>';
-						}
-					?>
+					<p class="done">
+						<?php if (isset($value["done"])) {
+							echo 'done: '.$value["done"];
+							}
+						?>
+					</p>
 				</div>
 			</li>
 			<?php endforeach; ?>

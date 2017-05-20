@@ -28,9 +28,14 @@ $(document).ready(function () {
 
 	// TO_DO LIST
 
-		// decorate list
+		// decorate list, change done date
 	$('.container').on('click', 'li', function (){
 		$(this).toggleClass('completed');
+		var id = $(this).children('.trash').attr('id');
+		// console.log(id);
+		$.post('data/functions.php', 'change=1&id='+id, function(data){
+			console.log(data);
+		});
 	});
 		// delete list
 	$('.container').on('click', 'li .trash', function (event){
@@ -38,7 +43,9 @@ $(document).ready(function () {
 			$(this).remove();
 		});
 		var id = $(this).attr('id');
-		$.post('data/functions.php', 'id='+id);
+		$.post('data/functions.php', 'del=1&id='+id, function(data){
+			console.log(data);
+		});
 		event.stopPropagation();
 	});
 
