@@ -37,15 +37,10 @@ if (isset($_POST['del']) && isset($_POST['id'])){
 		echo "Item deleted";
 	}
 }
+	// Change list request
 
 if (isset($_POST['change']) && isset($_POST['id'])){
 	changeDoneDate($con, $_POST['id']);
-	// $result = mysqli_query($con, $sql);
-	// if(!$result){
-	// 	echo "Error: ".mysqli_error($con) ;
-	// } else{
-	// 	echo "Item deleted";
-	// }
 }
 
 function selectById($con, $id) {

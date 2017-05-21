@@ -43,7 +43,8 @@
 		</div>
 		<ul>
 			<?php foreach ($todoList as $value):?>
-			<li>
+					<?php $completed = $value["done"] ? 'completed': ''; ?>
+			<li class= <?= $completed?> >
 				<span class="trash" id="<?=$value["id"]?>">
 					<i class='fa fa-trash'></i>
 				</span>
@@ -51,7 +52,7 @@
 				<div class="date">
 					<p>added: <?=$value["start_date"]?></p>
 					<p class="done">
-						<?php if (isset($value["done"])) {
+						<?php if ($value["done"]) {
 							echo 'done: '.$value["done"];
 							}
 						?>

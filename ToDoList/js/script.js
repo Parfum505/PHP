@@ -32,9 +32,16 @@ $(document).ready(function () {
 	$('.container').on('click', 'li', function (){
 		$(this).toggleClass('completed');
 		var id = $(this).children('.trash').attr('id');
-		// console.log(id);
 		$.post('data/functions.php', 'change=1&id='+id, function(data){
-			console.log(data);
+			// console.log(data);
+			id = "#"+id;
+			var done_date;
+			if (data) {
+				done_date = "done: "+data;
+			} else {
+				done_date = data;
+			}
+			$(id).siblings('.date').children('.done').html(done_date);
 		});
 	});
 		// delete list
