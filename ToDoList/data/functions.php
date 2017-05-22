@@ -59,6 +59,7 @@ function updateDate($con, $done, $id){
 	$sql = "UPDATE list SET done = '$done' WHERE id = '$id' ";
 	$result = mysqli_query($con, $sql);
 }
+
 function changeDoneDate($con, $id){
 	if(!($row = selectById($con, $id))){
 		echo "Error: can't change list";
@@ -79,7 +80,7 @@ function changeDoneDate($con, $id){
 	// Show To-Do list function
 
 function getToDO($con) {
-	$sql = "SELECT id, name, start_date, done FROM list ORDER BY id DESC";
+	$sql = "SELECT id, name, start_date, done FROM list ORDER BY start_date DESC";
 	$result = mysqli_query($con, $sql);
 	if (!$result) {
 		exit("Error: ".mysqli_error($con));
