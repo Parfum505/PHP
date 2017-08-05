@@ -1,6 +1,6 @@
 <?php
-	include_once "data/database.php";
-	include_once "data/functions.php";
+	require_once "data/database.php";
+	require_once "data/functions.php";
 
 	$todoList = getToDO($con);
 ?>

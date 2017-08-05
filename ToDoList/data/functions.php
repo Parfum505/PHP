@@ -1,5 +1,5 @@
 <?php
-include_once "database.php";
+require_once "database.php";
 
 	// Form request, add list
 
