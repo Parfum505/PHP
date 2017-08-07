@@ -1,0 +1,12 @@
+{
+  "name": "BookShop",
+  "version": "1.0.0",
+  "description": "After learning fundamentals of PHP I decided to implement all my knowledge in one project. Now I'm studying OOP in PHP so this project I will code using functional PHP.\r Main idea of this project- to use on practice all I've learned on [Udemy](https://udemy.com), [Linda](https://linda.com), [Treehouse](https://teamtreehouse.com), [Ntschool](https://ntschool.ru) and others.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,28 +1,27 @@
 <header class="">
-	<nav class="navbar navbar-inverse role='navigation'">
-		<div class="container">
-			<!-- Brand and toggle get grouped for better mobile display -->
-
-	<div class="row">
-				<div class="col-xs-4">
-					<a class="navbar-brand" href="">
-						<img src="https://res.cloudinary.com/parfum505/image/upload/v1468223336/logo_mini_ki8t86.png" alt=""></a>
-					</div>
-				<div class="col-xs-8">
+	<div class="container">
+		<div class="row">
+				<div class="logo">
+					<a class="" href="">
+						<img src="../img/logo_book.jpg" alt="logo">
+					</a>
+				</div>
+			<div class="header_nav">
 				<div class="row">
-					<form class="navbar-form navbar-left">
-						<div class="input-group">
-							<input type="text" class="form-control" placeholder="Search">
-							<div class="input-group-btn">
-								<button class="btn btn-default" type="submit"> <i class="glyphicon glyphicon-search"></i>
+				<div class="header_search_form ">
+					<form action="" method="GET">
+						<div class="row">
+							<input type="text" class="" placeholder="Search"><!--
+								--><button class="" type="submit"><i class="fa fa-search" aria-hidden="true"></i>
 								</button>
-							</div>
 						</div>
 					</form>
-					<ul class="nav navbar-nav navbar-right">
+				</div><!-- /.header_search_form -->
+
+					<ul class="header_cart">
 						<li>
 							<a href="#">
-								<span class="glyphicon glyphicon-log-in"></span>
+								<span><i class="fa fa-sign-in" aria-hidden="true"></i></span>
 								Login
 							</a>
 						</li>
@@ -30,42 +29,58 @@
 							<a href="basket.php">
 								<!-- <?= $count ?> -->
 								items
-								<span class="glyphicon glyphicon-shopping-cart"></span>
+								<span class="glyphicon glyphicon-shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
 							</a>
 						</li>
 					</ul>
 				</div>
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" data-target="#myNavbar">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
+				<!-- /.row -->
+				<div class="row">
+					<nav class="nav_main" role='navigation'">
+						<ul class="">
+							<li class="active">
+								<a href="#home">Home</a>
+							</li>
+							<li>
+								<a href="#about">About me</a>
+							</li>
+							<li>
+								<a href="#projects">My projects</a>
+							</li>
+							<li>
+								<a href="#contacts">Contacts</a>
+							</li>
+						</ul>
+					</nav>
+					<!-- /.nav_main -->
+					<div class="nav_btn_mobile">
+						<button type="button" class="">
+							<span><i class="fa fa-bars" aria-hidden="true"></i></span>
+						</button>
+					</div><!-- /.nav_btn_mobile -->
 				</div>
-
-
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse navbar-ex1-collapse " id="myNavbar">
-
-				<ul class="nav navbar-nav navbar-right text-uppercase">
-					<li class="active">
-						<a href="#home">Home</a>
-					</li>
-					<li>
-						<a href="#about">About me</a>
-					</li>
-					<li>
-						<a href="#projects">My projects</a>
-					</li>
-					<li>
-						<a href="#contacts">Contacts</a>
-					</li>
-				</ul>
+				<!-- /.row -->
 			</div>
-			<!-- /.navbar-collapse -->
-			</div>
-			</div> <!-- /row -->
-		</div> <!-- /container -->
-	</nav>
+			<!-- /.header_nav -->
+		</div>
+		<!-- /.row -->
+		<nav class="nav_mobile">
+			<ul class="">
+				<li>
+					<a href="#home">Home</a>
+				</li>
+				<li>
+					<a href="#about">About me</a>
+				</li>
+				<li>
+					<a href="#projects">My projects</a>
+				</li>
+				<li>
+					<a href="#contacts">Contacts</a>
+				</li>
+			</ul>
+		</nav>
+		<!-- /.nav_mobile -->
+	</div>
+	<!-- /.container -->
 </header>

@@ -1,0 +1,4 @@
+# .htaccess for shop
+Options -Indexes
+DirectoryIndex catalog.php
+AddDefaultCharset utf-8
