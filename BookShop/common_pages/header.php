@@ -2,16 +2,16 @@
 	<div class="container">
 		<div class="row">
 				<div class="logo">
-					<a class="" href="">
+					<a class="" href="../catalog.php">
 						<img src="../img/logo_book.jpg" alt="logo">
 					</a>
 				</div>
 			<div class="header_nav">
 				<div class="row">
-				<div class="header_search_form ">
+				<div class="header_search_form">
 					<form action="" method="GET">
 						<div class="row">
-							<input type="text" class="" placeholder="Search"><!--
+							<input type="text" class="" placeholder="Search by title"><!--
 								--><button class="" type="submit"><i class="fa fa-search" aria-hidden="true"></i>
 								</button>
 						</div>
@@ -42,10 +42,10 @@
 								<a href="#home">Home</a>
 							</li>
 							<li>
-								<a href="#about">About me</a>
+								<a href="#about">About us</a>
 							</li>
 							<li>
-								<a href="#projects">My projects</a>
+								<a href="#projects">Terms &amp; Conditions</a>
 							</li>
 							<li>
 								<a href="#contacts">Contacts</a>
@@ -55,7 +55,7 @@
 					<!-- /.nav_main -->
 					<div class="nav_btn_mobile">
 						<button type="button" class="">
-							<span><i class="fa fa-bars" aria-hidden="true"></i></span>
+							<span><i class="fa fa-bars" aria-hidden="true"></i> Menu</span>
 						</button>
 					</div><!-- /.nav_btn_mobile -->
 				</div>

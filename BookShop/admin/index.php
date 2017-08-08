@@ -27,7 +27,7 @@
 </head>
 <body>
 
-<?php require_once('../common_pages/header.php'); ?>
+<?php require_once "../common_pages/header.php"; ?>
 
 <div class="container">
 	<h1>Administration of the e-shop</h1>
@@ -62,8 +62,10 @@
 			</p>
 		</section>
 	</article>
+	<?php include_once "../pages/terms_conditions.php"; ?>
 
 </div>
 <!-- /.container -->
+<script src="../js/script.js"></script>
 </body>
 </html>
