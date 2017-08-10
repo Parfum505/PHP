@@ -23,10 +23,10 @@
 	<![endif]-->
 	<!-- <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>-->
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-
+<div class="wrapper">
 <?php require_once "../common_pages/header.php"; ?>
 
 <div class="container">
@@ -66,6 +66,7 @@
 
 </div>
 <!-- /.container -->
+</div><!-- /.wrapper -->
 <script src="../js/script.js"></script>
 </body>
 </html>

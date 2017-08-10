@@ -1,0 +1,23 @@
+/* Page Terms and Contitions */
+.terms{
+	ol{
+		list-style: none;
+		counter-reset: item;
+		li{
+			display: block;
+			&:before {
+				float: left;
+				counter-increment: item;
+				content: counters(item,".") ". ";
+				margin-right: 10px;
+				font-weight: bold;
+			}
+		}
+	}
+	.content{
+		overflow: hidden;
+		transition: all 0.5s linear;
+		max-height: 0px;
+	}
+}
+/* endof Terms and Contitions */

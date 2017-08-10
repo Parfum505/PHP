@@ -12,6 +12,7 @@ require "inc/config.inc.php";
 <head>
 	<meta charset="utf-8">
 	<title>Items catalogue</title>
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <p>Items in <a href="basket.php">the cart</a>: <?= $count ?></p>
