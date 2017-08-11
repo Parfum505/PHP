@@ -1,7 +1,8 @@
+@import '_variables.scss';
+
 /* Header */
 header{
 	a{
-		color: #999;
 		padding: 0 10px 10px 10px;
 		font-weight: 500;
 		&:hover{
@@ -9,7 +10,7 @@ header{
 		}
 	}
 	.header_cart{
-			background-color: #42454a;
+			background-color: $bg-top-bottom;
 			color: #fff;
 			padding: 5px 0;
 			ul{
@@ -45,13 +46,14 @@ header{
 		width: 69%;
 		.header_search_form{
 			float: left;
-			border: 1px solid #38312b;
+			border: 1px solid $bg-top-bottom;
 			border-radius: 5px;
+			background-color: $bg-nav;
 			input, button{
 				border: 0;
 				border-radius: 5px;
 				padding: 0px 5px;
-				background-color: #fff;
+				background-color: $bg-nav;
 				line-height: 25px;
 			}
 			button{
@@ -63,29 +65,56 @@ header{
 
 	}
 	.nav_main{
-		padding-bottom: 10px;
+		padding: 10px 0;
 		text-align: right;
+		background-color: $bg-nav;
+		@extend .shadow;
 		li{
 				display: inline-block;
 				vertical-align: middle;
+				&:not(:last-child){
+						border-right: 1px solid lighten($font-color, 60%);
+					}
 				a{
-					padding: 0 10px 10px 10px;
-					&:hover{
-					border-bottom: 2px solid #d6cab5;
-				}
+					position: relative;
+					padding: 10px;
+					&:after{
+						content: "";
+						position: absolute;
+						left: 0;
+						right: 100%;
+						bottom: 0;
+						background-color: rgba(245, 224, 182, 0.75);
+						height: 4px;
+						-webkit-transition-property: right;
+						transition-property: right;
+						-webkit-transition-duration: 0.3s;
+						transition-duration: 0.3s;
+						-webkit-transition-timing-function: ease-out;
+						transition-timing-function: ease-out;
+					}
+					&:hover:after{
+						right: 0;
+					}
 				}
 			}
 			@media(max-width: 720px){
+				padding: 0;
 				li{
 					display: block;
 					text-align: center;
+					&:not(:last-child){
+						border-right: none;
+					}
 					a{
-						box-shadow: 0 1px 9px rgba(0,0,0,0.1);
 						display: block;
-						padding: 5px 0;
+						border-bottom: 2px solid lighten($font-color, 60%);
 						&:hover{
-							background-color: rgba(162, 158, 158,0.1);
-							border-bottom: none;
+							box-shadow: inset 0 6px 20px 2px rgba(0,0,0, 0.1);
+							border-bottom: 2px solid lighten($font-color, 70%);
+						}
+						&:after{
+						content: none;
 						}
 					}
 				}
@@ -96,14 +125,14 @@ header{
 		}
 		.nav_btn_mobile{
 			display: none;
-			background-color: #42454a;
+			background-color: $bg-top-bottom;
 			color: #fff;
 			padding: 10px 0;
 				text-transform: uppercase;
 			&:hover{
 				color: #fff;
 				cursor: pointer;
-				background-color: #838383;
+				background-color: lighten($bg-top-bottom, 10%);
 			}
 			@media(max-width: 720px){
 				display: block;

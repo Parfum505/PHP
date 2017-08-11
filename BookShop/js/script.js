@@ -11,8 +11,6 @@ document.addEventListener('click', function (e) {
 	}
 });
 document.querySelector('.nav_btn_mobile').addEventListener('click', function (e) {
-	// var content = this.parentNode.querySelector('.content');
-	// content.classList.toggle('show');
 	slideToggle.call(this,'show');
 
 });

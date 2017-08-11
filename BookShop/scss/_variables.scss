@@ -1,0 +1,19 @@
+/* Variables @ */
+$bg-main: #f6f6f6;
+$bg-top-bottom: #42454a;
+$font-color: #42454a;
+$bg-nav: #fff;
+
+/* Mixins */
+@mixin clearfix{
+	&:before, &:after{
+		content: "";
+		display: table;
+	}
+	&:after{
+		clear: both;
+	}
+}
+.shadow{
+	box-shadow: 0px 1px 1px 0px #e6e6e6;
+}

@@ -30,7 +30,7 @@
 		<div class="row">
 			<div class="logo">
 				<a class="" href="../catalog.php">
-					<img src="../img/logo_book.jpg" alt="logo"></a>
+					<img src="../img/logo_book.png" alt="logo"></a>
 			</div>
 			<div class="header_nav">
 				<div class="row">

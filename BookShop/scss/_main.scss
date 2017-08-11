@@ -1,21 +1,12 @@
-/* Mixins */
-@mixin clearfix{
-	&:before, &:after{
-		content: "";
-		display: table;
-	}
-	&:after{
-		clear: both;
-	}
-}
+@import '_variables.scss';
 
 /* Main */
 
 html, body{
 	width: 100%;
 	height: 100%;
-	font-size: 100.01%;
-	background: #fff;
+	font-size: 100%;
+	background: $bg-main;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -23,6 +14,7 @@ html, body{
 
 body{
 	font: 16px/1.41 'Open Sans', Arial, sans-serif;
+	color: $font-color;
 }
 ul{
 	margin: 0;
@@ -31,6 +23,7 @@ ul{
 }
 a{
 	text-decoration: none;
+	color: $font-color;
 }
 table {
 	border-collapse: collapse;
