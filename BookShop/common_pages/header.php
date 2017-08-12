@@ -64,16 +64,16 @@
 			<!-- /.nav_btn_mobile -->
 			<nav class="nav_main content" role='navigation'">
 				<ul class="">
-					<li class="active">
-						<a href="#home">Home</a>
-					</li>
 					<li>
+						<a class="active" href="#home">Home</a>
+					</li><!--
+					--><li>
 						<a href="#about">About us</a>
-					</li>
-					<li>
+					</li><!--
+					--><li>
 						<a href="#projects">Terms &amp; Conditions</a>
-					</li>
-					<li>
+					</li><!--
+					--><li>
 						<a href="#contacts">Contacts</a>
 					</li>
 				</ul>

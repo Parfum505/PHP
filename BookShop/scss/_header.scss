@@ -65,19 +65,16 @@ header{
 
 	}
 	.nav_main{
-		padding: 10px 0;
 		text-align: right;
 		background-color: $bg-nav;
 		@extend .shadow;
 		li{
-				display: inline-block;
-				vertical-align: middle;
-				&:not(:last-child){
-						border-right: 1px solid lighten($font-color, 60%);
-					}
+			display: inline-block;
+			border-left: 1px solid lighten($font-color, 60%);
 				a{
+					display: inherit;
 					position: relative;
-					padding: 10px;
+					padding: 15px;
 					&:after{
 						content: "";
 						position: absolute;
@@ -93,7 +90,7 @@ header{
 						-webkit-transition-timing-function: ease-out;
 						transition-timing-function: ease-out;
 					}
-					&:hover:after{
+					&.active:after, &:hover:after{
 						right: 0;
 					}
 				}
@@ -103,13 +100,10 @@ header{
 				li{
 					display: block;
 					text-align: center;
-					&:not(:last-child){
-						border-right: none;
-					}
+					border-left: none;
 					a{
-						display: block;
 						border-bottom: 2px solid lighten($font-color, 60%);
-						&:hover{
+						&.active, &:hover{
 							box-shadow: inset 0 6px 20px 2px rgba(0,0,0, 0.1);
 							border-bottom: 2px solid lighten($font-color, 70%);
 						}
