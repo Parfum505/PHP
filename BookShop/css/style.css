@@ -1,6 +1,6 @@
 /* Variables @ */
 /* Mixins */
-.shadow, header .nav_main {
+.shadow {
   box-shadow: 0px 1px 1px 0px #e6e6e6; }
 
 /* Main */
@@ -31,7 +31,7 @@ table {
   border-spacing: 0; }
 
 img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   box-sizing: content-box; }
 
@@ -58,7 +58,7 @@ img {
 /* endof Main */
 /* Variables @ */
 /* Mixins */
-.shadow, header .nav_main {
+.shadow {
   box-shadow: 0px 1px 1px 0px #e6e6e6; }
 
 /* Header */
@@ -67,46 +67,93 @@ header a {
   font-weight: 500; }
   header a:hover {
     color: #38312b; }
-header .header_cart {
+header .header_log_in {
   background-color: #42454a;
   color: #fff;
   padding: 5px 0; }
-  header .header_cart ul {
+  header .header_log_in ul {
     float: right; }
-    header .header_cart ul li {
+    header .header_log_in ul li {
       display: inline-block;
       vertical-align: middle;
       line-height: 4px; }
-      header .header_cart ul li:last-child {
+      header .header_log_in ul li:last-child {
         border-left: 1px solid #cccccc; }
-      header .header_cart ul li a {
+      header .header_log_in ul li a {
         font-size: 0.8em;
         padding: 0 10px 10px 10px;
         color: #fff; }
-        header .header_cart ul li a:hover {
+        header .header_log_in ul li a:hover {
           color: #ccc; }
+header .header_top {
+  position: relative;
+  margin: 8px 0; }
+header .inline-block, header .logo, header .header_form_search, header .header_cart {
+  display: inline-block;
+  vertical-align: middle; }
 header .logo {
-  float: left;
-  width: 30%; }
+  width: 25%; }
   header .logo img {
-    width: 70%;
-    max-width: 110px; }
-header .header_nav {
-  float: right;
-  width: 69%; }
-  header .header_nav .header_search_form {
+    max-width: 230px; }
+  @media (max-width: 725px) {
+    header .logo {
+      width: 40%; } }
+header .search, header .header_form_search input, header .header_form_search button {
+  box-sizing: border-box;
+  font-size: 1.1em;
+  border: 0;
+  border-radius: 4px;
+  background-color: #fff;
+  line-height: 1.4px;
+  outline: none; }
+header .header_form_search {
+  margin-left: 5%;
+  border: 1px solid #a7abb1;
+  border-radius: 4px;
+  width: 44%;
+  background-color: #fff; }
+  header .header_form_search form {
+    width: 100%; }
+    header .header_form_search form:before, header .header_form_search form:after {
+      content: "";
+      display: table; }
+    header .header_form_search form:after {
+      clear: both; }
+  header .header_form_search input {
     float: left;
-    border: 1px solid #42454a;
-    border-radius: 5px;
-    background-color: #fff; }
-    header .header_nav .header_search_form input, header .header_nav .header_search_form button {
-      border: 0;
-      border-radius: 5px;
-      padding: 0px 5px;
-      background-color: #fff;
-      line-height: 25px; }
-    header .header_nav .header_search_form button:hover {
+    width: 100%;
+    margin-right: -40px;
+    padding: 10px 40px 10px 15px; }
+  header .header_form_search button {
+    float: right;
+    width: 40px;
+    padding: 10px 15px 10px 0;
+    height: 40px;
+    text-align: right;
+    color: #a7abb1; }
+    header .header_form_search button:hover {
       cursor: pointer; }
+  @media (max-width: 725px) {
+    header .header_form_search {
+      display: block;
+      width: 100%;
+      margin: 0; } }
+header .header_cart {
+  font-size: 1.1em;
+  line-height: 1.4px;
+  width: 25%;
+  text-align: right; }
+  header .header_cart a {
+    display: block;
+    padding: 10px;
+    color: #5a5e65; }
+  @media (max-width: 725px) {
+    header .header_cart {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-100%);
+      width: 50%; } }
 header .nav_main {
   text-align: right;
   background-color: #fff; }
@@ -133,7 +180,7 @@ header .nav_main {
         transition-timing-function: ease-out; }
       header .nav_main li a.active:after, header .nav_main li a:hover:after {
         right: 0; }
-  @media (max-width: 720px) {
+  @media (max-width: 725px) {
     header .nav_main {
       padding: 0;
       overflow: hidden;
@@ -160,14 +207,14 @@ header .nav_btn_mobile {
     color: #fff;
     cursor: pointer;
     background-color: #5a5e65; }
-  @media (max-width: 720px) {
+  @media (max-width: 725px) {
     header .nav_btn_mobile {
       display: block;
       text-align: center; } }
 
 /* Variables @ */
 /* Mixins */
-.shadow, header .nav_main {
+.shadow {
   box-shadow: 0px 1px 1px 0px #e6e6e6; }
 
 /* Page Terms and Contitions */

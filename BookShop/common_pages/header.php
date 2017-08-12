@@ -1,17 +1,44 @@
 <header class="">
 
-	<div class="header_cart">
+	<div class="header_log_in">
 		<div class="container">
 			<div class="row">
 				<ul class="">
 						<li>
 							<a href="#">
+								Log in
 								<span> <i class="fa fa-sign-in" aria-hidden="true"></i>
 								</span>
-								Login
 							</a>
 						</li>
 						<li>
+							<a href="#">
+								Sign up
+								<span class="glyphicon glyphicon-shopping-cart">
+									<i class="fa fa-user-plus" aria-hidden="true"></i>
+								</span>
+							</a>
+						</li>
+					</ul>
+			</div><!-- /.row -->
+		</div><!-- /.container -->
+
+	</div><!-- /.header_login -->
+	<div class="container">
+		<div class="header_top">
+		<div class="row">
+			<div class="logo">
+				<a class="" href="../catalog.php">
+					<img src="../img/logo_image.png" alt="logo"></a>
+			</div><!-- /.logo --><!--
+			--><div class="header_form_search">
+						<form action="" method="GET">
+								<input type="text" class="" placeholder="Search by title"><!--
+								--><button class="" type="submit"> <i class="fa fa-search" aria-hidden="true"></i>
+								</button>
+						</form>
+					</div><!-- /.header_search_form --><!--
+			--><div class="header_cart">
 							<a href="basket.php">
 								<!-- <?= $count ?>
 								-->
@@ -20,41 +47,11 @@
 									<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 								</span>
 							</a>
-						</li>
-					</ul>
-			</div><!-- /.row -->
-		</div><!-- /.container -->
-
-	</div><!-- /.header_cart -->
-	<div class="container">
-		<div class="row">
-			<div class="logo">
-				<a class="" href="../catalog.php">
-					<img src="../img/logo_book.png" alt="logo"></a>
+					</div><!-- /.header_cart -->
 			</div>
-			<div class="header_nav">
-				<div class="row">
-					<div class="header_search_form">
-						<form action="" method="GET">
-							<div class="row">
-								<input type="text" class="" placeholder="Search by title">
-								<!--
-								-->
-								<button class="" type="submit"> <i class="fa fa-search" aria-hidden="true"></i>
-								</button>
-							</div>
-						</form>
-					</div>
-					<!-- /.header_search_form -->
-
-
-				</div>
-				<!-- /.row -->
-			</div>
-			<!-- /.header_nav -->
-		</div>
 		<!-- /.row -->
-		<div class="row">
+		</div><!-- /.header_top -->
+		<div class="header_nav">
 			<div class="nav_btn_mobile slideToggle">
 					<span>
 						<i class="fa fa-bars" aria-hidden="true"></i>
@@ -80,8 +77,7 @@
 			</nav>
 			<!-- /.nav_main -->
 		</div>
-		<!-- /.row -->
-
+		<!-- /.header_nav -->
 	</div>
 	<!-- /.container -->
 </header>
