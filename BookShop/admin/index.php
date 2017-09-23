@@ -6,27 +6,6 @@
 // 	logOut();
 // }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Admin</title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
-	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-	<![endif]-->
-	<!-- <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>-->
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-	<link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-<div class="wrapper">
 <?php require_once "../common_pages/header.php"; ?>
 
 <div class="container">
