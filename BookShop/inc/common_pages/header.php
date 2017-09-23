@@ -26,6 +26,15 @@
 		<div class="container">
 			<div class="row">
 				<ul class="">
+					<li>
+							<a href="#">
+								<span><i class="fa fa-user" aria-hidden="true"></i>
+								</span>
+								<?php
+									echo isset($SESSION["username"]) ? $SESSION["username"] : "Guest" ;
+								?>
+							</a>
+						</li>
 						<li>
 							<a href="#">
 								Log in
@@ -36,7 +45,7 @@
 						<li>
 							<a href="#">
 								Sign up
-								<span class="glyphicon glyphicon-shopping-cart">
+								<span >
 									<i class="fa fa-user-plus" aria-hidden="true"></i>
 								</span>
 							</a>

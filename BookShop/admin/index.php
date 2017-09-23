@@ -1,13 +1,13 @@
 <?php
 // require_once "secure/session.inc.php";
 // require_once "secure/secure.inc.php";
-
+require_once "../inc/config.inc.php";
 // if(isset($_GET['logout'])) {
 // 	logOut();
 // }
 ?>
 <?php $title = "Admin"; ?>
-<?php require_once "../common_pages/header.php"; ?>
+<?php include_once (COMMON_PAGES . "header.php"); ?>
 
 
 
@@ -44,8 +44,8 @@
 			</p>
 		</section>
 	</article>
-	<?php include_once "../pages/terms_conditions.php"; ?>
+
 
 </div>
 <!-- /.container -->
-<?php require_once "../common_pages/footer.php"; ?>
+<?php include_once (COMMON_PAGES . "footer.php"); ?>
