@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Admin</title>
+	<title><?php echo isset($title) ? $title : 'BookShop'; ?></title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -65,7 +65,7 @@
 								<!-- <?= $count ?>
 								-->
 								items
-								<span class="glyphicon glyphicon-shopping-cart">
+								<span >
 									<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 								</span>
 							</a>
@@ -84,7 +84,7 @@
 			<nav class="nav_main content" role='navigation'">
 				<ul class="">
 					<li>
-						<a class="active" href="#home">Home</a>
+						<a class="active" href="#home">BookShop</a>
 					</li><!--
 					--><li>
 						<a href="#about">About us</a>

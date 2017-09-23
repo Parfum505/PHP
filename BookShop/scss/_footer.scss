@@ -1,0 +1,28 @@
+@import '_variables.scss';
+
+/* Footer */
+footer{
+	margin-top: -100px;
+	background-color: $bg-nav;
+	.nav-bottom{
+		float: left;
+		width: 50%;
+	}
+	.author{
+		background-color: $bg-top-bottom;
+		text-align: center;
+		color: #fff;
+		p{
+			margin:0;
+			padding: 1em 0;
+			font-size: 0.8em;
+		}
+		a{
+			color: orange;
+			&:hover{
+				color: #ccc;
+			}
+		}
+	}
+}
+/* endof Footer */

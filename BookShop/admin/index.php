@@ -6,7 +6,10 @@
 // 	logOut();
 // }
 ?>
+<?php $title = "Admin"; ?>
 <?php require_once "../common_pages/header.php"; ?>
+
+
 
 <div class="container">
 	<h1>Administration of the e-shop</h1>
@@ -45,7 +48,4 @@
 
 </div>
 <!-- /.container -->
-</div><!-- /.wrapper -->
-<script src="../js/script.js"></script>
-</body>
-</html>
+<?php require_once "../common_pages/footer.php"; ?>
