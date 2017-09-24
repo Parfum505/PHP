@@ -10,26 +10,11 @@ require_once "../inc/config.inc.php";
 <?php include_once (COMMON_PAGES . "header.php"); ?>
 
 
-
 <div class="container">
 	<h1>Administration of the e-shop</h1>
-	<aside>
-		<h3>Action options:</h3>
-		<ul>
-			<li>
-				<a href='add2cat.php'>Adding items to the catalog</a>
-			</li>
-			<li>
-				<a href='orders.php'>See orders</a>
-			</li>
-			<li>
-				<a href='secure/create_user.php'>Adding users</a>
-			</li>
-			<li>
-				<a href='index.php?logout'>Log out</a>
-			</li>
-		</ul>
-	</aside>
+	<div class="row">
+<?php include_once (COMMON_PAGES . "aside_admin.php"); ?>
+<main>
 	<article>
 		<header>
 			<h1>article header h1</h1>
@@ -44,8 +29,9 @@ require_once "../inc/config.inc.php";
 			</p>
 		</section>
 	</article>
-
-
+</main>
+	</div>
+	<!-- /.row -->
 </div>
 <!-- /.container -->
 <?php include_once (COMMON_PAGES . "footer.php"); ?>

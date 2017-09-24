@@ -1,20 +1,20 @@
 <?php
 
-require "inc/lib.inc.php";
-require "inc/config.inc.php";
+require "../inc/lib.inc.php";
+require "../inc/config.inc.php";
 
 
-	$goods = selectAllItems();
+	//$goods = selectAllItems();
 
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Items catalogue</title>
-	<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+<?php $title = "BookShop catalogue"; ?>
+<?php include_once (COMMON_PAGES . "header.php"); ?>
+
+<div class="container">
+	<h1>Bookshop</h1>
+	<div class="row">
+<?php include_once (COMMON_PAGES . "aside_shop.php"); ?>
+
 <p>Items in <a href="basket.php">the cart</a>: <?= $count ?></p>
 <table border="1" cellpadding="5" cellspacing="0" width="100%">
 <tr>
@@ -35,5 +35,8 @@ require "inc/config.inc.php";
 	</tr>
 <?php endforeach;?>
 </table>
-</body>
-</html>
+	</div>
+	<!-- /.row -->
+</div>
+<!-- /.container -->
+<?php include_once (COMMON_PAGES . "footer.php"); ?>
