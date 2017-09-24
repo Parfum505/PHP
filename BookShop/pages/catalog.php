@@ -1,7 +1,6 @@
 <?php
 
-require "../inc/lib.inc.php";
-require "../inc/config.inc.php";
+require "../inc/config.php";
 
 
 	//$goods = selectAllItems();
