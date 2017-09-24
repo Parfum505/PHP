@@ -58,6 +58,10 @@ img {
 main {
   float: right;
   width: 69%; }
+  main .product {
+    display: inline-block;
+    border: 1px solid red;
+    padding: 5px; }
 
 /* endof Main */
 /* Variables @ */
@@ -225,6 +229,12 @@ header .nav_btn_mobile {
 .aside_nav {
   float: left;
   width: 29%; }
+  .aside_nav a {
+    transition: all 0.3s; }
+    .aside_nav a.active {
+      margin-left: 1em; }
+    .aside_nav a:hover {
+      margin-left: 1em; }
 
 /* endof Aside */
 /* Variables @ */

@@ -4,6 +4,15 @@
 .aside_nav{
 	float: left;
 	width: 29%;
+	a{
+		transition: all 0.3s;
+		&.active{
+			margin-left: 1em;
+		}
+		&:hover{
+			margin-left: 1em;
+		}
+	}
 }
 
 

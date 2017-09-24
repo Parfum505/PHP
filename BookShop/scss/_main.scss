@@ -55,6 +55,11 @@ img{
 main{
 	float: right;
 	width: 69%;
+	.product{
+		display: inline-block;
+		border: 1px solid red;
+		padding: 5px;
+	}
 }
 /* endof Main */
 
