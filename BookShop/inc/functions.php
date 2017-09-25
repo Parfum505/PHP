@@ -19,15 +19,30 @@ function get_products(){
 	if (!$res) {
 		die("Error: " . mysqli_error($link));
 	}
+	$products = "";
 	while ($row = mysqli_fetch_assoc($res)) {
-		echo "<a class='product' href='catalog.php?id=".$row['prod_id']."'>";
-		echo "<img src='".$row['prod_img']."' alt='".$row['prod_title']."'>";
-		echo "<p>".$row['prod_title']."</p>";
-		echo "<p>".$row['prod_author']."</p>";
-		echo "<p>".$row['prod_description']."</p>";
-		echo "<p>".$row['prod_price']."</p>";
-		echo "</a>";
+		$products .= "<a class='product' href='item.php?id=".$row['prod_id']."'>";
+		$products .= "<img src='".$row['prod_img']."' alt='".$row['prod_title']."'>";
+		$products .= "<p>".$row['prod_title']."</p>";
+		$products .= "<p>".$row['prod_author']."</p>";
+		$products .= "<p>".$row['prod_description']."</p>";
+		$products .= "<p>&#8364; ".$row['prod_price']."</p>";
+		$products .= "</a>";
 	}
+	echo $products;
+}
+function show_item_page($id){
+	global $link;
+	(int)$id;
+	$id = mysqli_real_escape_string($link, $id);
+	$query = "SELECT * FROM products WHERE prod_id = '$id' ";
+	$res = mysqli_query($link, $query);
+	if (!$res) {
+		die("Error: " . mysqli_error($link));
+	}
+	$item = mysqli_fetch_all($res, MYSQLI_ASSOC);
+
+	return $item;
 }
 
 /*** Admin functions ***/
