@@ -27,11 +27,9 @@ $title = $item[0]['prod_title']; ?>
 			<p>
 				<?php echo $item[0]['prod_description']; ?></p>
 
-			<form action="">
 				<div class="">
 					<a href="cart.php?add=<?php echo $item[0]['prod_id']; ?>" class="">ADD</a>
 				</div>
-			</form>
 
 		</div>
 	</main>

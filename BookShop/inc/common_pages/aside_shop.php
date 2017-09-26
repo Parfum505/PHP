@@ -3,7 +3,7 @@
 	<h3>Categories:</h3>
 	<nav>
 	<ul>
-		<?php show_categories(); ?>
+		<?php show_nav_categories(); ?>
 	</ul>
 	</nav>
 </aside>

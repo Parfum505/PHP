@@ -1,3 +1,3 @@
 <?php
-header("Location: pages/catalog.php");
+header("Location: pages/main.php");
 ?>

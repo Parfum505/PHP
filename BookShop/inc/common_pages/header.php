@@ -93,16 +93,16 @@
 			<nav class="nav_main content" role='navigation'">
 				<ul class="">
 					<li>
-						<a class="active" href="#home">BookShop</a>
+						<a class="active" href="main.php">BookShop</a>
 					</li><!--
 					--><li>
-						<a href="#about">About us</a>
+						<a href="about_us.php">About us</a>
 					</li><!--
 					--><li>
-						<a href="#projects">Terms &amp; Conditions</a>
+						<a href="terms_conditions.php">Terms &amp; Conditions</a>
 					</li><!--
 					--><li>
-						<a href="#contacts">Contacts</a>
+						<a href="contacts.php">Contacts</a>
 					</li>
 				</ul>
 			</nav>

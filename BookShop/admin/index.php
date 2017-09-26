@@ -11,10 +11,11 @@ require_once "../inc/config.php";
 
 
 <div class="container">
-	<h1>Administration of the e-shop</h1>
+
 	<div class="row">
 <?php include_once (COMMON_PAGES . "aside_admin.php"); ?>
 <main>
+	<h1>Administration of the e-shop</h1>
 	<article>
 		<header>
 			<h1>article header h1</h1>
