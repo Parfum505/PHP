@@ -17,7 +17,9 @@ function show_category_items($cat_id){
 	global $link;
 	(int)$cat_id;
 	$cat_id = mysqli_real_escape_string($link, $cat_id);
-	$query = "SELECT * FROM products WHERE prod_cat_id = '$cat_id' ";
+	$query = "SELECT * , cat_title FROM products
+		JOIN categories ON prod_cat_id = cat_id
+		WHERE prod_cat_id = '$cat_id' ";
 	$res = mysqli_query($link, $query);
 	if (!$res) {
 		die("Error: " . mysqli_error($link));
