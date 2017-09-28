@@ -9,7 +9,7 @@
     <?php foreach($categories as $cat):?>
         <div class="col-md-4 text-center">
             <h3><?= $cat['cat_name']?></h3>
-            <a class="product" href="choose_meal.php?cuisine=<?= $cat['cat_id'];?>">
+            <a class="product_link" href="choose_meal.php?cuisine=<?= $cat['cat_id'];?>">
                 <img src="<?= $cat['cat_img'];?>" class="img-responsive" alt="Image">
             </a>
         </div>

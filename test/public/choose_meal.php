@@ -13,17 +13,17 @@
         <h2 class="text-center"><?= $items[0]['cat_name'];?></h2>
 		<?php foreach($items as $item):?>
         <div class="col-md-4 text-center">
-
-            <a class="product" href="#" data-toggle="modal" data-target="#<?= $item['item_id']; ?>">
+            <div class="product">
+            <a class="product_link" href="#" data-toggle="modal" data-target="#<?= $item['item_id']; ?>">
                 <img src="<?php echo $item['item_img']; ?>" class="img-responsive" alt="Image">
             </a>
             <h3><?= $item['item_name']; ?></h3>
 
-            <div class="">
-                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#<?= $item['item_id']; ?>">More info</button>
-                 <span>&#8364; <?= $item['item_price']; ?></span>
+            <div class="clearfix">
+                <button type="button" class="btn btn-info btn-lg pull-left" data-toggle="modal" data-target="#<?= $item['item_id']; ?>">More info</button>
+                 <span class="price pull-right">&#8364; <?= $item['item_price']; ?></span>
 			</div>
-
+        </div><!-- /.product -->
 
         </div>
     <?php endforeach; ?>
@@ -39,15 +39,30 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title"><?= $item['item_name']; ?></h4>
+        <h4 class="modal-title text-center"><?= $item['item_name']; ?></h4>
       </div>
       <div class="modal-body">
-        <div class="">
+        <div class="container-fruid">
+            <div class="row">
+        <div class="col-sm-6">
                 <img src="<?= $item['item_img']; ?>" class="img-responsive" alt="Image">
+        </div>
+        <div class="col-sm-6">
+        <p><?= $item['item_discription']; ?></p>
+        <p class="price">&#8364; <?= $item['item_price']; ?></p>
+        <form action="add_cart.php" method="POST" role="form">
+            <div class="form-group row">
+                <div class="col-sm-3">
+                <label for="quantity">Quantity: </label>
+                <input type="text" class="form-control" id="quantity" value="1">
             </div>
-        <p><?= $item['item_description']; ?></p>
-        <p><?= $item['item_price']; ?></p>
-      </div>
+            </div>
+            <button type="submit" class="btn btn-success">Add to Cart</button>
+        </form>
+        </div>
+        </div>
+</div>
+      </div><!--/.modal-body -->
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>

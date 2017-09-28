@@ -16,12 +16,20 @@ footer{
 	height: 70px;
 }
 .product{
+	width: 90%;
+	margin: 1em auto;
+	padding: 1em;
+	border-radius: 10px;
+	background-color: #f6f6f6;
+}
+.product_link{
 	display: inline-block;
-	position: relative;
 	box-shadow: 10px 10px 15px rgba(0,0,0,0.2);
 	transition: all 0.3s;
 }
-.product:hover{
-	transform: scale(1.05);
+.product_link:hover{
 	box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
+}
+.price{
+	font-size: 2em;
 }

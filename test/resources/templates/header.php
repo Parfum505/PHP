@@ -12,7 +12,7 @@
     <title>Restaurant</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/styles.css" rel="stylesheet">
@@ -50,13 +50,13 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lunch <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="choose_meal.php?cuisine=Polish cuisine">Polish cuisine</a></li>
-                            <li><a href="choose_meal.php?cuisine=Mexican cuisine">Mexican cuisine</a></li>
-                            <li><a href="choose_meal.php?cuisine=Italian cuisine">Italian cuisine</a></li>
+                            <li><a href="choose_meal.php?cuisine=1">Polish cuisine</a></li>
+                            <li><a href="choose_meal.php?cuisine=2">Mexican cuisine</a></li>
+                            <li><a href="choose_meal.php?cuisine=3">Italian cuisine</a></li>
                         </ul>
                     </li>
-                    <li><a href="choose_meal.php?cuisine=Drinks">Drinks</a></li>
-                    <li><a href="choose_meal.php?cuisine=Desserts">Dessert</a></li>
+                    <li><a href="choose_meal.php?cuisine=4">Drinks</a></li>
+                    <li><a href="choose_meal.php?cuisine=5">Dessert</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div>
