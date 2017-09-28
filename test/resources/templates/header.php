@@ -50,13 +50,13 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lunch <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="lunch.php?cuisine='Polish'">Polish cuisine</a></li>
-                            <li><a href="lunch.php?cuisine='Mexican'">Mexican cuisine</a></li>
-                            <li><a href="lunch.php?cuisine='Italian'">Italian cuisine</a></li>
+                            <li><a href="choose_meal.php?cuisine=Polish cuisine">Polish cuisine</a></li>
+                            <li><a href="choose_meal.php?cuisine=Mexican cuisine">Mexican cuisine</a></li>
+                            <li><a href="choose_meal.php?cuisine=Italian cuisine">Italian cuisine</a></li>
                         </ul>
                     </li>
-                    <li><a href="drinks.php">Drinks</a></li>
-                    <li><a href="dessert.php">Dessert</a></li>
+                    <li><a href="choose_meal.php?cuisine=Drinks">Drinks</a></li>
+                    <li><a href="choose_meal.php?cuisine=Desserts">Dessert</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div>
