@@ -52,9 +52,10 @@
                 <div class="col-sm-3">
                 <label for="quantity">Quantity: </label>
                 <input type="text" class="form-control" id="quantity" name="quantity" value="1">
+                <input type="hidden" class="form-control" name="item_id" value="<?= $item['item_id']; ?>">
             </div>
             </div>
-            <button type="submit" class="btn btn-success">Add to Cart</button>
+            <button type="submit" name="add" class="btn btn-success">Add to Cart</button>
         </form>
         </div>
         </div>

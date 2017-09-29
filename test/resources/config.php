@@ -23,7 +23,6 @@ $cart = []; //users cart
 $count = 0; //goods quantity in users cart
 
 require_once("functions.php");
-// require_once("cart.php");
 
-// cartInit();
+cartInit();
  ?>

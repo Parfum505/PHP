@@ -28,5 +28,67 @@ mysqli_free_result($res);
 
 return $items;
 }
+function cartInit(){
+        global $cart, $count;
+        if(!isset($_COOKIE['cart'])){
+            $cart = ['orderId' => uniqid('', true)];
+            saveToCart();
+        }else{
+            $cart = unserialize(base64_decode($_COOKIE['cart']));
+            $count = array_slice($cart, 1);
+            // print_r($count);
+            $count = array_sum($count);
+        }
+    }
+function saveToCart(){
+        global $cart;
+        $str = base64_encode(serialize($cart));
+        setcookie('cart', $str, 0x7FFFFFFF);
+    }
+function updateCart($id, $qu){
+        global $cart;
+        $cart[$id] = (int)$qu;
+        saveToCart();
+    }
+
+function add2Cart($id, $qu){
+        global $cart;
+        if (array_key_exists($id, $cart)) {
+            $cart[$id] = $cart[$id] + (int)$qu;
+        } else {
+            $cart[$id] = (int)$qu;
+        }
+        saveToCart();
+    }
+function deleteItemFromCart($id){
+        global $cart;
+        unset($cart[$id]);
+        saveToCart();
+    }
+function myCart(){
+        global $connection, $cart;
+        $goods = array_keys($cart);
+        array_shift($goods);
+        if (!$goods) {
+            return false;
+        }
+        $ids = implode(",", $goods);
+        $sql = "SELECT * FROM items WHERE item_id IN ($ids)";
+        if (!$result = mysqli_query($connection, $sql)) {
+            return false;
+        }
+        $items = addQuantity2Cart($result);
+        mysqli_free_result($result);
+        return $items;
+    }
+function addQuantity2Cart($data){
+        global $cart;
+        $arr = [];
+        while ($row = mysqli_fetch_assoc($data)) {
+            $row['quantity'] = $cart[$row['item_id']];
+            $arr[] = $row;
+        }
+        return $arr;
+    }
 
  ?>
