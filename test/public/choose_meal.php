@@ -50,11 +50,11 @@
         <div class="col-sm-6">
         <p><?= $item['item_discription']; ?></p>
         <p class="price">&#8364; <?= $item['item_price']; ?></p>
-        <form action="add_cart.php" method="POST" role="form">
+        <form action="add_to_cart.php" method="POST" role="form">
             <div class="form-group row">
                 <div class="col-sm-3">
                 <label for="quantity">Quantity: </label>
-                <input type="text" class="form-control" id="quantity" value="1">
+                <input type="text" class="form-control" id="quantity" name="quantity" value="1">
             </div>
             </div>
             <button type="submit" class="btn btn-success">Add to Cart</button>

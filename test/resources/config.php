@@ -17,12 +17,13 @@ defined("DB_PASS") ? null : define("DB_PASS", "");
 
 defined("DB_NAME") ? null : define("DB_NAME",  "restaurant");
 
-
-
 $connection = mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 
+$cart = []; //users cart
+$count = 0; //goods quantity in users cart
+
 require_once("functions.php");
-require_once("cart.php");
+// require_once("cart.php");
 
-
+// cartInit();
  ?>
