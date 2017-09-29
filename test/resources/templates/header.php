@@ -29,7 +29,7 @@
 <body>
 <div class="container">
     <!-- Navigation -->
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-inverse" role="navigation">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -45,19 +45,22 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
 
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav">
                     <li><a href="index.php">Home</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lunch <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="choose_meal.php?cuisine=1">Polish cuisine</a></li>
-                            <li><a href="choose_meal.php?cuisine=2">Mexican cuisine</a></li>
-                            <li><a href="choose_meal.php?cuisine=3">Italian cuisine</a></li>
+                            <li><a href="index.php?menu=Polish">Polish cuisine</a></li>
+                            <li><a href="index.php?menu=Mexican">Mexican cuisine</a></li>
+                            <li><a href="index.php?menu=Italian">Italian cuisine</a></li>
                         </ul>
                     </li>
-                    <li><a href="choose_meal.php?cuisine=4">Drinks</a></li>
-                    <li><a href="choose_meal.php?cuisine=5">Dessert</a></li>
+                    <li><a href="index.php?menu=Drinks">Drinks</a></li>
+                    <li><a href="index.php?menu=Dessert">Dessert</a></li>
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+      <li><a href="index.php?cart"><?= $count?> items <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+    </ul>
             </div><!-- /.navbar-collapse -->
         </div>
     </nav>

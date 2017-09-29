@@ -18,7 +18,7 @@ global $connection;
 (int)(trim($cat_id));
 $cat_id = mysqli_real_escape_string($connection, $cat_id);
 $query = " SELECT * FROM items JOIN category ON item_cat_id = cat_id
-WHERE cat_id = '$cat_id' ";
+WHERE cat_name LIKE '$cat_id%' ";
 $res = mysqli_query($connection, $query);
 if(!$res){
     die('Error: ' . mysql_error($connection));

@@ -1,10 +1,7 @@
-<?php require_once("../resources/config.php"); ?>
-
-<?php include(TEMPLATE . DS . "header.php") ?>
 
 <?php
-    if (isset($_GET['cuisine']) && !empty($_GET['cuisine'])) {
-        $items = get_products($_GET['cuisine']);
+    if (isset($_GET['menu']) && !empty($_GET['menu'])) {
+        $items = get_products($_GET['menu']);
     }
 ?>
 <!-- Page Content -->
@@ -75,4 +72,3 @@
 
 </div>
 <!-- /.container -->
-<?php include(TEMPLATE . DS . "footer.php"); ?>
