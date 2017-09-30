@@ -45,18 +45,19 @@ function saveToCart(){
         $str = base64_encode(serialize($cart));
         setcookie('cart', $str, 0x7FFFFFFF);
     }
-function updateCart($id, $qu){
+function updateCart($id, $qu = 1){
         global $cart;
-        $cart[$id] = (int)$qu;
+        $cart[$id] = (int)$qu >= 1? (int)$qu : 1;
         saveToCart();
     }
 
-function add2Cart($id, $qu){
+function add2Cart($id, $qu = 1){
         global $cart;
+        $qu = $qu >= 1? (int)$qu : 1;
         if (array_key_exists($id, $cart)) {
-            $cart[$id] = $cart[$id] + (int)$qu;
+            $cart[$id] = $cart[$id] + $qu;
         } else {
-            $cart[$id] = (int)$qu;
+            $cart[$id] = $qu;
         }
         saveToCart();
     }
