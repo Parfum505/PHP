@@ -69,6 +69,10 @@ function deleteItemFromCart($id){
         unset($cart[$id]);
         saveToCart();
     }
+function protect($a){
+    global $connection;
+    return mysqli_real_escape_string($connection, $a);
+}
 function myCart(){
         global $connection, $cart;
         $goods = array_keys($cart);
@@ -76,6 +80,7 @@ function myCart(){
         if (!$goods) {
             return false;
         }
+        $goods= array_map("protect", $goods);
         $ids = implode(",", $goods);
         $sql = "SELECT * FROM items
         LEFT JOIN category ON cat_id = item_cat_id
