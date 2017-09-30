@@ -1,7 +1,5 @@
-<?php require_once("../resources/config.php"); ?>
+<?php require_once("../resources/config.php");
 
-
-<?php
 
 if (isset($_POST['add'])) {
 	$id= (int)$_POST['item_id'];
@@ -12,18 +10,15 @@ if (isset($_POST['add'])) {
 	add2Cart($id, $qu, $lemon, $ice);
 
 	header("Location: {$ref}");
-
+	exit();
 }
 
 if (isset($_POST['update'])) {
 	unset($_POST['update']);
-	echo "<pre>";
-	print_r($_POST);
-	echo "</pre>";
 		foreach ($_POST as $id => $value) {
 			updateCart($id, $value);
 		}
 	$ref = $_SERVER["HTTP_REFERER"];
 	header("Location: {$ref}");
-
+	exit();
 	}
