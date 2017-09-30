@@ -74,7 +74,9 @@ function myCart(){
             return false;
         }
         $ids = implode(",", $goods);
-        $sql = "SELECT * FROM items WHERE item_id IN ($ids)";
+        $sql = "SELECT * FROM items
+        LEFT JOIN category ON cat_id = item_cat_id
+        WHERE item_id IN ($ids)";
         if (!$result = mysqli_query($connection, $sql)) {
             return false;
         }

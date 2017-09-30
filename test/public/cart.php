@@ -13,18 +13,18 @@
 <form action="add_to_cart.php" method="POST">
 <table class="table table-striped">
 <tr>
-	<th>N</th>
+	<th>Menu</th>
 	<th>Name</th>
 	<th>Price</th>
 	<th>Quantity</th>
 	<th>Sub-total</th>
 	<th></th>
 </tr>
-<?php $goods = myCart(); $i = 1; $sum = 0; $qu = 0;
+<?php $goods = myCart(); $sum = 0; $qu = 0;
 	if($goods){
 		foreach($goods as $item): ?>
 		<tr>
-			<td><?= $i ;?></td>
+			<td><?= $item['cat_name'] ;?></td>
 			<td><?= $item['item_name'] ;?></td>
 			<td>&#8364; <?= $item["item_price"] ;?></td>
 			<td><div class="col-xs-4"><input class="form-control" type="text" name="<?= $item['item_id'];?>" value="<?= $item['quantity'];?>"></div>
@@ -33,7 +33,7 @@
 			<td>&#8364; <?= number_format(($item["item_price"] * (int)$item['quantity']), 2, '.', '') ; ?></td>
 			<td><a class='btn btn-danger' href="delete_from_cart.php?id=<?= $item['item_id'];?>"><span class='glyphicon glyphicon-remove'></a></td>
 		</tr>
-		<?php $i++; $qu += (int)$item['quantity']; $sum += $item["item_price"] * (int)$item["quantity"]; ?>
+		<?php $qu += (int)$item['quantity']; $sum += $item["item_price"] * (int)$item["quantity"]; ?>
 <?php endforeach; }?>
 </table>
 
