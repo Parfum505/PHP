@@ -12,6 +12,7 @@
 
 ![restaurant addto cart](public/img/restaur_add2cart.jpg) 
 
+![restaurant addto cart](public/img/restaur_cart.jpg) 
  
  
 

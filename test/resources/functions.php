@@ -35,9 +35,10 @@ function cartInit(){
             saveToCart();
         }else{
             $cart = unserialize(base64_decode($_COOKIE['cart']));
-            $count = array_slice($cart, 1);
-            // print_r($count);
-            $count = array_sum($count);
+            $arr = array_slice($cart, 1);
+            foreach ($arr as $value) {
+                $count += (int)$value['qu'];
+            }
         }
     }
 function saveToCart(){
@@ -47,18 +48,20 @@ function saveToCart(){
     }
 function updateCart($id, $qu = 1){
         global $cart;
-        $cart[$id] = (int)$qu >= 1? (int)$qu : 1;
+        $cart[$id]['qu'] = (int)$qu >= 1? (int)$qu : 1;
         saveToCart();
     }
 
-function add2Cart($id, $qu = 1){
+function add2Cart($id, $qu = 1, $lemon = '', $ice = ''){
         global $cart;
         $qu = $qu >= 1? (int)$qu : 1;
         if (array_key_exists($id, $cart)) {
-            $cart[$id] = $cart[$id] + $qu;
+            $cart[$id]['qu'] = $cart[$id]['qu'] + $qu;
         } else {
-            $cart[$id] = $qu;
+            $cart[$id]['qu'] = $qu;
         }
+        $cart[$id]['lemon'] = $lemon;
+        $cart[$id]['ice'] = $ice;
         saveToCart();
     }
 function deleteItemFromCart($id){
@@ -88,7 +91,9 @@ function addQuantity2Cart($data){
         global $cart;
         $arr = [];
         while ($row = mysqli_fetch_assoc($data)) {
-            $row['quantity'] = $cart[$row['item_id']];
+            $row['quantity'] = $cart[$row['item_id']]['qu'];
+            $row['lemon'] = $cart[$row['item_id']]['lemon'];
+            $row['ice'] = $cart[$row['item_id']]['ice'];
             $arr[] = $row;
         }
         return $arr;

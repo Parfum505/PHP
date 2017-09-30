@@ -5,8 +5,7 @@
 	<h1>My cart</h1>
 <?php
 	if (!$count) {
-		echo "<h3>Shopping cart is empty</h3>
-		<p>You have no items in your shopping cart.</p>";
+		echo "<h3>Shopping cart is empty</h3>";
 	}
 ?>
 <div class="row">
@@ -21,17 +20,24 @@
 	<th></th>
 </tr>
 <?php $goods = myCart(); $sum = 0; $qu = 0;
+
 	if($goods){
 		foreach($goods as $item): ?>
 		<tr>
 			<td><?= $item['cat_name'] ;?></td>
-			<td><?= $item['item_name'] ;?></td>
+			<td><?= $item['item_name']."&nbsp;" ;?>
+				<?php if($item['lemon']){
+				echo "<span class='glyphicon glyphicon-ok'>{$item['lemon']}&nbsp;</span>";}
+				if($item['ice']){
+				echo "<span class='glyphicon glyphicon-ok'>{$item['ice']}</span>";}
+				?>
+			</td>
 			<td>&#8364; <?= $item["item_price"] ;?></td>
 			<td><div class="col-xs-4"><input class="form-control" type="text" name="<?= $item['item_id'];?>" value="<?= $item['quantity'];?>"></div>
 			</td>
 
 			<td>&#8364; <?= number_format(($item["item_price"] * (int)$item['quantity']), 2, '.', '') ; ?></td>
-			<td><a class='btn btn-danger' href="delete_from_cart.php?id=<?= $item['item_id'];?>"><span class='glyphicon glyphicon-remove'></a></td>
+			<td><a class='btn btn-danger' href="delete_from_cart.php?id=<?= $item['item_id'];?>"><span class='glyphicon glyphicon-remove'></span></a></td>
 		</tr>
 		<?php $qu += (int)$item['quantity']; $sum += $item["item_price"] * (int)$item["quantity"]; ?>
 <?php endforeach; }?>

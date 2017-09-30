@@ -25,4 +25,7 @@ $count = 0; //goods quantity in users cart
 require_once("functions.php");
 
 cartInit();
+// echo "<pre>";
+// 	print_r($cart);
+// 	echo "</pre>";
  ?>
