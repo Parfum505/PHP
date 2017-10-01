@@ -8,11 +8,11 @@
 * When ordering a drink, customer can additionally ask for ice cubes or/and lemon;
 * We must have getPrice() and getName() methods for each meal and drink;
 
-![restaurant main page](public/img/restaur_main.jpg) 
+![restaurant main page](Procedural_test/public/img/restaur_main.jpg) 
 
-![restaurant addto cart](public/img/restaur_add2cart.jpg) 
+![restaurant addto cart](Procedural_test/public/img/restaur_add2cart.jpg) 
 
-![restaurant addto cart](public/img/restaur_cart.jpg) 
+![restaurant addto cart](Procedural_test/public/img/restaur_cart.jpg) 
  
  
 

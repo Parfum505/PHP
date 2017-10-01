@@ -1,0 +1,42 @@
+html, body{
+	height:100%;
+	position:relative;
+}
+body{
+	height:auto;
+	min-height:100%;
+	padding-bottom: 70px;
+	font-size: 16px;
+}
+footer{
+	width: 100%;
+	position: absolute;
+	padding: 2em 0 1em;
+	bottom: 0;
+	height: 70px;
+}
+.product{
+	width: 90%;
+	margin: 1em auto;
+	padding: 1em;
+	border-radius: 10px;
+	background-color: #f6f6f6;
+}
+.product_link{
+	display: inline-block;
+	box-shadow: 10px 10px 15px rgba(0,0,0,0.2);
+	transition: all 0.3s;
+}
+.product_link:hover{
+	box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
+}
+.price{
+	font-size: 2em;
+}
+#btn_update, #btn_buy{
+	font-size: 1em;
+	box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+.glyphicon-ok:before{
+	color: green;
+}
