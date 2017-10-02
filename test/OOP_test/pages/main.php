@@ -1,4 +1,3 @@
-
 <?php $categories = get_categories(); ?>
 
 

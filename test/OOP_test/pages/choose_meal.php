@@ -1,7 +1,9 @@
-
 <?php
     if (isset($_GET['menu']) && !empty($_GET['menu'])) {
-        $items = get_products($_GET['menu']);
+        if(!$items = get_products($_GET['menu'])){
+            echo '<div class="container"><h2>No category: '.$_GET['menu'].' in our restaurant</h2></div>';
+            exit();
+        };
     }
 ?>
 <!-- Page Content -->

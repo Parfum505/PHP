@@ -53,10 +53,10 @@
                             <li><a href="index.php?menu=Polish">Polish cuisine</a></li>
                             <li><a href="index.php?menu=Mexican">Mexican cuisine</a></li>
                             <li><a href="index.php?menu=Italian">Italian cuisine</a></li>
+                            <li><a href="index.php?menu=Desserts">Dessert</a></li>
                         </ul>
                     </li>
                     <li><a href="index.php?menu=Drinks">Drinks</a></li>
-                    <li><a href="index.php?menu=Dessert">Dessert</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
       <li><a href="index.php?cart"><?= $count?> items <span class="glyphicon glyphicon-shopping-cart"></span></a></li>

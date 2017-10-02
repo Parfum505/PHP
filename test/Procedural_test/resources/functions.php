@@ -13,12 +13,12 @@ mysqli_free_result($res);
 return $items;
 }
 
-function get_products($cat_id) {
+function get_products($cat_name) {
 global $connection;
-(int)(trim($cat_id));
-$cat_id = mysqli_real_escape_string($connection, $cat_id);
+(string)(trim($cat_name));
+$cat_name = mysqli_real_escape_string($connection, $cat_name);
 $query = " SELECT * FROM items JOIN category ON item_cat_id = cat_id
-WHERE cat_name LIKE '$cat_id%' ";
+WHERE cat_name = '$cat_name' ";
 $res = mysqli_query($connection, $query);
 if(!$res){
     die('Error: ' . mysql_error($connection));
