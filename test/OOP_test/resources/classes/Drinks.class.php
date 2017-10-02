@@ -8,9 +8,9 @@ class Drinks extends Items
 	protected $lemon;
 	function __construct($id, $name, $price, $group, $ice, $lemon)
 	{
-		parent::__construct($id, $name, $price, $group);
-		$this->ice = (string)$ice;
-		$this->lemon = (string)$lemon;
+		parents::__construct($id, $name, $price, $group);
+		$this->ice = (string)(trim(strip_tags($ice)));
+		$this->lemon = (string)(trim(strip_tags($lemon)));
 	}
 	public function getIce()
 	{

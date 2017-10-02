@@ -62,6 +62,9 @@ WHERE cat_name = :menu');
                                             <label for="quantity">Quantity:</label>
                                             <input type="text" class="form-control" id="quantity" name="quantity" value="1">
                                             <input type="hidden" class="form-control" name="item_id" value="<?= $item['item_id']; ?>">
+                                            <input type="hidden" class="form-control" name="item_name" value="<?= $item['item_name']; ?>">
+                                            <input type="hidden" class="form-control" name="item_price" value="<?= $item['item_price']; ?>">
+                                            <input type="hidden" class="form-control" name="cat_name" value="<?= $items[0]['cat_name']; ?>">
                                         </div>
                                     </div>
                                     <div class="form-group row">

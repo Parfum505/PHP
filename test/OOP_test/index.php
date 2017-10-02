@@ -1,12 +1,5 @@
 <?php require_once("resources/config.php"); ?>
-<?php spl_autoload_register(function ($class_name)
-	{
-		require 'resources/classes/' . $class_name . '.class.php';
-	});
-?>
-<?php
-	$db = new Database;
-?>
+
 
 <?php include_once(TEMPLATE . DS . "header.php"); ?>
 

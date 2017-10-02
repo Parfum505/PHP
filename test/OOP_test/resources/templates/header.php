@@ -59,7 +59,7 @@
                     <li><a href="index.php?menu=Drinks">Drinks</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-      <li><a href="index.php?cart"><?= $count?> items <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+      <li><a href="index.php?cart"><?= $cart->count(); ?> items <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
     </ul>
             </div><!-- /.navbar-collapse -->
         </div>

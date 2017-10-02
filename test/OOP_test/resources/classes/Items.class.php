@@ -9,12 +9,16 @@ class Items
 	protected $name;
 	protected $price;
 	protected $group;
-	function __construct($id, $name, $price, $group)
+	protected $ice;
+	protected $lemon;
+	function __construct($id, $name, $price, $group, $ice = '', $lemon = '')
 	{
 		$this->id = (int)$id;
-		$this->name = (string)$name;
+		$this->name = (string)(trim(strip_tags($name)));
 		$this->price = number_format($price, 2, '.', '');
-		$this->group = (string)$group;
+		$this->group = (string)(trim(strip_tags($group)));
+		$this->ice = (string)(trim(strip_tags($ice)));
+		$this->lemon = (string)(trim(strip_tags($lemon)));
 	}
 	public function getId()
 	{
@@ -31,5 +35,13 @@ class Items
 	public function getGroup()
 	{
 		return $this->group;
+	}
+	public function getIce()
+	{
+		return $this->ice;
+	}
+	public function getLemon()
+	{
+		return $this->lemon;
 	}
 }

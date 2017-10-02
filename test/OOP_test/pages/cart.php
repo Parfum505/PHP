@@ -1,15 +1,16 @@
-<!-- Page Content -->
+<!--Page Content -->
 <div class="container">
 
 
-	<h1>My cart</h1>
+	<h1 class="text-center">My cart</h1>
 <?php
-	if (!$count) {
+	if (!$cart->count()) {
 		echo "<h3>Shopping cart is empty</h3>";
+		exit();
 	}
 ?>
-<div class="row">
-<form action="add_to_cart.php" method="POST">
+<!-- <div class="row"> -->
+<form action="pages/add_to_cart.php" method="POST">
 <table class="table table-striped">
 <tr>
 	<th>Menu</th>
@@ -19,27 +20,29 @@
 	<th>Sub-total</th>
 	<th></th>
 </tr>
-<?php $goods = myCart(); $sum = 0; $qu = 0;
+<?php $food = $cart->myCart();
+$sum = 0; $amount = 0;
 
-	if($goods){
-		foreach($goods as $item): ?>
+	if($food){
+		foreach($food as $meal): ?>
+
 		<tr>
-			<td><?= $item['cat_name'] ;?></td>
-			<td><?= $item['item_name']."&nbsp;" ;?>
-				<?php if($item['lemon']){
-				echo "<span class='glyphicon glyphicon-ok'>{$item['lemon']}&nbsp;</span>";}
-				if($item['ice']){
-				echo "<span class='glyphicon glyphicon-ok'>{$item['ice']}</span>";}
+			<td><?= $meal['item']->getGroup() ;?></td>
+			<td><?= $meal['item']->getName()."&nbsp;" ;?>
+				<?php if($meal['item']->getLemon()){
+				echo "<span class='glyphicon glyphicon-ok'>{$meal['item']->getLemon()}&nbsp;</span>";}
+				if($meal['item']->getIce()){
+				echo "<span class='glyphicon glyphicon-ok'>{$meal['item']->getIce()}</span>";}
 				?>
 			</td>
-			<td>&#8364; <?= $item["item_price"] ;?></td>
-			<td><div class="col-xs-4"><input class="form-control" type="text" name="<?= $item['item_id'];?>" value="<?= $item['quantity'];?>"></div>
+			<td>&#8364; <?= $meal['item']->getPrice() ;?></td>
+			<td><div class="col-xs-4"><input class="form-control" type="text" name="<?= $meal['item']->getId();?>" value="<?= $meal['qu'];?>"></div>
 			</td>
 
-			<td>&#8364; <?= number_format(($item["item_price"] * (int)$item['quantity']), 2, '.', '') ; ?></td>
-			<td><a class='btn btn-danger' href="delete_from_cart.php?id=<?= $item['item_id'];?>"><span class='glyphicon glyphicon-remove'></span></a></td>
+			<td>&#8364; <?= $meal['item']->getPrice() * $meal['qu'] ; ?></td>
+			<td><a class='btn btn-danger' href="pages/delete_from_cart.php?id=<?= $meal['item']->getId();?>"><span class='glyphicon glyphicon-remove'></span></a></td>
 		</tr>
-		<?php $qu += (int)$item['quantity']; $sum += $item["item_price"] * (int)$item["quantity"]; ?>
+		<?php $amount += $meal['qu']; $sum += $meal['item']->getPrice() * $meal['qu']; ?>
 <?php endforeach; }?>
 </table>
 
@@ -47,10 +50,10 @@
 	<button class="btn btn-info btn-md" type="submit" id="btn_update" name="update">Update my cart</button>
 </div>
 </form>
-</div><!--/.row-->
+<!-- </div> --><!--/.row-->
 
 <!--CART TOTALS-->
-<div class="row">
+<!-- <div class="row"> -->
 <div class="col-xs-4 pull-right ">
 <h2>Cart Totals</h2>
 
@@ -58,7 +61,7 @@
 <tbody>
 <tr class="cart-subtotal">
 <th>Items:</th>
-<td><span class="amount"><?= $qu ;?></span></td>
+<td><span class="amount"><?= $amount ;?></span></td>
 </tr>
 <tr class="order-total">
 <th>Order Total</th>
@@ -73,6 +76,6 @@
 </div>
 
 </div><!-- CART TOTALS-->
-</div><!-- /.row-->
+<!-- </div> --><!-- /.row-->
 </div>
-<!-- /.container -->
+<!-- /.container

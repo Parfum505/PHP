@@ -2,7 +2,8 @@
 
 if (isset($_GET['id'])) {
 	$id = (int) $_GET['id'];
-	deleteItemFromCart($id);
+	$cart->deleteItemFromCart($id);
 }
-	header('Location: index.php?cart');
+	$ref = $_SERVER["HTTP_REFERER"];
+	header("Location: {$ref}");
 	exit();
