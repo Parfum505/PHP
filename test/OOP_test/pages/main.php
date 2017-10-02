@@ -1,4 +1,6 @@
-<?php $categories = get_categories(); ?>
+<?php
+    $db->query('SELECT * FROM category');
+    $categories = $db->resultset(); ?>
 
 
 <div class="container">

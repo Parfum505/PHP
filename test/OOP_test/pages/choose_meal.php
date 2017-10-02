@@ -1,6 +1,9 @@
 <?php
     if (isset($_GET['menu']) && !empty($_GET['menu'])) {
-        if(!$items = get_products($_GET['menu'])){
+        $db->query('SELECT * FROM items JOIN category ON item_cat_id = cat_id
+WHERE cat_name = :menu');
+        $db->bind(':menu', $_GET['menu']);
+        if(!$items = $db->resultset()){
             echo '<div class="container"><h2>No category: '.$_GET['menu'].' in our restaurant</h2></div>';
             exit();
         };
@@ -53,7 +56,7 @@
                                 <p class="price">
                                     &#8364;
                                     <?= $item['item_price']; ?></p>
-                                <form action="add_to_cart.php" method="POST" role="form">
+                                <form action="pages/add_to_cart.php" method="POST" role="form">
                                     <div class="form-group row">
                                         <div class="col-sm-3 col-xs-4">
                                             <label for="quantity">Quantity:</label>
