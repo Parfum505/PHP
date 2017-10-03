@@ -8,10 +8,9 @@ function show_nav_categories(){
 	if (!$res) {
 		die("Error: " . mysqli_error($link));
 	}
-	while ($row = mysqli_fetch_assoc($res)) {
-		echo "<li><a href='category.php?id=".$row['cat_id']. "'>".$row['cat_title']."</a></li>";
-	}
+	$nav_categories = mysqli_fetch_all($res, MYSQLI_ASSOC);
 	mysqli_free_result($res);
+	return $nav_categories;
 }
 function show_category_items($cat_id){
 	global $link;

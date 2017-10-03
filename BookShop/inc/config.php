@@ -17,5 +17,6 @@
 	if(!$link) {
 		echo 'Failed to connect: ' . mysqli_connect_error();
 	}
+
+	require_once 'functions.php';
 	// cartInit();
-	require 'functions.php';

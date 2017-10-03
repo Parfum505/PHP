@@ -1,5 +1,5 @@
 <article class="terms">
-	<h2><a href="../catalog.php">BookBazaar</a> online shop terms &amp; conditions</h2>
+	<h2><a href="../catalog.php">BookShop</a> online shop terms &amp; conditions</h2>
 	<p>Table of content hiddens:</p>
 	<ol>
 		<li>

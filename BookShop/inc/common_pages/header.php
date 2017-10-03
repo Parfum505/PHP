@@ -15,7 +15,7 @@
 	<![endif]-->
 	<!-- <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>-->
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="wrapper">
@@ -59,8 +59,8 @@
 		<div class="header_top">
 		<div class="row">
 			<div class="logo">
-				<a class="" href="../catalog.php">
-					<img src="../img/logo_image.png" alt="logo"></a>
+				<a class="" href="index.php">
+					<img src="img/logo_image.png" alt="logo"></a>
 			</div><!-- /.logo --><!--
 			--><div class="header_form_search">
 						<form action="" method="GET">
@@ -70,7 +70,7 @@
 						</form>
 					</div><!-- /.header_search_form --><!--
 			--><div class="header_cart">
-							<a href="basket.php">
+							<a href="index.php?page=cart">
 								<!-- <?= $count ?>
 								-->
 								items
@@ -93,16 +93,19 @@
 			<nav class="nav_main content" role='navigation'">
 				<ul class="">
 					<li>
-						<a class="active" href="main.php">BookShop</a>
+						<a class="active" href="index.php">BookShop</a>
 					</li><!--
 					--><li>
-						<a href="about_us.php">About us</a>
+						<a href="index.php?page=about">About us</a>
 					</li><!--
 					--><li>
-						<a href="terms_conditions.php">Terms &amp; Conditions</a>
+						<a href="index.php?page=terms">Terms &amp; Conditions</a>
 					</li><!--
 					--><li>
-						<a href="contacts.php">Contacts</a>
+						<a href="index.php?page=contacts">Contacts</a>
+					</li>
+					<li>
+						<a href="#">Admin</a>
 					</li>
 				</ul>
 			</nav>
