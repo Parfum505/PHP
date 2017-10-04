@@ -20,7 +20,6 @@ if (isset($_POST['add'])) {
 
 if (isset($_POST['update'])) {
 	unset($_POST['update']);
-	print_r($_POST);
 		foreach ($_POST as $id => $value) {
 			$cart->updateCart($id, $value);
 		}

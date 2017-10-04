@@ -36,14 +36,14 @@
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="index.php?page=login">
 								Log in
 								<span> <i class="fa fa-sign-in" aria-hidden="true"></i>
 								</span>
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="index.php?page=singup">
 								Sign up
 								<span >
 									<i class="fa fa-user-plus" aria-hidden="true"></i>

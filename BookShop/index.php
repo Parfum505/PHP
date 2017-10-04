@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php require "inc/config.php"; ?>
 
 <?php $title = "BookShop"; ?>
@@ -9,6 +10,7 @@
 <main>
 	<?php
 	$pages = array_slice(scandir('pages'), 2);
+
 	if (isset($_GET['page'])) {
 		$page = $_GET['page'] . '.php';
 

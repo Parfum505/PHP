@@ -1,5 +1,4 @@
 <?php require "inc/config.php"; ?>
-
 <?php
 	if (isset($_GET['page']) && ($_GET['page'] == 'book') && !empty($_GET['id'])) {
 		$item = show_item_page($_GET['id']);
