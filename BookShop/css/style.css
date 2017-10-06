@@ -115,6 +115,8 @@ header .search, header .header_form_search input, header .header_form_search but
   line-height: 1.4px;
   outline: none; }
 header .header_form_search {
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5);
   margin-left: 5%;
   border: 1px solid #a7abb1;
   border-radius: 4px;
@@ -164,7 +166,14 @@ header .header_cart {
       width: 50%; } }
 header .nav_main {
   text-align: right;
-  background-color: #fff; }
+  background-color: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5);
+  background-image: -webkit-linear-gradient(top, #ffffff, #f4f4f4);
+  background-image: -moz-linear-gradient(top, #ffffff, #f4f4f4);
+  background-image: -o-linear-gradient(top, #ffffff, #f4f4f4);
+  background-image: linear-gradient(to inverse-side(top), #ffffff, #f4f4f4); }
   header .nav_main li {
     display: inline-block;
     border-left: 1px solid #dddfe1; }
@@ -178,7 +187,7 @@ header .nav_main {
         left: 0;
         right: 100%;
         bottom: 0;
-        background-color: rgba(245, 224, 182, 0.75);
+        background-color: #eb6e7e;
         height: 4px;
         -webkit-transition-property: right;
         transition-property: right;
@@ -228,7 +237,19 @@ header .nav_btn_mobile {
 /* Aside */
 .aside_nav {
   float: left;
-  width: 29%; }
+  width: 29%;
+  margin-top: 50px;
+  padding: 18px 20px;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-image: -webkit-radial-gradient(cover, #ececec, #ffffff);
+  background-image: -moz-radial-gradient(cover, #ececec, #ffffff);
+  background-image: -o-radial-gradient(cover, #ececec, #ffffff);
+  background-image: radial-gradient(cover, #ececec, #ffffff); }
   .aside_nav a {
     transition: all 0.3s; }
     .aside_nav a.active {
@@ -237,6 +258,99 @@ header .nav_btn_mobile {
       margin-left: 1em; }
 
 /* endof Aside */
+/* Variables @ */
+/* Mixins */
+.shadow {
+  box-shadow: 0px 1px 1px 0px #e6e6e6; }
+
+/* Login */
+.login input, .login textarea, .login select, .login label, .singup input, .singup textarea, .singup select, .singup label {
+  font-family: inherit;
+  font-size: 1em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.login, .singup {
+  margin: 50px auto;
+  padding: 18px 20px;
+  width: 90%;
+  max-width: 600px;
+  background-color: #fff;
+  background-clip: padding-box;
+  border-radius: 5px;
+  background-image: -webkit-radial-gradient(cover, #ececec, #ffffff);
+  background-image: -moz-radial-gradient(cover, #ececec, #ffffff);
+  background-image: -o-radial-gradient(cover, #ececec, #ffffff);
+  background-image: radial-gradient(cover, #ececec, #ffffff);
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5); }
+  .login > h2, .singup > h2 {
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.4); }
+    .login > h2 a:hover, .singup > h2 a:hover {
+      text-decoration: underline;
+      color: #eb6e7e; }
+    .login > h2 a.active, .singup > h2 a.active {
+      color: #eb6e7e; }
+  .login input, .singup input {
+    display: block;
+    width: 100%;
+    height: 37px;
+    margin: 10px 0 20px;
+    padding: 0 10px;
+    background-color: #fff !important;
+    border: 1px solid #15243b;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.2); }
+    .login input:focus, .singup input:focus {
+      outline: 0;
+      background-color: #fff;
+      -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 0 4px 1px rgba(255, 255, 255, 0.6);
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 0 4px 1px rgba(255, 255, 255, 0.6); }
+  .login .login-submit, .singup .login-submit {
+    display: block;
+    width: 100%;
+    height: 37px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #294779;
+    text-align: center;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.3);
+    background: #adcbfa;
+    background-clip: padding-box;
+    border: 1px solid #284473;
+    border-bottom-color: #223b66;
+    border-radius: 4px;
+    cursor: pointer;
+    background-image: -webkit-linear-gradient(top, #d0e1fe, #96b8ed);
+    background-image: -moz-linear-gradient(top, #d0e1fe, #96b8ed);
+    background-image: -o-linear-gradient(top, #d0e1fe, #96b8ed);
+    background-image: linear-gradient(to inverse-side(top), #d0e1fe, #96b8ed);
+    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), inset 0 0 7px rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), inset 0 0 7px rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.15); }
+    .login .login-submit:active, .singup .login-submit:active {
+      background: #a4c2f3;
+      -webkit-box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.4), 0 1px rgba(255, 255, 255, 0.1);
+      box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.4), 0 1px rgba(255, 255, 255, 0.1); }
+  .login .login-help, .singup .login-help {
+    text-align: center; }
+    .login .login-help > a, .singup .login-help > a {
+      font-size: 14px;
+      color: #d4deef;
+      text-decoration: none;
+      text-shadow: 0 -1px rgba(0, 0, 0, 0.4); }
+      .login .login-help > a:hover, .singup .login-help > a:hover {
+        text-decoration: underline; }
+  .login .message, .singup .message {
+    text-align: center;
+    color: red; }
+
 /* Variables @ */
 /* Mixins */
 .shadow {

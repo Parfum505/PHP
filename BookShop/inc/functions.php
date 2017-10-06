@@ -15,9 +15,9 @@ function setMessage($message){
 	$_SESSION['message'] = $message;
 }
 function showMessage(){
-	$message = $_SESSION['message'];
-	// unset($_SESSION['message']);
-	return $message;
+	echo $_SESSION['message'];
+	unset($_SESSION['message']);
+	// return $message;
 }
 
 /*** Database functions ***/
@@ -89,17 +89,30 @@ function login($email, $pass){
 	bind($stmt, ':email', $email);
 	bind($stmt, ':pass', $pass);
 	$res = resultset($stmt);
-	// echo "<pre>";
-	// print_r($res);
-	// echo "</pre>";
 	if (!$res) {
 		setMessage("Wrong email or password");
 	} else {
 		$_SESSION['username'] = $res[0]['user_name'];
-		setMessage("Nice to see you {$res[0]['user_name']}, {$_SESSION['username']}");
+		setMessage("Nice to see you {$res[0]['user_name']}");
 
 	}
 
-	redirect('index.php?page=login');
+	redirectBackward();
+}
+function singup($email, $pass){
+	global $link;
+	$stmt = query_prep("SELECT * FROM users WHERE user_email = :email AND user_password = :pass ");
+	bind($stmt, ':email', $email);
+	bind($stmt, ':pass', $pass);
+	$res = resultset($stmt);
+	if (!$res) {
+		setMessage("Wrong email or password");
+	} else {
+		$_SESSION['username'] = $res[0]['user_name'];
+		setMessage("Nice to see you {$res[0]['user_name']}");
+
+	}
+
+	redirectBackward();
 }
 /*** Admin functions ***/

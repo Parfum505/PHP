@@ -31,7 +31,7 @@
 								<span><i class="fa fa-user" aria-hidden="true"></i>
 								</span>
 								<?php
-									echo isset($SESSION["username"]) ? $SESSION["username"] : "Guest" ;
+									echo isset($_SESSION["username"]) ? $_SESSION["username"] : "Guest" ;
 								?>
 							</a>
 						</li>
