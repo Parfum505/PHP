@@ -7,9 +7,9 @@
 	<h2><a class="active" href="index.php?page=login">Login</a> &Iota; <a href="index.php?page=singup">Sing Up</a></h2>
 	<form action="" method="POST">
 		<label for="email">Email address</label>
-		<input type="email" name="email" id="email">
+		<input type="email" name="email" id="email" required="require">
 		<label for="password">Password</label>
-		<input type="password" name="password" id="password">
+		<input type="password" name="password" id="password" required="require">
 		<button type="submit" class="login-submit" name="login">Login</button>
 	</form>
 	<p class="login-help"><a href="#">Forgot password?</a></p>
