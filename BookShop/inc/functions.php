@@ -99,7 +99,11 @@ function login($email, $pass){
 
 	redirectBackward();
 }
-function singup($email, $pass){
+function singup($firstName, $lastName, $email, $pass, $confirmPass){
+	if($pass !== $confirmPass){
+		setMessage("Please comfirm your password");
+		redirectBackward();
+	}
 	global $link;
 	$stmt = query_prep("SELECT * FROM users WHERE user_email = :email AND user_password = :pass ");
 	bind($stmt, ':email', $email);

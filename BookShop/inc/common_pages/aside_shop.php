@@ -1,6 +1,7 @@
 
 <aside class="aside_nav">
 	<h3>Categories:</h3>
+	<div class="vertical_word">Categories</div>
 	<nav>
 	<ul>
 	<?php	$links = show_nav_categories(); ?>

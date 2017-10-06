@@ -47,7 +47,7 @@ header{
 		img{
 			max-width: 230px;
 		}
-		@media(max-width: 725px){
+		@media(max-width: 745px){
 			width: 40%;
 		}
 	}
@@ -92,7 +92,7 @@ header{
 					cursor: pointer;
 				}
 			}
-			@media(max-width: 725px){
+			@media(max-width: 745px){
 				display: block;
 				width: 100%;
 				margin: 0;
@@ -109,7 +109,7 @@ header{
 				padding: 10px;
 				color: lighten($font-color, 10%);
 			}
-			@media(max-width: 725px){
+			@media(max-width: 745px){
 				position: absolute;
 				top: 50%;
 				right: 0;
@@ -117,12 +117,15 @@ header{
 				width: 50%;
 			}
 		}
+		.header_nav{
+			position: relative;
+		}
 	.nav_main{
 		text-align: right;
 		background-color: $bg-nav;
 		border-radius: 5px;
 		@include box-shadow(inset 0 1px rgba(white, .3), inset 0 0 1px 1px rgba(white, .1), 0 2px 10px rgba(black, .5));
-		@include linear-gradient(top, #ffffff, #f4f4f4);
+		@include linear-gradient(top, $bg-nav, $bg-gradient);
 		li{
 			display: inline-block;
 			border-left: 1px solid lighten($font-color, 60%);
@@ -150,7 +153,9 @@ header{
 					}
 				}
 			}
-			@media(max-width: 725px){
+			@media(max-width: 745px){
+				position: absolute;
+				width: 100%;
 				padding: 0;
 				li{
 					display: block;
@@ -183,7 +188,7 @@ header{
 				cursor: pointer;
 				background-color: lighten($bg-top-bottom, 10%);
 			}
-			@media(max-width: 725px){
+			@media(max-width: 745px){
 				display: block;
 				text-align: center;
 			}

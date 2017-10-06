@@ -40,6 +40,7 @@ img {
   margin: 0 auto; }
 
 .wrapper {
+  position: relative;
   width: 100%;
   min-height: 100%;
   padding-bottom: 100px; }
@@ -103,7 +104,7 @@ header .logo {
   width: 25%; }
   header .logo img {
     max-width: 230px; }
-  @media (max-width: 725px) {
+  @media (max-width: 745px) {
     header .logo {
       width: 40%; } }
 header .search, header .header_form_search input, header .header_form_search button {
@@ -143,7 +144,7 @@ header .header_form_search {
     color: #a7abb1; }
     header .header_form_search button:hover {
       cursor: pointer; }
-  @media (max-width: 725px) {
+  @media (max-width: 745px) {
     header .header_form_search {
       display: block;
       width: 100%;
@@ -157,23 +158,25 @@ header .header_cart {
     display: block;
     padding: 10px;
     color: #5a5e65; }
-  @media (max-width: 725px) {
+  @media (max-width: 745px) {
     header .header_cart {
       position: absolute;
       top: 50%;
       right: 0;
       transform: translateY(-100%);
       width: 50%; } }
+header .header_nav {
+  position: relative; }
 header .nav_main {
   text-align: right;
   background-color: #fff;
   border-radius: 5px;
   -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5);
-  background-image: -webkit-linear-gradient(top, #ffffff, #f4f4f4);
-  background-image: -moz-linear-gradient(top, #ffffff, #f4f4f4);
-  background-image: -o-linear-gradient(top, #ffffff, #f4f4f4);
-  background-image: linear-gradient(to inverse-side(top), #ffffff, #f4f4f4); }
+  background-image: -webkit-linear-gradient(top, #fff, #ececec);
+  background-image: -moz-linear-gradient(top, #fff, #ececec);
+  background-image: -o-linear-gradient(top, #fff, #ececec);
+  background-image: linear-gradient(to inverse-side(top), #fff, #ececec); }
   header .nav_main li {
     display: inline-block;
     border-left: 1px solid #dddfe1; }
@@ -197,8 +200,10 @@ header .nav_main {
         transition-timing-function: ease-out; }
       header .nav_main li a.active:after, header .nav_main li a:hover:after {
         right: 0; }
-  @media (max-width: 725px) {
+  @media (max-width: 745px) {
     header .nav_main {
+      position: absolute;
+      width: 100%;
       padding: 0;
       overflow: hidden;
       transition: all 0.5s linear;
@@ -224,7 +229,7 @@ header .nav_btn_mobile {
     color: #fff;
     cursor: pointer;
     background-color: #5a5e65; }
-  @media (max-width: 725px) {
+  @media (max-width: 745px) {
     header .nav_btn_mobile {
       display: block;
       text-align: center; } }
@@ -246,16 +251,41 @@ header .nav_btn_mobile {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  background-image: -webkit-radial-gradient(cover, #ececec, #ffffff);
-  background-image: -moz-radial-gradient(cover, #ececec, #ffffff);
-  background-image: -o-radial-gradient(cover, #ececec, #ffffff);
-  background-image: radial-gradient(cover, #ececec, #ffffff); }
+  background-image: -webkit-radial-gradient(cover, #ececec, #fff);
+  background-image: -moz-radial-gradient(cover, #ececec, #fff);
+  background-image: -o-radial-gradient(cover, #ececec, #fff);
+  background-image: radial-gradient(cover, #ececec, #fff); }
   .aside_nav a {
     transition: all 0.3s; }
     .aside_nav a.active {
       margin-left: 1em; }
     .aside_nav a:hover {
       margin-left: 1em; }
+  .aside_nav .vertical_word {
+    position: absolute;
+    display: none;
+    top: 0;
+    right: -40px;
+    width: 1em;
+    padding: 10px;
+    font-family: Consolas, Monaco, monospace;
+    word-wrap: break-word;
+    text-align: center;
+    background-image: -webkit-radial-gradient(cover, #ececec, #fff);
+    background-image: -moz-radial-gradient(cover, #ececec, #fff);
+    background-image: -o-radial-gradient(cover, #ececec, #fff);
+    background-image: radial-gradient(cover, #ececec, #fff);
+    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5); }
+    @media (max-width: 745px) {
+      .aside_nav .vertical_word {
+        display: block; } }
+  @media (max-width: 745px) {
+    .aside_nav {
+      position: fixed;
+      top: 200px;
+      left: -150px;
+      width: 150px; } }
 
 /* endof Aside */
 /* Variables @ */
@@ -279,10 +309,10 @@ header .nav_btn_mobile {
   background-color: #fff;
   background-clip: padding-box;
   border-radius: 5px;
-  background-image: -webkit-radial-gradient(cover, #ececec, #ffffff);
-  background-image: -moz-radial-gradient(cover, #ececec, #ffffff);
-  background-image: -o-radial-gradient(cover, #ececec, #ffffff);
-  background-image: radial-gradient(cover, #ececec, #ffffff);
+  background-image: -webkit-radial-gradient(cover, #ececec, #fff);
+  background-image: -moz-radial-gradient(cover, #ececec, #fff);
+  background-image: -o-radial-gradient(cover, #ececec, #fff);
+  background-image: radial-gradient(cover, #ececec, #fff);
   -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5); }
   .login > h2, .singup > h2 {
