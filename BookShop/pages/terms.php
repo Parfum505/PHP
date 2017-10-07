@@ -1,11 +1,12 @@
 <article class="terms">
-	<h2><a href="../catalog.php">BookShop</a> online shop terms &amp; conditions</h2>
+	<h2><a href="index.php">BookShop</a> online shop terms &amp; conditions</h2>
 	<p>Table of content hiddens:</p>
 	<ol>
 		<li>
 			<a href="#" class="slideToggle">
 				General terms &amp; conditions
-				<span class="st-arrow">Open or Close</span>
+				<i class="fa fa-arrow-down" aria-hidden="true"></i>
+				<i class="fa fa-arrow-up hidden" aria-hidden="true"></i>
 			</a>
 			<ol class="content hidden">
 				<li>
@@ -28,7 +29,8 @@
 		<li>
 			<a href="#" class="slideToggle">
 				Electronic services of the internet shop
-				<span class="st-arrow">Open or Close</span>
+				<i class="fa fa-arrow-down" aria-hidden="true"></i>
+				<i class="fa fa-arrow-up hidden" aria-hidden="true"></i>
 			</a>
 
 			<ol class="content hidden">
@@ -53,7 +55,8 @@
 		<li>
 			<a href="#" class="slideToggle">
 				Conditions of sales agreements
-				<span class="st-arrow">Open or Close</span>
+				<i class="fa fa-arrow-down" aria-hidden="true"></i>
+				<i class="fa fa-arrow-up hidden" aria-hidden="true"></i>
 			</a>
 
 			<ol class="content hidden">
@@ -78,7 +81,8 @@
 		<li>
 			<a href="#" class="slideToggle">
 				Methods and terms of payment
-				<span class="st-arrow">Open or Close</span>
+				<i class="fa fa-arrow-down" aria-hidden="true"></i>
+				<i class="fa fa-arrow-up hidden" aria-hidden="true"></i>
 			</a>
 			<ol class="content hidden">
 				<li>
@@ -95,7 +99,8 @@
 		<li>
 			<a href="#" class="slideToggle">
 				Methods and time of delivery
-				<span class="st-arrow">Open or Close</span>
+				<i class="fa fa-arrow-down" aria-hidden="true"></i>
+				<i class="fa fa-arrow-up hidden" aria-hidden="true"></i>
 			</a>
 			<ol class="content hidden">
 				<li>
@@ -116,7 +121,8 @@
 		<li>
 			<a href="#" class="slideToggle">
 				Returns and exchanges
-				<span class="st-arrow">Open or Close</span>
+				<i class="fa fa-arrow-down" aria-hidden="true"></i>
+				<i class="fa fa-arrow-up hidden" aria-hidden="true"></i>
 			</a>
 			<ol class="content hidden">
 				<li>

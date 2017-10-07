@@ -61,6 +61,10 @@ main{
 		border: 1px solid red;
 		padding: 5px;
 	}
+	@media(max-width: 745px){
+		display: block;
+		width: 100%;
+	}
 }
 /* endof Main */
 

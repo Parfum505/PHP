@@ -93,7 +93,7 @@
 			<nav class="nav_main content" role='navigation'">
 				<ul class="">
 					<li>
-						<a class="active" href="index.php">BookShop</a>
+						<a class="" href="index.php">BookShop</a>
 					</li><!--
 					--><li>
 						<a href="index.php?page=about">About us</a>
@@ -103,9 +103,6 @@
 					</li><!--
 					--><li>
 						<a href="index.php?page=contacts">Contacts</a>
-					</li>
-					<li>
-						<a href="#">Admin</a>
 					</li>
 				</ul>
 			</nav>

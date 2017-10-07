@@ -1,0 +1,24 @@
+@import '_variables.scss';
+/* Page About us */
+.about_us{
+	padding: 15px;
+	h2{
+		margin-top: 30px;
+		text-align: center;
+	}
+	a{
+		color: blue;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+/* endof About us */

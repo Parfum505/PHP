@@ -1,6 +1,14 @@
 @import '_variables.scss';
 /* Page Terms and Contitions */
 .terms{
+	padding: 15px;
+	h2{
+		margin-top: 30px;
+		text-align: center;
+	}
+	> p{
+		padding-left: 40px;
+	}
 	ol{
 		list-style: none;
 		counter-reset: item;
@@ -13,6 +21,16 @@
 				margin-right: 10px;
 				font-weight: bold;
 			}
+		}
+	}
+	.slideToggle{
+		text-decoration: underline;
+		color: blue;
+		&:hover{
+			color: rgb(235, 110, 126);
+		}
+		i.hidden{
+			display: none;
 		}
 	}
 	.content{
