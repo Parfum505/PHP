@@ -19,6 +19,9 @@ function showMessage(){
 	unset($_SESSION['message']);
 	// return $message;
 }
+function clearString($str){
+	return trim(strip_tags($str));
+}
 
 /*** Database functions ***/
 

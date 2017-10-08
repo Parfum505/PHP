@@ -1,7 +1,9 @@
 <?php require "inc/config.php"; ?>
 <?php
 	if(isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password'])){
-			login($_POST['email'], $_POST['password']); }
+		$email = clearString($_POST['email']);
+		$pass = clearString($_POST['password']);
+			login($email, $pass); }
 ?>
 <div class="login">
 	<h2><a class="active" href="index.php?page=login">Login</a> &Iota; <a href="index.php?page=singup">Sing Up</a></h2>

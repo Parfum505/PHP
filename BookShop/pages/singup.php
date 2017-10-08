@@ -2,7 +2,13 @@
 <?php
 
 if(isset($_POST['singup']) && !empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['confirmPassword'])){
-			singup($_POST['firstName'], $_POST['lastName'], $_POST['email'], $_POST['password'], $_POST['confirmPassword']); } ?>
+		$fName = clearString($_POST['firstName']);
+		$lName = clearString($_POST['lastName']);
+		$email = clearString($_POST['email']);
+		$pass = clearString($_POST['password']);
+		$confPass = clearString($_POST['confirmPassword']);
+			singup($fName, $lName, $email, $pass, $confPass);
+	} ?>
 <div class="singup">
 	<h2><a href="index.php?page=login">Login</a> &Iota; <a class="active" href="index.php?page=singup">Sing Up</a></h2>
 	<p class="message">
