@@ -1,6 +1,6 @@
 # Recruitment test for position PHP Developer
 
-	[Live demo](http://parfum505.000webhostapp.com/index.php)
+## Live demo: <http://parfum505.000webhostapp.com/index.php>
 
 ## User's story:
 * There is a possibility to order lunch or drink;
