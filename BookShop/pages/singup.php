@@ -1,4 +1,4 @@
-<?php require "inc/config.php"; ?>
+<?php require_once "inc/config.php"; ?>
 <?php
 
 if(isset($_POST['singup']) && !empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['confirmPassword'])){
