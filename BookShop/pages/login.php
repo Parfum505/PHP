@@ -1,17 +1,39 @@
 <?php require "inc/config.php"; ?>
 <?php
-	if(isset($_POST['login']) && !empty($_POST['email']) && !empty($_POST['password'])){
+	$email = $password = '';
+	$emailErr = $passwordErr = '';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
+
+	if (empty($_POST['email'])) {
+		$emailErr = "Email is required";
+	} else {
 		$email = clearString($_POST['email']);
-		$pass = clearString($_POST['password']);
-			login($email, $pass); }
+		if(!checkEmail($email)) {
+			$emailErr = "Invalid email format";
+		}
+	}
+	if (empty($_POST['password'])) {
+		$passwordErr = "Password is required";
+	} else {
+		$password = clearString($_POST['password']);
+	}
+
+	if (checkEmail($email) && $password) {
+		login($email, $password);;
+	}
+}
+
 ?>
 <div class="login">
 	<h2><a class="active" href="index.php?page=login">Login</a> &Iota; <a href="index.php?page=singup">Sing Up</a></h2>
 	<form action="" method="POST">
 		<label for="email">Email address</label>
-		<input type="email" name="email" id="email" required="require">
+		<input type="email" name="email" id="email" value="<?= $email;?>">
+		<span class="error"><?= $emailErr;?></span>
 		<label for="password">Password</label>
-		<input type="password" name="password" id="password" required="require">
+		<input type="password" name="password" id="password" >
+		<span class="error"><?= $passwordErr;?></span>
 		<button type="submit" class="login-submit" name="login">Login</button>
 	</form>
 	<p class="login-help"><a href="#">Forgot password?</a></p>

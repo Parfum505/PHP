@@ -20,7 +20,7 @@ function showMessage(){
 	// return $message;
 }
 function clearString($str){
-	return trim(strip_tags($str));
+	return  htmlspecialchars(trim(strip_tags($str)));
 }
 
 /*** Database functions ***/
@@ -134,6 +134,5 @@ function sendEmail($subject, $message, $email, $name){
 		} else {
 			setMessage("Your Message has been sent sucsessfuly");
 		}
-		// redirectBackward();
 }
 /*** Admin functions ***/

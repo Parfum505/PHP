@@ -43,16 +43,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['send'])) {
 	</p>
 	<form action="" method="POST">
 		<label for="name">Name </label>
-		<input type="text" name="name" id="name" value="<?= $name;?>">
+		<input type="text" name="name" id="name" value="<?= $name;?>" required="require">
 		<span class="error"><?= $nameErr;?></span>
 		<label for="email">Email address </label>
-		<input type="email" name="email" id="email" value="<?= $email;?>">
+		<input type="email" name="email" id="email" value="<?= $email;?>" required="require">
 		<span class="error"><?= $emailErr;?></span>
 		<label for="subject">Subject </label>
-		<input type="text" name="subject" id="subject" value="<?= $subject;?>">
+		<input type="text" name="subject" id="subject" value="<?= $subject;?>" required="require">
 		<span class="error"><?= $subjectErr;?></span>
 		<label for="message">Message </label>
-		<textarea name="message" id="message" value="<?= $message;?>"></textarea>
+		<textarea name="message" id="message" value="<?= $message;?>" required="require"></textarea>
 		<span class="error"><?= $messageErr;?></span>
 		<button type="submit" class="login-submit" name="send">Send</button>
 	</form>
