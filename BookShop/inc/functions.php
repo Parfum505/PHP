@@ -123,19 +123,9 @@ function singup($firstName, $lastName, $email, $pass, $confirmPass){
 	redirectBackward();
 }
 function checkEmail($email){
-	if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-		return true;
-	} else {
-		setMessage("{$email} is not a valid email address");
-		return false;
-	}
-
-
+	return filter_var($email, FILTER_VALIDATE_EMAIL) ? $email : false;
 }
 function sendEmail($subject, $message, $email, $name){
-	if (!checkEmail($email)) {
-		redirectBackward();
-	} else {
 		$to = "parfum05@mail.ru";
 		$header = "From: {$name}, {$email}";
 		$res = mail($to, $subject, $message, $header);
@@ -144,9 +134,6 @@ function sendEmail($subject, $message, $email, $name){
 		} else {
 			setMessage("Your Message has been sent sucsessfuly");
 		}
-		redirectBackward();
-
-	}
-
+		// redirectBackward();
 }
 /*** Admin functions ***/
