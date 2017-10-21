@@ -61,7 +61,6 @@ function resultset($stmt){
 /*** Shop functions ***/
 
 function show_nav_categories(){
-	global $link;
 	$stmt = query("SELECT * FROM categories");
 
 	$res = resultset($stmt);
@@ -71,7 +70,6 @@ function show_nav_categories(){
 	return $res;
 }
 function show_category_items($cat_id){
-	global $link;
 	$stmt = query_prep("SELECT * , cat_title FROM products
 		JOIN categories ON prod_cat_id = cat_id
 		WHERE prod_cat_id = :cat_id ");
@@ -80,14 +78,12 @@ function show_category_items($cat_id){
 	return $res;
 }
 function show_item_page($id){
-	global $link;
 	$stmt = query_prep("SELECT * FROM products WHERE prod_id = :id ");
 	bind($stmt, ':id', $id);
 	$res = resultset($stmt);
 	return $res;
 }
 function login($email, $pass){
-	global $link;
 	$stmt = query_prep("SELECT * FROM users WHERE user_email = :email AND user_password = :pass ");
 	bind($stmt, ':email', $email);
 	bind($stmt, ':pass', $pass);
@@ -97,25 +93,33 @@ function login($email, $pass){
 	} else {
 		$_SESSION['username'] = $res[0]['user_name'];
 		setMessage("Nice to see you {$res[0]['user_name']}");
-
 	}
-
 	redirectBackward();
 }
-function singup($firstName, $lastName, $email, $pass){
-	global $link;
-	$stmt = query_prep("SELECT * FROM users WHERE user_email = :email AND user_password = :pass ");
+function logOut(){
+	session_destroy();
+	redirect('index.php');
+}
+function userExist($email){
+	$stmt = query_prep("SELECT user_email FROM users WHERE user_email = :email");
 	bind($stmt, ':email', $email);
-	bind($stmt, ':pass', $pass);
 	$res = resultset($stmt);
-	if (!$res) {
-		setMessage("Can't register, please try late");
-	} else {
-		$_SESSION['username'] = $res[0]['user_name'];
-		setMessage("Nice to see you {$res[0]['user_name']}");
-
-	}
-
+	return $res ? true: false;
+}
+function singup($firstName, $lastName, $email, $pass){
+		$stmt = query_prep("INSERT INTO users (user_name, last_name, user_email, user_password)
+			VALUES (:firstName, :lastName, :email, :pass) ");
+		bind($stmt, ':firstName', $firstName);
+		bind($stmt, ':lastName', $lastName);
+		bind($stmt, ':email', $email);
+		bind($stmt, ':pass', $pass);
+		$res = execute($stmt);
+		if (!$res) {
+			setMessage("Can't register {$firstName}, please try late");
+		} else {
+			$_SESSION['username'] = $firstName;
+			setMessage("Nice to see you {$firstName}");
+		}
 	redirectBackward();
 }
 function checkEmail($email){
@@ -131,8 +135,5 @@ function sendEmail($subject, $message, $email, $name){
 			setMessage("Your Message has been sent sucsessfuly");
 		}
 }
-function logOut(){
-	session_destroy();
-	redirect('index.php');
-}
+
 /*** Admin functions ***/
