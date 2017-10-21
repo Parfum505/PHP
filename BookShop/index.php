@@ -1,6 +1,10 @@
 <?php session_start(); ?>
-<?php require "inc/config.php"; ?>
+<?php require "inc/config.php";
 
+	if(isset($_GET['logout'])){
+		logOut();
+	}
+?>
 <?php $title = "BookShop"; ?>
 <?php include_once (COMMON_PAGES . "header.php"); ?>
 

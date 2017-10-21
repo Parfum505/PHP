@@ -102,18 +102,14 @@ function login($email, $pass){
 
 	redirectBackward();
 }
-function singup($firstName, $lastName, $email, $pass, $confirmPass){
-	if($pass !== $confirmPass){
-		setMessage("Please comfirm your password");
-		redirectBackward();
-	}
+function singup($firstName, $lastName, $email, $pass){
 	global $link;
 	$stmt = query_prep("SELECT * FROM users WHERE user_email = :email AND user_password = :pass ");
 	bind($stmt, ':email', $email);
 	bind($stmt, ':pass', $pass);
 	$res = resultset($stmt);
 	if (!$res) {
-		setMessage("Wrong email or password");
+		setMessage("Can't register, please try late");
 	} else {
 		$_SESSION['username'] = $res[0]['user_name'];
 		setMessage("Nice to see you {$res[0]['user_name']}");
@@ -134,5 +130,9 @@ function sendEmail($subject, $message, $email, $name){
 		} else {
 			setMessage("Your Message has been sent sucsessfuly");
 		}
+}
+function logOut(){
+	session_destroy();
+	redirect('index.php');
 }
 /*** Admin functions ***/

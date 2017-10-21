@@ -27,20 +27,28 @@
 			<div class="row">
 				<ul class="">
 					<li>
-							<a href="#">
+							<!-- <a href="#"> -->
 								<span><i class="fa fa-user" aria-hidden="true"></i>
 								</span>
 								<?php
 									echo isset($_SESSION["username"]) ? $_SESSION["username"] : "Guest" ;
 								?>
-							</a>
+							<!-- </a> -->
 						</li>
 						<li>
-							<a href="index.php?page=login">
-								Log in
-								<span> <i class="fa fa-sign-in" aria-hidden="true"></i>
-								</span>
-							</a>
+							<?php
+								if (isset($_SESSION["username"])){
+									echo '<a href="index.php?logout">Log out';
+									echo '<span> <i class="fa fa-sign-out" aria-hidden="true"></i>
+								</span>';
+									echo '</a>';
+								} else{
+									echo '<a href="index.php?page=login">Log in';
+									echo '<span> <i class="fa fa-sign-in" aria-hidden="true"></i>
+								</span>';
+									echo '</a>';
+								}
+							?>
 						</li>
 						<li>
 							<a href="index.php?page=singup">
