@@ -1,13 +1,13 @@
 @import '_variables.scss';
 /* Login */
-.login,.singup,.contacts{
+.login,.singup,.contacts,.remindPassword{
 	input, textarea, select, label {
 		font-family: inherit;
 		font-size: 1em;
 		@include box-sizing(border-box);
 	}
 }
-.login,.singup,.contacts{
+.login,.singup,.contacts,.remindPassword{
   margin: 50px auto;
   padding: 18px 20px;
   width: 90%;
@@ -79,13 +79,11 @@
 }
 	.login-help {
   text-align: center;
-
   > a {
     font-size: 14px;
     color: #d4deef;
     text-decoration: none;
     text-shadow: 0 -1px rgba(black, .4);
-
     &:hover { text-decoration: underline; }
   }
 }

@@ -135,5 +135,20 @@ function sendEmail($subject, $message, $email, $name){
 			setMessage("Your Message has been sent sucsessfuly");
 		}
 }
-
+function remindPassword($email){
+	$stmt = query_prep("SELECT user_password FROM users WHERE user_email = :email");
+	bind($stmt, ':email', $email);
+	$res = resultset($stmt);
+	$password = $res[0]['user_password'];
+	$to = $email;
+	$header = "From: Bookshop, parfum05@mail.ru";
+	$subject = "Remind password";
+	$message = "Your password is {$password}";
+	$res = mail($to, $subject, $message, $header);
+		if (!$res) {
+			setMessage("Sorry we couldn't send your password");
+		} else {
+			setMessage("Password has been sent on email {$email}");
+		}
+}
 /*** Admin functions ***/

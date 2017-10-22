@@ -321,14 +321,14 @@ header .nav_btn_mobile {
   box-shadow: 0px 1px 1px 0px #e6e6e6; }
 
 /* Login */
-.login input, .login textarea, .login select, .login label, .singup input, .singup textarea, .singup select, .singup label, .contacts input, .contacts textarea, .contacts select, .contacts label {
+.login input, .login textarea, .login select, .login label, .singup input, .singup textarea, .singup select, .singup label, .contacts input, .contacts textarea, .contacts select, .contacts label, .remindPassword input, .remindPassword textarea, .remindPassword select, .remindPassword label {
   font-family: inherit;
   font-size: 1em;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-.login, .singup, .contacts {
+.login, .singup, .contacts, .remindPassword {
   margin: 50px auto;
   padding: 18px 20px;
   width: 90%;
@@ -342,18 +342,18 @@ header .nav_btn_mobile {
   background-image: radial-gradient(cover, #ececec, #fff);
   -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5); }
-  .login > h2, .singup > h2, .contacts > h2 {
+  .login > h2, .singup > h2, .contacts > h2, .remindPassword > h2 {
     margin-bottom: 20px;
     font-size: 1.3em;
     font-weight: bold;
     text-align: center;
     text-shadow: 0 -1px rgba(0, 0, 0, 0.4); }
-    .login > h2 a:hover, .singup > h2 a:hover, .contacts > h2 a:hover {
+    .login > h2 a:hover, .singup > h2 a:hover, .contacts > h2 a:hover, .remindPassword > h2 a:hover {
       text-decoration: underline;
       color: #eb6e7e; }
-    .login > h2 a.active, .singup > h2 a.active, .contacts > h2 a.active {
+    .login > h2 a.active, .singup > h2 a.active, .contacts > h2 a.active, .remindPassword > h2 a.active {
       color: #eb6e7e; }
-  .login input, .login textarea, .singup input, .singup textarea, .contacts input, .contacts textarea {
+  .login input, .login textarea, .singup input, .singup textarea, .contacts input, .contacts textarea, .remindPassword input, .remindPassword textarea {
     display: block;
     width: 100%;
     height: 37px;
@@ -364,14 +364,14 @@ header .nav_btn_mobile {
     border-radius: 4px;
     -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.2);
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.2); }
-    .login input:focus, .login textarea:focus, .singup input:focus, .singup textarea:focus, .contacts input:focus, .contacts textarea:focus {
+    .login input:focus, .login textarea:focus, .singup input:focus, .singup textarea:focus, .contacts input:focus, .contacts textarea:focus, .remindPassword input:focus, .remindPassword textarea:focus {
       outline: 0;
       background-color: #fff;
       -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 0 4px 1px rgba(255, 255, 255, 0.6);
       box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 0 4px 1px rgba(255, 255, 255, 0.6); }
-  .login textarea, .singup textarea, .contacts textarea {
+  .login textarea, .singup textarea, .contacts textarea, .remindPassword textarea {
     height: 100px; }
-  .login .login-submit, .singup .login-submit, .contacts .login-submit {
+  .login .login-submit, .singup .login-submit, .contacts .login-submit, .remindPassword .login-submit {
     display: block;
     width: 100%;
     height: 37px;
@@ -393,29 +393,29 @@ header .nav_btn_mobile {
     background-image: linear-gradient(to inverse-side(top), #d0e1fe, #96b8ed);
     -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), inset 0 0 7px rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.15);
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), inset 0 0 7px rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.15); }
-    .login .login-submit:active, .singup .login-submit:active, .contacts .login-submit:active {
+    .login .login-submit:active, .singup .login-submit:active, .contacts .login-submit:active, .remindPassword .login-submit:active {
       background: #a4c2f3;
       -webkit-box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.4), 0 1px rgba(255, 255, 255, 0.1);
       box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.4), 0 1px rgba(255, 255, 255, 0.1); }
-  .login .login-help, .singup .login-help, .contacts .login-help {
+  .login .login-help, .singup .login-help, .contacts .login-help, .remindPassword .login-help {
     text-align: center; }
-    .login .login-help > a, .singup .login-help > a, .contacts .login-help > a {
+    .login .login-help > a, .singup .login-help > a, .contacts .login-help > a, .remindPassword .login-help > a {
       font-size: 14px;
       color: #d4deef;
       text-decoration: none;
       text-shadow: 0 -1px rgba(0, 0, 0, 0.4); }
-      .login .login-help > a:hover, .singup .login-help > a:hover, .contacts .login-help > a:hover {
+      .login .login-help > a:hover, .singup .login-help > a:hover, .contacts .login-help > a:hover, .remindPassword .login-help > a:hover {
         text-decoration: underline; }
-  .login .message, .singup .message, .contacts .message {
+  .login .message, .singup .message, .contacts .message, .remindPassword .message {
     text-align: center;
     color: red; }
-  .login .error, .singup .error, .contacts .error {
+  .login .error, .singup .error, .contacts .error, .remindPassword .error {
     color: red;
     font-size: 0.7em;
     padding-bottom: 10px;
     display: block;
     margin-top: -5px; }
-  .login label:after, .singup label:after, .contacts label:after {
+  .login label:after, .singup label:after, .contacts label:after, .remindPassword label:after {
     display: inline;
     content: '*';
     color: red; }

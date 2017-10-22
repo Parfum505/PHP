@@ -1,26 +1,26 @@
 <?php require "inc/config.php"; ?>
 <?php
-	$email = $password = '';
-	$emailErr = $passwordErr = '';
+$email = $password = '';
+$emailErr = $passwordErr = '';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
-
-	if (empty($_POST['email'])) {
-		$emailErr = "Email is required";
-	} else {
-		$email = clearString($_POST['email']);
-		if(!checkEmail($email)) {
-			$emailErr = "Invalid email format";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	if (isset($_POST['login'])) {
+		if (empty($_POST['email'])) {
+			$emailErr = "Email is required";
+		} else {
+			$email = clearString($_POST['email']);
+			if(!checkEmail($email)) {
+				$emailErr = "Invalid email format";
+			}
 		}
-	}
-	if (empty($_POST['password'])) {
-		$passwordErr = "Password is required";
-	} else {
-		$password = clearString($_POST['password']);
-	}
-
-	if (checkEmail($email) && $password) {
-		login($email, $password);;
+		if (empty($_POST['password'])) {
+			$passwordErr = "Password is required";
+		} else {
+			$password = clearString($_POST['password']);
+		}
+		if (checkEmail($email) && $password) {
+			login($email, $password);;
+		}
 	}
 }
 
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
 		<span class="error"><?= $passwordErr;?></span>
 		<button type="submit" class="login-submit" name="login">Login</button>
 	</form>
-	<p class="login-help"><a href="#">Forgot password?</a></p>
+	<p class="login-help"><a href="index.php?page=remindpassword">Forgot password?</a></p>
 	<p class="message">
 		<?php if(isset($_SESSION['message'])){
 			showMessage();
