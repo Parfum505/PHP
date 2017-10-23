@@ -45,13 +45,13 @@ class Database
 					$type = PDO::PARAM_STR;
 			}
 		}
-		return $stmt->bindValue($param, $value, $type);
+		return $this->stmt->bindValue($param, $value, $type);
 	}
-	public function execute($stmt){
-		return $stmt->execute();
+	public function execute(){
+		return $this->stmt->execute();
 	}
-	public function resultset($stmt){
-		$stmt = execute();
-		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	public function resultset(){
+		$this->execute();
+		return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 }

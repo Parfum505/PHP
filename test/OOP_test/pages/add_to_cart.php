@@ -9,10 +9,15 @@ if (isset($_POST['add'])) {
 	$qu= (int)$_POST['quantity'];
 	$lemon= isset($_POST['lemon'])? trim(strip_tags($_POST['lemon'])) : '' ;
 	$ice= isset($_POST['ice'])? trim(strip_tags($_POST['ice'])) : '' ;
+	if ($group == 'Drinks') {
+		$item = new Drinks($id, $name, $price, $group, $ice, $lemon);
+		$cart->drinksAdd2Cart($item, $qu);
+	} else {
+		$item = new Items($id, $name, $price, $group);
+		$cart->itemAdd2Cart($item, $qu);
+	}
 
-	$item = new Items($id, $name, $price, $group, $ice, $lemon);
 
-	$cart->add2Cart($item, $qu);
 	$ref = $_SERVER["HTTP_REFERER"];
 	header("Location: {$ref}");
 	exit();

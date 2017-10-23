@@ -18,9 +18,9 @@ defined("DB_PASS") ? null : define("DB_PASS", "");
 defined("DB_NAME") ? null : define("DB_NAME",  "restaurant");
 
 
- spl_autoload_register(function ($class_name)
+spl_autoload_register(function ($class_name)
 	{
-		require 'classes/' . $class_name . '.class.php';
+		require_once 'classes/' . $class_name . '.class.php';
 	});
 $db = new Database;
 $cart = new Cart;

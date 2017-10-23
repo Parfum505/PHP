@@ -16,7 +16,7 @@ class Cart
             }
         }
 	private function saveToCart(){
-		print_r($this->cart_arr);
+		// print_r($this->cart_arr);
         $str = base64_encode(serialize($this->cart_arr));
         setcookie('cart', $str, 0x7FFFFFFF, '/');
 	}
@@ -29,7 +29,7 @@ class Cart
 			}
 		return $count;
 	}
-	public function add2Cart($item, $qu)
+	private function add2Cart($item, $qu)
 	{
 		$id = $item->getId();
 		$qu = $qu >= 1? (int)$qu : 1;
@@ -40,6 +40,14 @@ class Cart
             $this->cart_arr[$id] = array('item' => $item, 'qu' => $qu);
             $this->saveToCart();
         }
+	}
+	public function itemAdd2Cart(Items $item, $qu)
+	{
+		$this->add2Cart($item, $qu);
+	}
+	public function drinksAdd2Cart(Drinks $item, $qu)
+	{
+		$this->add2Cart($item, $qu);
 	}
 	public function updateCart($id, $qu)
 	{

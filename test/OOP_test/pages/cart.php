@@ -29,10 +29,12 @@ $sum = 0; $amount = 0;
 		<tr>
 			<td><?= $meal['item']->getGroup() ;?></td>
 			<td><?= $meal['item']->getName()."&nbsp;" ;?>
-				<?php if($meal['item']->getLemon()){
-				echo "<span class='glyphicon glyphicon-ok'>{$meal['item']->getLemon()}&nbsp;</span>";}
-				if($meal['item']->getIce()){
-				echo "<span class='glyphicon glyphicon-ok'>{$meal['item']->getIce()}</span>";}
+				<?php if($meal['item']->getGroup() == 'Drinks'){
+					$lemon = $meal['item']->getLemon();
+					$ice = $meal['item']->getIce();
+				if($lemon){echo "<span class='glyphicon glyphicon-ok'>{$meal['item']->getLemon()}&nbsp;</span>";}
+				if($ice){echo "<span class='glyphicon glyphicon-ok'>{$meal['item']->getIce()}</span>";}
+			}
 				?>
 			</td>
 			<td>&#8364; <?= $meal['item']->getPrice() ;?></td>
