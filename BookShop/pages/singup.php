@@ -75,6 +75,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['singup'])) {
 		<label for="confirmPassword">Confirm password</label>
 		<input type="password" name="confirmPassword" id="confirmPassword" required="require">
 		<span class="error"><?= $confirmPassErr;?></span>
-		<button type="submit" class="login-submit" name="singup">Sing up</button>
+		<button type="submit" class="btn login-submit" name="singup">Sing up</button>
 	</form>
 </div>

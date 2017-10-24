@@ -36,8 +36,9 @@ img {
   box-sizing: content-box; }
 
 .container {
-  width: 80%;
-  margin: 0 auto; }
+  width: 90%;
+  margin: 0 auto;
+  min-width: 250px; }
 
 .wrapper {
   position: relative;
@@ -56,13 +57,40 @@ img {
   max-height: 1000px !important;
   opacity: 1 !important; }
 
+.btn {
+  display: block;
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  color: #42454a;
+  cursor: pointer;
+  padding: 0.7em;
+  background: #adcbfa;
+  background-clip: padding-box;
+  background-image: -webkit-linear-gradient(top, #d0e1fe, #96b8ed);
+  background-image: -moz-linear-gradient(top, #d0e1fe, #96b8ed);
+  background-image: -o-linear-gradient(top, #d0e1fe, #96b8ed);
+  background-image: linear-gradient(to inverse-side(top), #d0e1fe, #96b8ed);
+  transition: all 0.3s; }
+  .btn:hover {
+    -webkit-box-shadow: inset 0 0 20px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 20px 1px rgba(0, 0, 0, 0.2); }
+
 main {
   float: right;
-  width: 69%; }
-  main .product {
-    display: inline-block;
-    border: 1px solid red;
-    padding: 5px; }
+  width: 73%;
+  margin-top: 50px;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-image: -webkit-radial-gradient(cover, #ececec, #fff);
+  background-image: -moz-radial-gradient(cover, #ececec, #fff);
+  background-image: -o-radial-gradient(cover, #ececec, #fff);
+  background-image: radial-gradient(cover, #ececec, #fff); }
   @media (max-width: 745px) {
     main {
       display: block;
@@ -246,7 +274,7 @@ header .nav_btn_mobile {
 /* Aside */
 .aside_nav {
   float: left;
-  width: 29%;
+  width: 25%;
   margin-top: 50px;
   padding: 18px 20px;
   border-radius: 5px;
@@ -329,19 +357,11 @@ header .nav_btn_mobile {
   box-sizing: border-box; }
 
 .login, .singup, .contacts, .remindPassword {
-  margin: 50px auto;
+  margin: 0 auto;
   padding: 18px 20px;
   width: 90%;
   max-width: 600px;
-  background-color: #fff;
-  background-clip: padding-box;
-  border-radius: 5px;
-  background-image: -webkit-radial-gradient(cover, #ececec, #fff);
-  background-image: -moz-radial-gradient(cover, #ececec, #fff);
-  background-image: -o-radial-gradient(cover, #ececec, #fff);
-  background-image: radial-gradient(cover, #ececec, #fff);
-  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5);
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5); }
+  background-clip: padding-box; }
   .login > h2, .singup > h2, .contacts > h2, .remindPassword > h2 {
     margin-bottom: 20px;
     font-size: 1.3em;
@@ -372,27 +392,11 @@ header .nav_btn_mobile {
   .login textarea, .singup textarea, .contacts textarea, .remindPassword textarea {
     height: 100px; }
   .login .login-submit, .singup .login-submit, .contacts .login-submit, .remindPassword .login-submit {
-    display: block;
     width: 100%;
-    height: 37px;
     margin-bottom: 15px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #294779;
-    text-align: center;
     text-shadow: 0 1px rgba(255, 255, 255, 0.3);
-    background: #adcbfa;
-    background-clip: padding-box;
     border: 1px solid #284473;
-    border-bottom-color: #223b66;
-    border-radius: 4px;
-    cursor: pointer;
-    background-image: -webkit-linear-gradient(top, #d0e1fe, #96b8ed);
-    background-image: -moz-linear-gradient(top, #d0e1fe, #96b8ed);
-    background-image: -o-linear-gradient(top, #d0e1fe, #96b8ed);
-    background-image: linear-gradient(to inverse-side(top), #d0e1fe, #96b8ed);
-    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), inset 0 0 7px rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.15);
-    box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), inset 0 0 7px rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.15); }
+    border-bottom-color: #223b66; }
     .login .login-submit:active, .singup .login-submit:active, .contacts .login-submit:active, .remindPassword .login-submit:active {
       background: #a4c2f3;
       -webkit-box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.4), 0 1px rgba(255, 255, 255, 0.1);
@@ -474,6 +478,42 @@ header .nav_btn_mobile {
     max-height: 0px; }
 
 /* endof Terms and Contitions */
+/* Variables @ */
+/* Mixins */
+.shadow {
+  box-shadow: 0px 1px 1px 0px #e6e6e6; }
+
+/* Page Category */
+.category {
+  text-align: center; }
+  .category .product {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-left: 0.5em; }
+    .category .product li {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 0 0.5em 1em 0;
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 0.5em;
+      -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      max-width: 160px;
+      min-width: 70px; }
+      .category .product li p {
+        margin: 0 0 0.3em 0;
+        font-size: 0.9em;
+        font-weight: bold; }
+        .category .product li p.author {
+          font-size: 0.7em;
+          font-weight: normal; }
+        .category .product li p.price {
+          color: red; }
+
+/* endof Page Category */
 /* Variables @ */
 /* Mixins */
 .shadow {

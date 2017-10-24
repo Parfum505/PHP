@@ -54,6 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['send'])) {
 		<label for="message">Message </label>
 		<textarea name="message" id="message" value="<?= $message;?>" required="require"></textarea>
 		<span class="error"><?= $messageErr;?></span>
-		<button type="submit" class="login-submit" name="send">Send</button>
+		<button type="submit" class="btn login-submit" name="send">Send</button>
 	</form>
 </div>

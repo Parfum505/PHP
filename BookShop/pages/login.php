@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		<label for="password">Password</label>
 		<input type="password" name="password" id="password" required="require">
 		<span class="error"><?= $passwordErr;?></span>
-		<button type="submit" class="login-submit" name="login">Login</button>
+		<button type="submit" class="btn login-submit" name="login">Login</button>
 	</form>
 	<p class="login-help"><a href="index.php?page=remindpassword">Forgot password?</a></p>
 	<p class="message">
