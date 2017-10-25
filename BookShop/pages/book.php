@@ -5,23 +5,23 @@
 	}
 ?>
 
+<div class="single_book">
+	<div class="single_book_img">
+		<img class="" src="<?php echo $item[0]['prod_img'];?>" alt="">
+	</div>
+	<div class="single_book_info">
+		<h2>
+			<?= $item[0]['prod_title']; ?>
+		</h2>
+		<p class="author">
+			<?= $item[0]['prod_author']; ?></p>
+		<p class="description">
+			<?= $item[0]['prod_description']; ?></p>
+		<p class="price">
+			<?= "&#8364; " . $item[0]['prod_price']; ?></p>
 
-			<img class="" src="<?php echo $item[0]['prod_img'];?>" alt="">
-			<div class="">
-				<h4>
-					<a href="#">
-						<?= $item[0]['prod_title']; ?></a>
-				</h4>
-				<hr>
-				<p>
-					<?= $item[0]['prod_author']; ?></p>
-				<p>
-					<?= $item[0]['prod_description']; ?></p>
-					<span class="">
-					<?= "&#8364; " . $item[0]['prod_price']; ?></span>
-
-				<div class="">
-					<a href="add2cart.php?add=<?= $item[0]['prod_id']; ?>" class="">Add to cart</a>
-				</div>
-
-			</div>
+		<div class="">
+			<a href="add2cart.php?add=<?= $item[0]['prod_id']; ?>" class="btn">Add to cart</a>
+		</div>
+	</div>
+</div>

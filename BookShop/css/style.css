@@ -38,7 +38,7 @@ img {
 .container {
   width: 90%;
   margin: 0 auto;
-  min-width: 250px; }
+  min-width: 200px; }
 
 .wrapper {
   position: relative;
@@ -490,30 +490,74 @@ header .nav_btn_mobile {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-left: 0.5em; }
+    padding: 0 10px 10px; }
     .category .product li {
+      flex: 1 20%;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      margin: 0 0.5em 1em 0;
+      margin: 1%;
       background-color: #fff;
       border-radius: 5px;
       padding: 0.5em;
       -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-      max-width: 160px;
-      min-width: 70px; }
-      .category .product li p {
+      max-width: 300px;
+      min-width: 150px;
+      transition: all 0.3s; }
+      .category .product li:hover {
+        -webkit-box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
+        box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4); }
+      .category .product li a {
+        display: block;
+        margin-bottom: auto; }
+      .category .product li .product_info p {
         margin: 0 0 0.3em 0;
         font-size: 0.9em;
         font-weight: bold; }
-        .category .product li p.author {
+        .category .product li .product_info p.author {
           font-size: 0.7em;
           font-weight: normal; }
-        .category .product li p.price {
+        .category .product li .product_info p.price {
           color: red; }
 
 /* endof Page Category */
+/* Variables @ */
+/* Mixins */
+.shadow {
+  box-shadow: 0px 1px 1px 0px #e6e6e6; }
+
+/* Page book.php */
+.single_book {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  .single_book .single_book_img {
+    flex: 1 30%;
+    max-width: 350px;
+    min-width: 150px;
+    margin: 0 auto; }
+  .single_book .single_book_info {
+    flex: 2 66%;
+    margin: 0 2%;
+    display: flex;
+    flex-direction: column; }
+    .single_book .single_book_info h2 {
+      margin: 0; }
+    .single_book .single_book_info p {
+      margin: 0.8em 0 0; }
+    .single_book .single_book_info .description {
+      font-size: 0.8em;
+      margin-bottom: auto; }
+    .single_book .single_book_info .price {
+      font-size: 1.1em;
+      color: red;
+      font-weight: bold;
+      margin-bottom: 1em; }
+
+/* endof Page book.php */
 /* Variables @ */
 /* Mixins */
 .shadow {

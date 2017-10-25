@@ -11,12 +11,13 @@
 	<li>
 	<a href="index.php?page=book&id=<?= $item['prod_id'];?>">
 		<img src="<?= $item['prod_img']; ?>" alt="
-		<?= $item['prod_title'];?>">
+		<?= $item['prod_title'];?>"></a>
+		<div class="product_info">
 		<p class="title"><?= $item['prod_title']; ?></p>
 		<p class="author"><?= $item['prod_author']; ?></p>
 		<p class="price">&#8364;<?= $item['prod_price']; ?></p>
 		<a href="add2cart.php?id=<?= $item['prod_id']; ?>" class='btn'>Add to cart</a>
-	</a>
+		</div>
 	</li>
 <?php endforeach; ?>
 </ul>
