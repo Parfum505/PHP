@@ -10,7 +10,7 @@
 <?php foreach($cat_items as $item): ?>
 	<li>
 	<a href="index.php?page=book&id=<?= $item['prod_id'];?>">
-		<img src="<?= $item['prod_img']; ?>" alt="
+		<img src="img/products_foto/<?= $item['prod_img']; ?>" alt="
 		<?= $item['prod_title'];?>"></a>
 		<div class="product_info">
 		<p class="title"><?= $item['prod_title']; ?></p>

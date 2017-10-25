@@ -7,7 +7,7 @@
 
 <div class="single_book">
 	<div class="single_book_img">
-		<img class="" src="<?php echo $item[0]['prod_img'];?>" alt="">
+		<img class="" src="img/products_foto/<?php echo $item[0]['prod_img'];?>" alt="">
 	</div>
 	<div class="single_book_info">
 		<h2>

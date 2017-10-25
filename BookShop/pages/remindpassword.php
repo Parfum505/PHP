@@ -26,13 +26,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <div class="remindPassword">
-	<h2>Forgot password?</h2>
-	<p>Please fill in the form and we will send password on your email.</p>
+	<h2>Forgot your password?</h2>
+	<p>Please wright the email you used on registration and we will send the password on your email.</p>
 	<form action="" method="POST">
 		<label for="email">Email address</label>
 		<input type="email" name="email" id="email" value="<?= $email;?>" required="require">
 		<span class="error"><?= $remindEmailErr;?></span>
-		<button type="submit" class="login-submit" name="remindPassword">Send password</button>
+		<button type="submit" class="btn login-submit" name="remindPassword">Send password</button>
 	</form>
 	<p class="message">
 		<?php if(isset($_SESSION['message'])){
