@@ -62,17 +62,17 @@ function resultset($stmt){
 
 function show_nav_categories(){
 	$stmt = query("SELECT * FROM categories");
-
 	$res = resultset($stmt);
 	if (!$res) {
 		die("Error: " . mysqli_error($link));
 	}
 	return $res;
 }
-function show_category_items($cat_id){
+function show_category_items($cat_id, $limit, $pageNumber = 1){
+	$startpoint = ($limit * $pageNumber) - $limit;
 	$stmt = query_prep("SELECT * , cat_title FROM products
 		JOIN categories ON prod_cat_id = cat_id
-		WHERE prod_cat_id = :cat_id ");
+		WHERE prod_cat_id = :cat_id LIMIT $startpoint, $limit");
 	bind($stmt, ':cat_id', $cat_id);
 	$res = resultset($stmt);
 	return $res;
@@ -151,4 +151,42 @@ function remindPassword($email){
 			setMessage("Password has been sent on email {$email}");
 		}
 }
+function pagination($limit, $pageNumber = 1){
+	$stmt = query("SELECT Count(prod_id) AS total FROM products");
+	$res = resultset($stmt);
+	if($res){
+		$total = $res[0]["total"];
+	} else {
+		return false;
+	}
+	$totalPages = ceil($total / $limit);
+
+if($pageNumber <=1 ){
+	echo "<span id='page_links' style='font-weight: bold;'>Prev</span>";
+}
+else{
+	$j = $pageNumber - 1;
+	echo "<span><a id='page_a_link' href='index.php?page=category&id={$_GET['id']}&q=$j'>< Prev</a></span>";
+}
+for($i=1; $i <= $totalPages; $i++){
+	if($i<>$pageNumber){
+		echo "<span><a id='page_a_link' href='index.php?page=category&id={$_GET['id']}&q=$i'>$i</a></span>";
+	}
+	else{
+		echo "<span id='page_links' style='font-weight: bold;'>$i</span>";
+	}
+}
+if($pageNumber == $totalPages){
+	echo "<span id='page_links' style='font-weight: bold;'>Next ></span>";
+}
+else{
+	$j = $pageNumber + 1;
+	echo "<span><a id='page_a_link' href='index.php?page=category&id={$_GET['id']}&q=$j'>Next</a></span>";
+}
+}
+
+
+
+
+
 /*** Admin functions ***/

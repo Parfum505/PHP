@@ -1,7 +1,9 @@
 <?php require "inc/config.php"; ?>
 <?php
 	if (isset($_GET['page']) && ($_GET['page'] == 'category') && !empty($_GET['id'])) {
-		$cat_items = show_category_items($_GET['id']);
+		$limit = 2;
+		$pageNumber = isset($_GET["q"]) ? intval($_GET["q"]) : 1;
+		$cat_items = show_category_items($_GET['id'], $limit, $pageNumber);
 	}
 ?>
 <div class="category">
@@ -21,4 +23,9 @@
 	</li>
 <?php endforeach; ?>
 </ul>
+
+	<div id='pagination'>
+		<?php pagination($limit,$pageNumber);?>
+	</div>
 </div>
+
