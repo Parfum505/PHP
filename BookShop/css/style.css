@@ -74,7 +74,7 @@ img {
   color: #42454a;
   cursor: pointer;
   padding: 0.7em;
-  background: #adcbfa;
+  background: #96b8ed;
   background-clip: padding-box;
   background-image: -webkit-linear-gradient(top, #d0e1fe, #96b8ed);
   background-image: -moz-linear-gradient(top, #d0e1fe, #96b8ed);
@@ -358,6 +358,16 @@ header .nav_btn_mobile {
 .shadow {
   box-shadow: 0px 1px 1px 0px #e6e6e6; }
 
+/* Page main.php */
+.main h2 {
+  text-align: center; }
+
+/* endof Page main.php */
+/* Variables @ */
+/* Mixins */
+.shadow {
+  box-shadow: 0px 1px 1px 0px #e6e6e6; }
+
 /* Login */
 .login input, .login textarea, .login select, .login label, .singup input, .singup textarea, .singup select, .singup label, .contacts input, .contacts textarea, .contacts select, .contacts label, .remindPassword input, .remindPassword textarea, .remindPassword select, .remindPassword label {
   font-family: inherit;
@@ -494,41 +504,44 @@ header .nav_btn_mobile {
   box-shadow: 0px 1px 1px 0px #e6e6e6; }
 
 /* Page Category */
-.category {
+.category h2 {
   text-align: center; }
-  .category .product {
+
+.product {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 0 10px 10px; }
+  .product li {
+    flex: 1 20%;
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 0 10px 10px; }
-    .category .product li {
-      flex: 1 20%;
-      display: flex;
-      flex-direction: column;
-      margin: 1%;
-      background-color: #fff;
-      border-radius: 5px;
-      padding: 0.5em;
-      -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-      max-width: 300px;
-      min-width: 150px;
-      transition: all 0.3s; }
-      .category .product li:hover {
-        -webkit-box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
-        box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4); }
-      .category .product li a {
-        display: block;
-        margin-bottom: auto; }
-      .category .product li .product_info p {
-        margin: 0 0 0.3em 0;
-        font-size: 0.9em;
-        font-weight: bold; }
-        .category .product li .product_info p.author {
-          font-size: 0.7em;
-          font-weight: normal; }
-        .category .product li .product_info p.price {
-          color: red; }
+    flex-direction: column;
+    margin: 1%;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 0.5em;
+    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    max-width: 250px;
+    min-width: 150px;
+    transition: all 0.3s; }
+    .product li:hover {
+      -webkit-box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
+      box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4); }
+    .product li a {
+      display: block;
+      margin-bottom: auto; }
+    .product li .product_info p {
+      margin: 0 0 0.3em 0;
+      font-size: 0.9em;
+      font-weight: bold; }
+      .product li .product_info p.author {
+        font-size: 0.7em;
+        font-weight: normal; }
+      .product li .product_info p.price {
+        color: red;
+        font-size: 1.2em; }
 
 /* endof Page Category */
 /* Variables @ */
@@ -562,7 +575,7 @@ header .nav_btn_mobile {
       font-size: 0.8em;
       margin-bottom: auto; }
     .single_book .single_book_info .price {
-      font-size: 1.1em;
+      font-size: 1.2em;
       color: red;
       font-weight: bold;
       margin-bottom: 1em; }
@@ -575,27 +588,39 @@ header .nav_btn_mobile {
 
 /* Styles for pagination*/
 #pagination {
-  display: inline-block;
-  margin: 1em auto; }
-
-#page_links {
-  font-family: arial, verdana;
-  font-size: 12px;
-  border: 1px #000000 solid;
-  padding: 6px;
-  margin: 3px;
-  background-color: #cccccc;
-  text-decoration: none; }
-
-#page_a_link {
-  font-family: arial, verdana;
-  font-size: 12px;
-  border: 1px #000000 solid;
-  color: #ff0000;
-  background-color: #cccccc;
-  padding: 6px;
-  margin: 3px;
-  text-decoration: none; }
+  margin: 1em 0;
+  text-align: center; }
+  #pagination ul.pagination {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    overflow: hidden;
+    font: 1em 'Tahoma';
+    list-style-type: none; }
+    #pagination ul.pagination li {
+      float: left;
+      margin: 0px;
+      padding: 0px;
+      margin-left: 5px; }
+      #pagination ul.pagination li:first-child {
+        margin-left: 0px; }
+      #pagination ul.pagination li a {
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        background: #96b8ed;
+        background-image: -webkit-linear-gradient(top, #d0e1fe, #96b8ed);
+        background-image: -moz-linear-gradient(top, #d0e1fe, #96b8ed);
+        background-image: -o-linear-gradient(top, #d0e1fe, #96b8ed);
+        background-image: linear-gradient(to inverse-side(top), #d0e1fe, #96b8ed);
+        border-radius: 3px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        padding: 6px 9px 6px 9px; }
+        #pagination ul.pagination li a:hover, #pagination ul.pagination li a.current {
+          color: #42454a;
+          background: #96b8ed; }
 
 /* endof Styles for pagination*/
 /* Variables @ */

@@ -63,10 +63,13 @@ function resultset($stmt){
 function show_nav_categories(){
 	$stmt = query("SELECT * FROM categories");
 	$res = resultset($stmt);
-	if (!$res) {
-		die("Error: " . mysqli_error($link));
-	}
-	return $res;
+	return $res ? $res: false;
+}
+function show_all_items($limit, $pageNumber = 1){
+	$startpoint = ($limit * $pageNumber) - $limit;
+	$stmt = query("SELECT * FROM products");
+	$res = resultset($stmt);
+	return $res ? $res: false;
 }
 function show_category_items($cat_id, $limit, $pageNumber = 1){
 	$startpoint = ($limit * $pageNumber) - $limit;
@@ -75,13 +78,13 @@ function show_category_items($cat_id, $limit, $pageNumber = 1){
 		WHERE prod_cat_id = :cat_id LIMIT $startpoint, $limit");
 	bind($stmt, ':cat_id', $cat_id);
 	$res = resultset($stmt);
-	return $res;
+	return $res ? $res: false;
 }
 function show_item_page($id){
 	$stmt = query_prep("SELECT * FROM products WHERE prod_id = :id ");
 	bind($stmt, ':id', $id);
 	$res = resultset($stmt);
-	return $res;
+	return $res ? $res: false;
 }
 function login($email, $pass){
 	$stmt = query_prep("SELECT * FROM users WHERE user_email = :email AND user_password = :pass ");
@@ -151,38 +154,85 @@ function remindPassword($email){
 			setMessage("Password has been sent on email {$email}");
 		}
 }
-function pagination($limit, $pageNumber = 1){
-	$stmt = query("SELECT Count(prod_id) AS total FROM products");
+function totalPagesPagination($limit, $id = 0){
+	if ($id) {
+		$stmt = query("SELECT Count(prod_id) AS total FROM products WHERE prod_cat_id = $id");
+	} else {
+		$stmt = query("SELECT Count(prod_id) AS total FROM products");
+	}
+
 	$res = resultset($stmt);
 	if($res){
-		$total = $res[0]["total"];
+		$totalItems = $res[0]["total"];
+		return $totalPages = ceil($totalItems / $limit);
 	} else {
 		return false;
 	}
-	$totalPages = ceil($total / $limit);
+}
+function pagination($totalPages, $pageNumber = 1, $url){
+	$lastpageMinus1 = $totalPages - 1;
+	$prev = $pageNumber - 1;
+	$next = $pageNumber + 1;
+	$pagination = "";
 
-if($pageNumber <=1 ){
-	echo "<span id='page_links' style='font-weight: bold;'>Prev</span>";
-}
-else{
-	$j = $pageNumber - 1;
-	echo "<span><a id='page_a_link' href='index.php?page=category&id={$_GET['id']}&q=$j'>< Prev</a></span>";
-}
-for($i=1; $i <= $totalPages; $i++){
-	if($i<>$pageNumber){
-		echo "<span><a id='page_a_link' href='index.php?page=category&id={$_GET['id']}&q=$i'>$i</a></span>";
+if ($totalPages > 1) {
+	$pagination .= "<ul class='pagination'>";
+	if($pageNumber <=1 ){
+		$pagination .= "<li><a class='current'>Prev</a></li>";
 	}
 	else{
-		echo "<span id='page_links' style='font-weight: bold;'>$i</span>";
+		$pagination .= "<li><a href='{$url}q={$prev}'>Prev</a></li>";
 	}
-}
-if($pageNumber == $totalPages){
-	echo "<span id='page_links' style='font-weight: bold;'>Next ></span>";
-}
-else{
-	$j = $pageNumber + 1;
-	echo "<span><a id='page_a_link' href='index.php?page=category&id={$_GET['id']}&q=$j'>Next</a></span>";
-}
+	if ($totalPages < 8) {
+		for ($count=1; $count<= $totalPages ; $count++) {
+			if ($count == $pageNumber) {
+				$pagination .= "<li><a class='current'>{$count}</a></li>";
+			} else {
+				$pagination.= "<li><a href='{$url}q={$count}'>{$count}</a></li>";
+			}
+
+		}
+	} else {
+		if ($pageNumber < 6 ) {
+			for ($count=1; $count<= $pageNumber ; $count++) {
+				if ($count == $pageNumber) {
+					$pagination .= "<li><a class='current'>{$count}</a></li>";
+				} else {
+				$pagination.= "<li><a href='{$url}q={$count}'>{$count}</a></li>";
+				}
+			$pagination.= "<li class='dot'>..</li>";
+			$pagination.= "<li><a href='{$url}q={$totalPages}'>{$totalPages}</a></li>";
+			}
+		} else {
+			$pagination.= "<li><a href='{$url}q=1'>1</a></li>";
+			$pagination.= "<li><a href='{$url}q=2'>2</a></li>";
+			$pagination.= "<li class='dot'>..</li>";
+			$pagination.= "<li><a class='current'>{$pageNumber}</a></li>";
+			if ($pageNumber < $totalPages - 1) {
+				$pagination.= "<li class='dot'>..</li>";
+				$pagination.= "<li><a href='{$url}q={$lastpageMinus1}'>{$lastpageMinus1}</a></li>";
+				$pagination.= "<li><a href='{$url}q={$totalPages}'>{$totalPages}</a></li>";
+			} elseif ($pageNumber == $totalPages - 1) {
+				$pagination.= "<li><a href='{$url}q={$totalPages}'>{$totalPages}</a></li>";
+			}
+
+		}
+
+	}
+	if($pageNumber == $totalPages){
+		$pagination .= "<li><a class='current'>Next</a></li>";
+	}
+	else{
+		$pagination .= "<li><a href='{$url}q={$next}'>Next</a></li>";
+	}
+
+
+	$pagination.= "</ul>";
+	return $pagination;
+	} else {
+	return false;
+	}
+
 }
 
 

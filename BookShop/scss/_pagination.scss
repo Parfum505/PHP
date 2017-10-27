@@ -3,28 +3,43 @@
 /* Styles for pagination*/
 
 #pagination{
+	margin: 1em 0;
+	text-align: center;
+	ul.pagination{
 	display: inline-block;
-	margin: 1em auto;
+	margin:0px;
+	padding:0px;
+	height:100%;
+	overflow:hidden;
+	font:1em 'Tahoma';
+	list-style-type:none;
+		li{
+			float:left;
+			margin:0px;
+			padding:0px;
+			margin-left:5px;
+			&:first-child{
+				margin-left:0px;
+			}
+			a{
+				display:block;
+				text-decoration:none;
+				color: #fff;
+				background:$btn-grad-to;
+				@include linear-gradient(top,$btn-grad-from,$btn-grad-to);
+				border-radius:3px;
+				-moz-border-radius:3px;
+				-webkit-border-radius:3px;
+				padding:6px 9px 6px 9px;
+				&:hover, &.current{
+					color:$font-color;
+					background:$btn-grad-to;
+				}
+			}
+		}
+	}
 }
-#page_links{
-  font-family: arial, verdana;
-  font-size: 12px;
-  border:1px #000000 solid;
-  padding: 6px;
-  margin: 3px;
-  background-color: #cccccc;
-  text-decoration: none;
- }
- #page_a_link{
-  font-family: arial, verdana;
-  font-size: 12px;
-  border:1px #000000 solid;
-  color: #ff0000;
-  background-color: #cccccc;
-  padding: 6px;
-  margin: 3px;
-  text-decoration: none;
- }
+
 
 
 

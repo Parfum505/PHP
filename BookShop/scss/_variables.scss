@@ -4,7 +4,8 @@ $bg-top-bottom: #42454a;
 $font-color: #42454a;
 $bg-nav: #fff;
 $bg-gradient: #ececec;
-
+$btn-grad-from:#d0e1fe;
+$btn-grad-to:#96b8ed;
 /* Mixins */
 @mixin clearfix{
 	&:before, &:after{
