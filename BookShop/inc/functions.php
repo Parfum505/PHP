@@ -234,9 +234,15 @@ if ($totalPages > 1) {
 	}
 
 }
+function getlastItems($quantity){
+	$stmt = query("SELECT * FROM products ORDER BY prod_id DESC LIMIT $quantity");
+	$res = resultset($stmt);
+	return $res ? $res: false;
+}
 
+function slider(){
 
-
+}
 
 
 /*** Admin functions ***/

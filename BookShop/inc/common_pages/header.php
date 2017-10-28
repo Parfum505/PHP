@@ -7,6 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
+	<!-- Source: https://www.jssor.com -->
+	<script src="js/jssor.slider-26.3.0.min.js" type="text/javascript"></script>
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>

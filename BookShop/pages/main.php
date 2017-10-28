@@ -1,4 +1,7 @@
-<?php require "inc/config.php"; ?>
+<?php
+require "inc/config.php";
+require "inc/slider.php";
+?>
 <?php
 	$limit = 2;
 	$pageNumber = isset($_GET["q"]) ? intval($_GET["q"]) : 1;
@@ -6,6 +9,15 @@
 ?>
 <div class="main">
 <h2>Main page</h2>
+	<div class="slider">
+		<h3>New arrivals</h3>
+		<?php $items = getlastitems(15);
+		// print_r($items);
+			if ($items){
+				show_slider($items);
+			}
+		?>
+	</div>
 <ul class='product'>
 <?php if($all_items){
 	foreach($all_items as $item): ?>
