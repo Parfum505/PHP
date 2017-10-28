@@ -12,7 +12,6 @@ require "inc/slider.php";
 	<div class="slider">
 		<h3>New arrivals</h3>
 		<?php $items = getlastitems(15);
-		// print_r($items);
 			if ($items){
 				show_slider($items);
 			}

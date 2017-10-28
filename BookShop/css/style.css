@@ -415,8 +415,11 @@ header .nav_btn_mobile {
   pointer-events: none; }
 
 .slider {
-  margin: 0 1em;
-  text-align: center; }
+  margin: 1em;
+  text-align: center;
+  border-bottom: 2px solid #d0e1fe; }
+  .slider h3 {
+    text-align: left; }
   .slider a {
     display: flex;
     flex-direction: column; }

@@ -33,7 +33,10 @@
         .jssora073.jssora073ds {opacity:.3;pointer-events:none;}
 
 .slider {
-	margin: 0 1em; text-align: center;
+	margin: 1em;
+    text-align: center;
+    border-bottom: 2px solid $btn-grad-from;
+    h3 {text-align: left;}
 	a {
 		display: flex; flex-direction: column;
 		img {display: block; margin-bottom: auto;}
