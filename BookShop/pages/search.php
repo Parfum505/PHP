@@ -4,12 +4,14 @@ if (isset($_GET['page']) && ($_GET['page'] == 'search')){
 	if(isset($_GET['query'])){
 		$limit = 12;
 		$pageNumber = isset($_GET["q"]) ? intval($_GET["q"]) : 1;
-		if(empty($_GET['query'])){
-			$items = '';
+		$title = clearString(htmlspecialchars_decode($_GET['query']));
+		$items = '';
+		if(empty($_GET['query']) || empty($title)){
 			setMessage('Your request is empty, title is required');
 		}else{
-			$title = clearString($_GET['query']);
-			$items = searchByTitle($title, $limit, $pageNumber);
+			if(!empty($title)) {
+				$items = searchByTitle($title, $limit, $pageNumber);
+			}
 		}
 	}
 }
@@ -20,8 +22,18 @@ if (isset($_GET['page']) && ($_GET['page'] == 'search')){
 	<p class="message">
 		<?php if(isset($_SESSION['message'])) showMessage(); ?>
 	</p>
+<?php if(!empty($title)){
+		if($totalProducts = totalProducts(0, $title)){
+			echo "<p class='total_products'>We&apos;ve found <span>{$totalProducts}</span> book(s) by your request.</p>";
+		} else {
+			echo '<p class="total_products">We&apos;ve found <span>0</span> book(s) by your request.</p>';
+		}
+	}
+?>
+
+
 <ul class='product'>
-<?php if($items){
+<?php if(!empty($items)){
 	foreach($items as $item): ?>
 	<li>
 	<a href="index.php?page=book&id=<?= $item['prod_id'];?>">

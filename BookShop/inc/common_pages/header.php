@@ -75,7 +75,7 @@
 			--><div class="header_form_search">
 						<form action="index.php" method="GET">
 							<input type="text" name="page" hidden class="" placeholder="Search by title" value="search">
-								<input type="text" name="query" class="" placeholder="Search by title"><!--
+								<input type="text" name="query" class="" placeholder="Search by title" value="<?= (isset($_GET['query'])&& !empty(clearString(htmlspecialchars_decode($_GET['query']))))? $_GET['query'] : '' ?>"><!--
 								--><button class="" type="submit"> <i class="fa fa-search" aria-hidden="true"></i>
 								</button>
 						</form>

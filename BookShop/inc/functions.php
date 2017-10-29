@@ -19,7 +19,7 @@ function showMessage(){
 	unset($_SESSION['message']);
 }
 function clearString($str){
-	return  htmlspecialchars(trim(strip_tags($str)));
+	return strip_tags(trim($str));
 }
 
 /*** Database functions ***/
@@ -86,11 +86,12 @@ function show_item_page($id){
 	return $res ? $res: false;
 }
 function searchByTitle($title, $limit = 12, $pageNumber = 1){
-	$startpoint = ($limit * $pageNumber) - $limit;
-	$title = '%'.$title.'%';
-	$stmt = query("SELECT * FROM products WHERE prod_title LIKE '$title' LIMIT $startpoint, $limit");
-	$res = resultset($stmt);
-	return $res ? $res: false;
+		$startpoint = ($limit * $pageNumber) - $limit;
+		$title = '%'.$title.'%';
+		$stmt = query_prep("SELECT * FROM products WHERE prod_title LIKE :title LIMIT $startpoint, $limit");
+		bind($stmt, ':title', $title, PDO::PARAM_STR);
+		$res = resultset($stmt);
+		return $res ? $res: false;
 }
 function login($email, $pass){
 	$stmt = query_prep("SELECT * FROM users WHERE user_email = :email AND user_password = :pass ");
@@ -160,21 +161,29 @@ function remindPassword($email){
 			setMessage("Password has been sent on email {$email}");
 		}
 }
-function totalPagesPagination($limit = 12, $prod_cat_id = 0, $prod_title = 0){
-	$prod_cat_id = intval($prod_cat_id);
+function totalProducts($prod_cat_id = 0, $prod_title = 0){
 	if ($prod_cat_id) {
+		$prod_cat_id = intval($prod_cat_id);
 		$stmt = query("SELECT Count(prod_id) AS total FROM products WHERE prod_cat_id = $prod_cat_id");
 	} elseif ($prod_title) {
-		$prod_title = '%'.$prod_title.'%';
-		$stmt = query("SELECT Count(prod_id) AS total FROM products WHERE prod_title LIKE '$prod_title' ");
+		$prod_title = '%'. $prod_title .'%';
+		$stmt = query_prep("SELECT Count(prod_id) AS total FROM products WHERE prod_title LIKE :prod_title ");
+		bind($stmt, ':prod_title', $prod_title, PDO::PARAM_STR);
 	} else {
 		$stmt = query("SELECT Count(prod_id) AS total FROM products");
 	}
 
 	$res = resultset($stmt);
 	if($res){
-		$totalItems = $res[0]["total"];
-		return $totalPages = ceil($totalItems / $limit);
+		return $totalItems = $res[0]["total"];
+	} else {
+		return false;
+	}
+}
+function totalPagesPagination($limit = 12, $prod_cat_id = 0, $prod_title = 0){
+	$totalProducts = totalProducts($prod_cat_id, $prod_title);
+	if($totalProducts){
+		return $totalPages = ceil($totalProducts / $limit);
 	} else {
 		return false;
 	}

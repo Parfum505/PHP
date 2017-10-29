@@ -419,7 +419,9 @@ header .nav_btn_mobile {
   text-align: center;
   border-bottom: 2px solid #d0e1fe; }
   .slider h3 {
-    text-align: left; }
+    text-align: left;
+    color: #42454a;
+    font-size: 1.3em; }
   .slider a {
     display: flex;
     flex-direction: column; }
@@ -441,8 +443,12 @@ header .nav_btn_mobile {
   box-shadow: 0px 1px 1px 0px #e6e6e6; }
 
 /* Page main.php */
-.main h2 {
-  text-align: center; }
+.main .total_products {
+  padding: 0 1em;
+  font-weight: bold; }
+  .main .total_products span {
+    color: red;
+    font-size: 1.2em; }
 
 /* endof Page main.php */
 /* Variables @ */
@@ -635,6 +641,12 @@ header .nav_btn_mobile {
 .search .message, header .header_form_search input .message, header .header_form_search button .message {
   text-align: center;
   color: red; }
+.search .total_products, header .header_form_search input .total_products, header .header_form_search button .total_products {
+  padding: 0 1em;
+  font-weight: bold; }
+  .search .total_products span, header .header_form_search input .total_products span, header .header_form_search button .total_products span {
+    color: red;
+    font-size: 1.2em; }
 
 /* endof Search page */
 /* Variables @ */

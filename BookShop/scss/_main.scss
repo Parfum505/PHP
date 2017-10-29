@@ -2,8 +2,13 @@
 /* Page main.php */
 
 .main{
-	h2{
-		text-align: center;
+	.total_products{
+		padding: 0 1em;
+		font-weight: bold;
+		span{
+			color: red;
+			font-size: 1.2em;
+		}
 	}
 
 }

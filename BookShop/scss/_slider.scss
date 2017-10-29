@@ -36,7 +36,10 @@
 	margin: 1em;
     text-align: center;
     border-bottom: 2px solid $btn-grad-from;
-    h3 {text-align: left;}
+    h3 {text-align: left;
+        color: $font-color;
+        font-size: 1.3em;
+        }
 	a {
 		display: flex; flex-direction: column;
 		img {display: block; margin-bottom: auto;}

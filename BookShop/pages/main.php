@@ -3,12 +3,11 @@ require "inc/config.php";
 require "inc/slider.php";
 ?>
 <?php
-	$limit = 2;
+	$limit = 12;
 	$pageNumber = isset($_GET["q"]) ? intval($_GET["q"]) : 1;
 	$all_items = show_all_items($limit, $pageNumber);
 ?>
 <div class="main">
-<h2>Main page</h2>
 	<div class="slider">
 		<h3>New arrivals</h3>
 		<?php $items = getlastitems(15);
@@ -17,7 +16,12 @@ require "inc/slider.php";
 			}
 		?>
 	</div>
+<?php if($totalProducts = totalProducts()):?>
+	<p class="total_products">We have <span><?= $totalProducts?></span> book(s) in our Bookshop.</p>
+<?php endif;?>
+
 <ul class='product'>
+
 <?php if($all_items){
 	foreach($all_items as $item): ?>
 	<li>
