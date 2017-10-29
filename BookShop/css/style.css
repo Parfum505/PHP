@@ -631,6 +631,17 @@ header .nav_btn_mobile {
 .shadow {
   box-shadow: 0px 1px 1px 0px #e6e6e6; }
 
+/* Search page */
+.search .message, header .header_form_search input .message, header .header_form_search button .message {
+  text-align: center;
+  color: red; }
+
+/* endof Search page */
+/* Variables @ */
+/* Mixins */
+.shadow {
+  box-shadow: 0px 1px 1px 0px #e6e6e6; }
+
 /* Page book.php */
 .single_book {
   display: flex;

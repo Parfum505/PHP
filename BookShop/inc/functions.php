@@ -17,7 +17,6 @@ function setMessage($message){
 function showMessage(){
 	echo $_SESSION['message'];
 	unset($_SESSION['message']);
-	// return $message;
 }
 function clearString($str){
 	return  htmlspecialchars(trim(strip_tags($str)));
@@ -65,9 +64,9 @@ function show_nav_categories(){
 	$res = resultset($stmt);
 	return $res ? $res: false;
 }
-function show_all_items($limit, $pageNumber = 1){
+function show_all_items($limit = 12, $pageNumber = 1){
 	$startpoint = ($limit * $pageNumber) - $limit;
-	$stmt = query("SELECT * FROM products");
+	$stmt = query("SELECT * FROM products LIMIT $startpoint, $limit");
 	$res = resultset($stmt);
 	return $res ? $res: false;
 }
@@ -83,6 +82,13 @@ function show_category_items($cat_id, $limit, $pageNumber = 1){
 function show_item_page($id){
 	$stmt = query_prep("SELECT * FROM products WHERE prod_id = :id ");
 	bind($stmt, ':id', $id);
+	$res = resultset($stmt);
+	return $res ? $res: false;
+}
+function searchByTitle($title, $limit = 12, $pageNumber = 1){
+	$startpoint = ($limit * $pageNumber) - $limit;
+	$title = '%'.$title.'%';
+	$stmt = query("SELECT * FROM products WHERE prod_title LIKE '$title' LIMIT $startpoint, $limit");
 	$res = resultset($stmt);
 	return $res ? $res: false;
 }
@@ -154,9 +160,13 @@ function remindPassword($email){
 			setMessage("Password has been sent on email {$email}");
 		}
 }
-function totalPagesPagination($limit, $id = 0){
-	if ($id) {
-		$stmt = query("SELECT Count(prod_id) AS total FROM products WHERE prod_cat_id = $id");
+function totalPagesPagination($limit = 12, $prod_cat_id = 0, $prod_title = 0){
+	$prod_cat_id = intval($prod_cat_id);
+	if ($prod_cat_id) {
+		$stmt = query("SELECT Count(prod_id) AS total FROM products WHERE prod_cat_id = $prod_cat_id");
+	} elseif ($prod_title) {
+		$prod_title = '%'.$prod_title.'%';
+		$stmt = query("SELECT Count(prod_id) AS total FROM products WHERE prod_title LIKE '$prod_title' ");
 	} else {
 		$stmt = query("SELECT Count(prod_id) AS total FROM products");
 	}
@@ -240,9 +250,6 @@ function getlastItems($quantity){
 	return $res ? $res: false;
 }
 
-function slider(){
-
-}
 
 
 /*** Admin functions ***/

@@ -73,8 +73,9 @@
 					<img src="img/logo_image.png" alt="logo"></a>
 			</div><!-- /.logo --><!--
 			--><div class="header_form_search">
-						<form action="" method="GET">
-								<input type="text" class="" placeholder="Search by title"><!--
+						<form action="index.php" method="GET">
+							<input type="text" name="page" hidden class="" placeholder="Search by title" value="search">
+								<input type="text" name="query" class="" placeholder="Search by title"><!--
 								--><button class="" type="submit"> <i class="fa fa-search" aria-hidden="true"></i>
 								</button>
 						</form>
