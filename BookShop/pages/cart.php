@@ -22,9 +22,8 @@
 		</div>
 		<div class="flex_item2">
 			<p class="price">&#8364;<?= $item['prod_price']; ?></p>
-			<div class=""><input class="" type="text" name="<?= $item['prod_id'];?>" value="<?= $item['prod_quantity'];?>"></div>
-			<p class="">&#8364; <?= number_format(($item["prod_price"] * (int)$item['prod_quantity']), 2, '.', '') ; ?>
-			</p>
+				<input class="" type="text" name="<?= $item['prod_id'];?>" value="<?= $item['prod_quantity'];?>">
+			<p class="sub_total">&#8364;<?= number_format(($item["prod_price"] * (int)$item['prod_quantity']), 2, '.', '') ; ?></p>
 		</div>
 		<div class="btn_cart_delete">
 			<a class='btn' href="pages/delete_from_cart.php?id=<?= $item['prod_id'];?>"><span><i class="fa fa-times" aria-hidden="true"></i></span>
@@ -43,19 +42,19 @@
 	<div class="cart_totals">
 		<h2>Cart Totals</h2>
 
-		<table class="table table-bordered" cellspacing="0">
+		<table class="table" cellspacing="0">
 			<tbody>
-				<tr class="cart-subtotal">
+				<tr class="">
 					<th>Items:</th>
 					<td>
 						<span class="amount">
 							<?= $qu ;?></span>
 					</td>
 				</tr>
-				<tr class="order-total">
+				<tr class="">
 					<th>Order Total</th>
 					<td> <strong>
-						<span class="amount">&#8364; <?= number_format($sum, 2, '.', '') ;?></span>
+						<span class="amount">&#8364;<?= number_format($sum, 2, '.', '') ;?></span>
 						</strong>
 					</td>
 				</tr>
@@ -63,7 +62,7 @@
 			</tbody>
 
 		</table>
-		<div class="">
+		<div class="btn_cart_container">
 			<button class="btn btn_cart" type="submit" id="btn_buy" name="buy">Buy</button>
 		</div>
 		<?php endif;?></div>

@@ -2,7 +2,7 @@
 
 /* Cart page */
 .cart{
-	margin: 1em;
+	margin: 1.3em;
 	ul{
 		text-align: center;
 		li{
@@ -37,6 +37,10 @@
 				.price{
 					color: red;
 					font-weight: bold;
+					padding-right: 0.4em;
+				}
+				.sub_total{
+					padding-left: 0.4em;
 				}
 				input{
 					display: block;
@@ -57,6 +61,7 @@
 				a{
 					display: block;
 					padding: 0.4em .6em;
+					color: #fff;
 					@include linear-gradient(top, #fad7d7, #f85050);
 					&:hover{
 						color: red;
@@ -66,7 +71,7 @@
 		}
 	}
 	.btn_cart_container{
-		text-align: center;
+		text-align: right;
 	}
 	.btn_cart{
 		display: inline-block;
@@ -76,6 +81,25 @@
 	}
 	.cart_totals{
 		float: right;
+		width: 50%;
+		min-width: 175px;
+		h2{
+			font-size: 1.4em;
+			font-weight: normal;
+			margin: 0.5em 0 0.2em;
+		}
+		.table{
+			width: 100%;
+			border: 1px solid #ccc;
+			margin-bottom: 0.6em;
+			td, th{
+				padding: 0.5em;
+				text-align: left;
+				vertical-align: top;
+				line-height: 2em;
+				border: 1px solid #ccc;
+			}
+		}
 	}
 }
 
