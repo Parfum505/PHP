@@ -23,4 +23,4 @@
 	}
 
 	require_once 'functions.php';
-	// cartInit();
+	cartInit();

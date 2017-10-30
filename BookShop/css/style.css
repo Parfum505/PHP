@@ -41,7 +41,8 @@ img {
   box-sizing: border-box;
   width: 90%;
   margin: 0 auto;
-  min-width: 200px;
+  max-width: 1250px;
+  min-width: 250px;
   position: relative; }
   @media (max-width: 860px) {
     .container {
@@ -70,6 +71,7 @@ img {
   font-size: 1em;
   font-weight: bold;
   text-align: center;
+  border: 0;
   border-radius: 5px;
   color: #42454a;
   cursor: pointer;
@@ -686,6 +688,78 @@ header .nav_btn_mobile {
       margin-bottom: 1em; }
 
 /* endof Page book.php */
+/* Variables @ */
+/* Mixins */
+.shadow {
+  box-shadow: 0px 1px 1px 0px #e6e6e6; }
+
+/* Cart page */
+.cart {
+  margin: 1em; }
+  .cart ul {
+    text-align: center; }
+    .cart ul li {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 0.5em;
+      border-bottom: 1px solid #96b8ed;
+      margin-bottom: 1em; }
+      .cart ul li > a {
+        width: 110px;
+        margin: 0 auto; }
+      .cart ul li .product_info {
+        flex: 1 1 auto;
+        align-self: center; }
+        .cart ul li .product_info .title {
+          font-weight: bold;
+          font-size: 1.2em; }
+        .cart ul li .product_info .author {
+          font-size: 0.8em; }
+      .cart ul li .flex_item2 {
+        flex: 1 2 auto;
+        align-self: center;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1em; }
+        .cart ul li .flex_item2 .price {
+          color: red;
+          font-weight: bold; }
+        .cart ul li .flex_item2 input {
+          display: block;
+          width: 80%;
+          max-width: 50px;
+          margin: 0 auto;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          padding: 6px 12px;
+          font-size: 1em;
+          height: 34px; }
+      .cart ul li .btn_cart_delete {
+        position: absolute;
+        right: 0;
+        top: 0; }
+        .cart ul li .btn_cart_delete a {
+          display: block;
+          padding: 0.4em .6em;
+          background-image: -webkit-linear-gradient(top, #fad7d7, #f85050);
+          background-image: -moz-linear-gradient(top, #fad7d7, #f85050);
+          background-image: -o-linear-gradient(top, #fad7d7, #f85050);
+          background-image: linear-gradient(to inverse-side(top), #fad7d7, #f85050); }
+          .cart ul li .btn_cart_delete a:hover {
+            color: red; }
+  .cart .btn_cart_container {
+    text-align: center; }
+  .cart .btn_cart {
+    display: inline-block; }
+    .cart .btn_cart:hover {
+      -webkit-box-shadow: 3px 5px 9px rgba(0, 0, 0, 0.3), inset 0 0 20px 1px rgba(0, 0, 0, 0.2);
+      box-shadow: 3px 5px 9px rgba(0, 0, 0, 0.3), inset 0 0 20px 1px rgba(0, 0, 0, 0.2); }
+  .cart .cart_totals {
+    float: right; }
+
+/* enfof Cart page */
 /* Variables @ */
 /* Mixins */
 .shadow {

@@ -21,7 +21,7 @@
 			<?= "&#8364; " . $item[0]['prod_price']; ?></p>
 
 		<div class="">
-			<a href="add2cart.php?add=<?= $item[0]['prod_id']; ?>" class="btn">Add to cart</a>
+			<a href="pages/add2cart.php?add=<?= $item[0]['prod_id']; ?>" class="btn">Add to cart</a>
 		</div>
 	</div>
 </div>

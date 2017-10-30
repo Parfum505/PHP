@@ -29,13 +29,11 @@
 			<div class="row">
 				<ul class="">
 					<li>
-							<!-- <a href="#"> -->
 								<span><i class="fa fa-user" aria-hidden="true"></i>
 								</span>
 								<?php
 									echo isset($_SESSION["username"]) ? $_SESSION["username"] : "Guest" ;
 								?>
-							<!-- </a> -->
 						</li>
 						<li>
 							<?php
@@ -75,16 +73,14 @@
 			--><div class="header_form_search">
 						<form action="index.php" method="GET">
 							<input type="text" name="page" hidden class="" placeholder="Search by title" value="search">
-								<input type="text" name="query" class="" placeholder="Search by title" value="<?= (isset($_GET['query'])&& !empty(clearString(htmlspecialchars_decode($_GET['query']))))? $_GET['query'] : '' ?>"><!--
+								<input type="text" name="query" class="" placeholder="Search by title" value="<?= (isset($_GET['query'])&& !empty(clearString(htmlspecialchars_decode($_GET['query']))))? $_GET['query'] : '' ?>" required="require"><!--
 								--><button class="" type="submit"> <i class="fa fa-search" aria-hidden="true"></i>
 								</button>
 						</form>
 					</div><!-- /.header_search_form --><!--
 			--><div class="header_cart">
 							<a href="index.php?page=cart">
-								<!-- <?= $count ?>
-								-->
-								items
+								<?= $count? $count.' book(s)': ''; ?>
 								<span >
 									<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 								</span>

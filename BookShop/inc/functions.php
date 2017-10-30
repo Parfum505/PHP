@@ -258,7 +258,66 @@ function getlastItems($quantity){
 	$res = resultset($stmt);
 	return $res ? $res: false;
 }
-
-
-
+/* Cart functions*/
+function cartInit(){
+global $cart, $count;
+	if(!isset($_COOKIE['cart'])){
+		$cart = ['orderId' => uniqid('', true)];
+		saveToCart();
+	}else{
+        $cart = unserialize(base64_decode($_COOKIE['cart']));
+        $arr = array_slice($cart, 1);
+        foreach ($arr as $value) {
+            $count += (int)$value['prod_quantity'];
+        }
+    }
+}
+function saveToCart(){
+	global $cart;
+	$str = base64_encode(serialize($cart));
+	setcookie('cart', $str, 0x7FFFFFFF, '/');
+}
+function add2Cart($id){
+global $cart;
+if (array_key_exists($id, $cart)) {
+    $cart[$id]['prod_quantity'] += 1;
+} else {
+    $cart[$id]['prod_quantity'] = 1;
+}
+saveToCart();
+}
+function deleteItemFromCart($id){
+	global $cart;
+	unset($cart[$id]);
+	saveToCart();
+}
+function updateCart($id, $value){
+	global $cart;
+	$cart[$id]['prod_quantity'] = (int)$value >= 1? (int)$value : 1;
+	saveToCart();
+}
+function myCart(){
+        global $cart;
+        $goods = array_keys($cart);
+        array_shift($goods);
+        if (!$goods) {
+            return false;
+        }
+        $ids = implode(",", $goods);
+        $stmt = query("SELECT * FROM products WHERE prod_id IN ($ids)");
+        if (!$res = resultset($stmt)) {
+            return false;
+        }
+        $items = addQuantity2Cart($res);
+        return $items;
+    }
+function addQuantity2Cart($items){
+        global $cart;
+        $arr = [];
+        foreach($items as $item) {
+            $item['prod_quantity'] = $cart[$item['prod_id']]['prod_quantity'];
+            $arr[] = $item;
+        }
+        return $arr;
+    }
 /*** Admin functions ***/

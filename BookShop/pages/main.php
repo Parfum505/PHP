@@ -32,7 +32,7 @@ require "inc/slider.php";
 		<p class="title"><?= $item['prod_title']; ?></p>
 		<p class="author"><?= $item['prod_author']; ?></p>
 		<p class="price">&#8364;<?= $item['prod_price']; ?></p>
-		<a href="add2cart.php?id=<?= $item['prod_id']; ?>" class='btn'>Add to cart</a>
+		<a href="pages/add2cart.php?add=<?= $item['prod_id']; ?>" class='btn'>Add to cart</a>
 		</div>
 	</li>
 <?php endforeach;} ?>
