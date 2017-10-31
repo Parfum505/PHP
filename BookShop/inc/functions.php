@@ -66,12 +66,14 @@ function show_nav_categories(){
 }
 function show_all_items($limit = 12, $pageNumber = 1){
 	$startpoint = ($limit * $pageNumber) - $limit;
+	$startpoint = $startpoint > 0 ? $startpoint : 1;
 	$stmt = query("SELECT * FROM products LIMIT $startpoint, $limit");
 	$res = resultset($stmt);
 	return $res ? $res: false;
 }
 function show_category_items($cat_id, $limit, $pageNumber = 1){
 	$startpoint = ($limit * $pageNumber) - $limit;
+	$startpoint = $startpoint > 0 ? $startpoint : 1;
 	$stmt = query_prep("SELECT * , cat_title FROM products
 		JOIN categories ON prod_cat_id = cat_id
 		WHERE prod_cat_id = :cat_id LIMIT $startpoint, $limit");
@@ -87,6 +89,7 @@ function show_item_page($id){
 }
 function searchByTitle($title, $limit = 12, $pageNumber = 1){
 		$startpoint = ($limit * $pageNumber) - $limit;
+		$startpoint = $startpoint > 0 ? $startpoint : 1;
 		$title = '%'.$title.'%';
 		$stmt = query_prep("SELECT * FROM products WHERE prod_title LIKE :title LIMIT $startpoint, $limit");
 		bind($stmt, ':title', $title, PDO::PARAM_STR);
@@ -190,6 +193,7 @@ function totalPagesPagination($limit = 12, $prod_cat_id = 0, $prod_title = 0){
 }
 function pagination($totalPages, $pageNumber = 1, $url){
 	$lastpageMinus1 = $totalPages - 1;
+	$pageNumber = $pageNumber > 0 ? $pageNumber : 1;
 	$prev = $pageNumber - 1;
 	$next = $pageNumber + 1;
 	$pagination = "";
@@ -219,9 +223,9 @@ if ($totalPages > 1) {
 				} else {
 				$pagination.= "<li><a href='{$url}q={$count}'>{$count}</a></li>";
 				}
+			}
 			$pagination.= "<li class='dot'>..</li>";
 			$pagination.= "<li><a href='{$url}q={$totalPages}'>{$totalPages}</a></li>";
-			}
 		} else {
 			$pagination.= "<li><a href='{$url}q=1'>1</a></li>";
 			$pagination.= "<li><a href='{$url}q=2'>2</a></li>";

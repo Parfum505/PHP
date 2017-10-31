@@ -1,10 +1,9 @@
-</div><!-- /.wrapper -->
 <footer role = "contentinfo">
 	<div class="container">
 		<div class="row">
 			<div class="nav-bottom">
 				<h4>MORE INFO</h4>
-				<ul class="nav-bottom">
+				<ul class="">
 					<li>
 						<a href="#">How to order</a>
 					</li>
@@ -14,17 +13,11 @@
 					<li>
 						<a href="#">Location</a>
 					</li>
-					<li>
-						<a href="#">Shipping</a>
-					</li>
-					<li>
-						<a href="#">Membership</a>
-					</li>
 				</ul>
 			</div>
 			<div class="nav-bottom">
 				<h4>CONTACT US</h4>
-				<p>office: </p>
+				<p>office: Plaza Street 2b, 36-014 Cracow</p>
 				<ul class="social">
 					<li>
 						<a href="#"> <i class="fa fa-facebook-square" aria-hidden="true"></i>
@@ -36,12 +29,12 @@
 					</li>
 					<li>
 						<a href="#">
-							<i class="rss"></i>
+							<i class="fa fa-rss-square" aria-hidden="true"></i>
 						</a>
 					</li>
 					<li>
 						<a href="#">
-							<i class="gmail"></i>
+							<i class="fa fa-envelope" aria-hidden="true"></i>
 						</a>
 					</li>
 
@@ -58,7 +51,7 @@
 	</div>
 	</div>
 </footer>
-
+</div><!-- /.wrapper -->
 <script src="js/script.js"></script>
 </body>
 </html>

@@ -41,12 +41,21 @@
         font-size: 1.3em;
         }
 	a {
-		display: flex; flex-direction: column;
-		img {display: block; margin-bottom: auto;}
+        height: 100%;
+		display: flex;
+        flex-direction: column;
+		img {
+            display: block; margin-bottom: auto;
+        }
 	}
 	p {
 		margin: 0.6em; font-size: 0.9em;
-		&.price{color: red; font-size: 1.1em; font-weight: bold;}
+		&.price{
+            color: red;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 1em;
+        }
 	}
 }
 

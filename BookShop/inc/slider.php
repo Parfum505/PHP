@@ -57,7 +57,6 @@ foreach ($items as $item){
 	$list .= '<a href="index.php?page=book&id='.$item['prod_id'].'">';
 		$list .= '<img data-u="" src="img/products_foto/'.$item['prod_img'].'" alt="'.$item['prod_title'].'">';
 		$list .= '<div class="product_info">';
-	//	$list .= '<p class="title">'.$item['prod_title'].'</p>';
 		$list .= '<p class="author">'.$item['prod_author'].'</p>';
 		$list .= '<p class="price">&#8364;'.$item['prod_price'].'</p>';
 		$list .= '</div>';

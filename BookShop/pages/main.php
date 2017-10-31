@@ -17,7 +17,7 @@ require "inc/slider.php";
 		?>
 	</div>
 <?php if($totalProducts = totalProducts()):?>
-	<p class="total_products">We have <span><?= $totalProducts?></span> book(s) in our Bookshop.</p>
+	<p class="total_products">Total <span><?= $totalProducts?></span> book(s) in our Bookshop.</p>
 <?php endif;?>
 
 <ul class='product'>

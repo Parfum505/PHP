@@ -53,7 +53,7 @@ img {
   position: relative;
   width: 100%;
   min-height: 100%;
-  padding-bottom: 100px; }
+  padding-bottom: 240px; }
 
 .row:before, .row:after {
   content: "";
@@ -425,6 +425,7 @@ header .nav_btn_mobile {
     color: #42454a;
     font-size: 1.3em; }
   .slider a {
+    height: 100%;
     display: flex;
     flex-direction: column; }
     .slider a img {
@@ -436,7 +437,8 @@ header .nav_btn_mobile {
     .slider p.price {
       color: red;
       font-size: 1.1em;
-      font-weight: bold; }
+      font-weight: bold;
+      margin-bottom: 1em; }
 
 /* endof Slider */
 /* Variables @ */
@@ -829,11 +831,25 @@ header .nav_btn_mobile {
 
 /* Footer */
 footer {
-  margin-top: -100px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   background-color: #fff; }
   footer .nav-bottom {
+    margin-bottom: 1em;
     float: left;
     width: 50%; }
+    footer .nav-bottom h4 {
+      margin: 1em 0; }
+    footer .nav-bottom .social li {
+      display: inline-block;
+      margin-right: 0.5em; }
+      footer .nav-bottom .social li a {
+        font-size: 1.3em;
+        transition: all 0.3s; }
+        footer .nav-bottom .social li a:hover {
+          color: #96b8ed; }
   footer .author {
     background-color: #42454a;
     text-align: center;

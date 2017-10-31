@@ -2,11 +2,31 @@
 
 /* Footer */
 footer{
-	margin-top: -100px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
 	background-color: $bg-nav;
 	.nav-bottom{
+		margin-bottom: 1em;
 		float: left;
 		width: 50%;
+		h4{
+			margin: 1em 0;
+		}
+		.social{
+			li{
+				display: inline-block;
+				margin-right: 0.5em;
+				a{
+					font-size: 1.3em;
+					transition: all 0.3s;
+					&:hover{
+						color: $btn-grad-to;
+					}
+				}
+			}
+		}
 	}
 	.author{
 		background-color: $bg-top-bottom;
