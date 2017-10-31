@@ -8,6 +8,12 @@ require "inc/slider.php";
 	$all_items = show_all_items($limit, $pageNumber);
 ?>
 <div class="main">
+	<span class="message_confirm">
+		<?php if(isset($_SESSION['messageConfirm'])){
+			echo '<i class="fa fa-check" aria-hidden="true"></i> ';
+			showMessageConfirm();
+			} ?>
+	</span>
 	<div class="slider">
 		<h3>New arrivals</h3>
 		<?php $items = getlastitems(15);
@@ -21,7 +27,6 @@ require "inc/slider.php";
 <?php endif;?>
 
 <ul class='product'>
-
 <?php if($all_items){
 	foreach($all_items as $item): ?>
 	<li>
@@ -32,7 +37,11 @@ require "inc/slider.php";
 		<p class="title"><?= $item['prod_title']; ?></p>
 		<p class="author"><?= $item['prod_author']; ?></p>
 		<p class="price">&#8364;<?= $item['prod_price']; ?></p>
-		<a href="pages/add2cart.php?add=<?= $item['prod_id']; ?>" class='btn'>Add to cart</a>
+		<form action="pages/add2cart.php" method="POST">
+			<input type="text" hidden="hidden" name="prod_title" value="<?= $item['prod_title']; ?>">
+			<input type="text" hidden="hidden" name="prod_id" value="<?= $item['prod_id']; ?>">
+			<input type="submit" name="add" class='btn' value ="Add to cart">
+		</form>
 		</div>
 	</li>
 <?php endforeach;} ?>

@@ -6,12 +6,13 @@
 		echo "<h3>Shopping cart is empty</h3>";
 	}
 ?>
-<form action="pages/add2cart.php" method="POST">
-<ul>
+
 <?php $goods = myCart(); $sum = 0; $qu = 0;
 
-	if($goods):
-		foreach($goods as $item): ?>
+	if($goods): ?>
+<form action="pages/add2cart.php" method="POST">
+<ul>
+	<?php foreach($goods as $item): ?>
 		<li>
 			<a class="" href="index.php?page=book&id=<?= $item['prod_id'];?>">
 				<img src="img/products_foto/<?= $item['prod_img']; ?>" alt="
@@ -37,8 +38,9 @@
 	<button class="btn btn_cart" type="submit" id="btn_update" name="update">Update my cart</button>
 </div>
 </form>
-<!--CART TOTALS-->
+
 <div class="row">
+	<!--CART TOTALS-->
 	<div class="cart_totals">
 		<h2>Cart Totals</h2>
 
@@ -65,7 +67,8 @@
 		<div class="btn_cart_container">
 			<button class="btn btn_cart" type="submit" id="btn_buy" name="buy">Buy</button>
 		</div>
-		<?php endif;?></div>
+	</div>
 	<!-- CART TOTALS-->
-</div>
+</div><!-- /.row-->
+<?php endif;?>
 </div>

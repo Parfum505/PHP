@@ -19,6 +19,12 @@ if (isset($_GET['page']) && ($_GET['page'] == 'search')){
 
 
 <div class="search">
+	<span class="message_confirm">
+		<?php if(isset($_SESSION['messageConfirm'])){
+			echo '<i class="fa fa-check" aria-hidden="true"></i> ';
+			showMessageConfirm();
+			} ?>
+	</span>
 	<p class="message">
 		<?php if(isset($_SESSION['message'])) showMessage(); ?>
 	</p>
@@ -43,7 +49,11 @@ if (isset($_GET['page']) && ($_GET['page'] == 'search')){
 		<p class="title"><?= $item['prod_title']; ?></p>
 		<p class="author"><?= $item['prod_author']; ?></p>
 		<p class="price">&#8364;<?= $item['prod_price']; ?></p>
-		<a href="add2cart.php?id=<?= $item['prod_id']; ?>" class='btn'>Add to cart</a>
+		<form action="pages/add2cart.php" method="POST">
+			<input type="text" hidden="hidden" name="prod_title" value="<?= $item['prod_title']; ?>">
+			<input type="text" hidden="hidden" name="prod_id" value="<?= $item['prod_id']; ?>">
+			<input type="submit" name="add" class='btn' value ="Add to cart">
+		</form>
 		</div>
 	</li>
 <?php endforeach;} ?>

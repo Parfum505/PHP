@@ -2,13 +2,14 @@
 /* Page book.php */
 
 .single_book{
+	position: relative;
 	display: flex;
 	flex-wrap: wrap;
 	margin: 1em;
 	@include box-sizing(border-box);
 	.single_book_img{
 		flex: 1 30%;
-		max-width: 350px;
+		max-width: 300px;
 		min-width: 150px;
 		margin: 0 auto;
 

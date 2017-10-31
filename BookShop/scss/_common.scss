@@ -47,10 +47,14 @@ img{
 	}
 }
 .wrapper{
+	@include box-sizing(border-box);
 	position: relative;
 	width: 100%;
 	min-height: 100%;
 	padding-bottom: 240px;
+	@media(max-width: 350px){
+		padding-bottom: 300px;
+	}
 }
 .row{
 	@include clearfix;
@@ -90,6 +94,15 @@ main{
 	@media(max-width: 860px){
 		display: block;
 		width: 100%;
+	}
+	.message_confirm{
+		position: absolute;
+		margin: 0;
+		white-space: nowrap;
+		top: -55px;
+		left: 50%;
+		transform: translateX(-50%);
+		color: green;
 	}
 }
 /* endof Main */

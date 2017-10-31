@@ -18,6 +18,13 @@ function showMessage(){
 	echo $_SESSION['message'];
 	unset($_SESSION['message']);
 }
+function setMessageConfirm($message){
+	$_SESSION['messageConfirm'] = $message;
+}
+function showMessageConfirm(){
+	echo $_SESSION['messageConfirm'];
+	unset($_SESSION['messageConfirm']);
+}
 function clearString($str){
 	return strip_tags(trim($str));
 }

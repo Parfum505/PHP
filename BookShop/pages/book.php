@@ -6,6 +6,12 @@
 ?>
 
 <div class="single_book">
+	<span class="message_confirm">
+		<?php if(isset($_SESSION['messageConfirm'])){
+			echo '<i class="fa fa-check" aria-hidden="true"></i> ';
+			showMessageConfirm();
+			} ?>
+	</span>
 	<div class="single_book_img">
 		<img class="" src="img/products_foto/<?php echo $item[0]['prod_img'];?>" alt="">
 	</div>
@@ -20,8 +26,10 @@
 		<p class="price">
 			<?= "&#8364; " . $item[0]['prod_price']; ?></p>
 
-		<div class="">
-			<a href="pages/add2cart.php?add=<?= $item[0]['prod_id']; ?>" class="btn">Add to cart</a>
-		</div>
+		<form action="pages/add2cart.php" method="POST">
+			<input type="text" hidden="hidden" name="prod_title" value="<?= $item[0]['prod_title']; ?>">
+			<input type="text" hidden="hidden" name="prod_id" value="<?= $item[0]['prod_id']; ?>">
+			<input type="submit" name="add" class='btn' value ="Add to cart">
+		</form>
 	</div>
 </div>

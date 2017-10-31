@@ -2,6 +2,7 @@
 /* Page Category */
 
 .category{
+	position: relative;
 	h2{
 		text-align: center;
 	}
@@ -27,11 +28,14 @@
 		&:hover{
 			@include box-shadow(3px 3px 15px rgba(black, 0.4));
 		}
-		a{
+		> a{
 			display: block;
 			margin-bottom: auto;
 		}
 		.product_info{
+			.btn{
+				width: 100%;
+			}
 			p{
 			margin: 0 0 0.3em 0;
 			font-size: 0.9em;
@@ -39,11 +43,11 @@
 			&.author{
 				font-size: 0.7em;
 				font-weight: normal;
-			}
+				}
 			&.price{
 				color: red;
 				font-size: 1.2em;
-			}
+				}
 			}
 		}
 	}

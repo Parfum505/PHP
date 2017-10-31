@@ -50,10 +50,16 @@ img {
       padding: 0 1em; } }
 
 .wrapper {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   position: relative;
   width: 100%;
   min-height: 100%;
   padding-bottom: 240px; }
+  @media (max-width: 350px) {
+    .wrapper {
+      padding-bottom: 300px; } }
 
 .row:before, .row:after {
   content: "";
@@ -105,6 +111,14 @@ main {
     main {
       display: block;
       width: 100%; } }
+  main .message_confirm {
+    position: absolute;
+    margin: 0;
+    white-space: nowrap;
+    top: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: green; }
 
 /* endof Main */
 /* Variables @ */
@@ -447,12 +461,14 @@ header .nav_btn_mobile {
   box-shadow: 0px 1px 1px 0px #e6e6e6; }
 
 /* Page main.php */
-.main .total_products {
-  padding: 0 1em;
-  font-weight: bold; }
-  .main .total_products span {
-    color: red;
-    font-size: 1.2em; }
+.main {
+  position: relative; }
+  .main .total_products {
+    padding: 0 1em;
+    font-weight: bold; }
+    .main .total_products span {
+      color: red;
+      font-size: 1.2em; }
 
 /* endof Page main.php */
 /* Variables @ */
@@ -596,8 +612,10 @@ header .nav_btn_mobile {
   box-shadow: 0px 1px 1px 0px #e6e6e6; }
 
 /* Page Category */
-.category h2 {
-  text-align: center; }
+.category {
+  position: relative; }
+  .category h2 {
+    text-align: center; }
 
 .product {
   text-align: center;
@@ -621,9 +639,11 @@ header .nav_btn_mobile {
     .product li:hover {
       -webkit-box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
       box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4); }
-    .product li a {
+    .product li > a {
       display: block;
       margin-bottom: auto; }
+    .product li .product_info .btn {
+      width: 100%; }
     .product li .product_info p {
       margin: 0 0 0.3em 0;
       font-size: 0.9em;
@@ -642,15 +662,17 @@ header .nav_btn_mobile {
   box-shadow: 0px 1px 1px 0px #e6e6e6; }
 
 /* Search page */
-.search .message, header .header_form_search input .message, header .header_form_search button .message {
-  text-align: center;
-  color: red; }
-.search .total_products, header .header_form_search input .total_products, header .header_form_search button .total_products {
-  padding: 0 1em;
-  font-weight: bold; }
-  .search .total_products span, header .header_form_search input .total_products span, header .header_form_search button .total_products span {
-    color: red;
-    font-size: 1.2em; }
+.search, header .header_form_search input, header .header_form_search button {
+  position: relative; }
+  .search .message, header .header_form_search input .message, header .header_form_search button .message {
+    text-align: center;
+    color: red; }
+  .search .total_products, header .header_form_search input .total_products, header .header_form_search button .total_products {
+    padding: 0 1em;
+    font-weight: bold; }
+    .search .total_products span, header .header_form_search input .total_products span, header .header_form_search button .total_products span {
+      color: red;
+      font-size: 1.2em; }
 
 /* endof Search page */
 /* Variables @ */
@@ -660,6 +682,7 @@ header .nav_btn_mobile {
 
 /* Page book.php */
 .single_book {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   margin: 1em;
@@ -668,7 +691,7 @@ header .nav_btn_mobile {
   box-sizing: border-box; }
   .single_book .single_book_img {
     flex: 1 30%;
-    max-width: 350px;
+    max-width: 300px;
     min-width: 150px;
     margin: 0 auto; }
   .single_book .single_book_info {
@@ -842,6 +865,8 @@ footer {
     width: 50%; }
     footer .nav-bottom h4 {
       margin: 1em 0; }
+    footer .nav-bottom p {
+      margin: 0 0 0.3em; }
     footer .nav-bottom .social li {
       display: inline-block;
       margin-right: 0.5em; }
