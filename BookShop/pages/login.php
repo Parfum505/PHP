@@ -26,6 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 <div class="login">
+	<p class="message">
+		<?php if(isset($_SESSION['message'])){
+			showMessage();
+			} ?>
+	</p>
 	<h2><a class="active" href="index.php?page=login">Login</a> &Iota; <a href="index.php?page=singup">Sing Up</a></h2>
 	<form action="" method="POST">
 		<label for="email">Email address</label>
@@ -37,9 +42,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		<button type="submit" class="btn login-submit" name="login">Login</button>
 	</form>
 	<p class="login-help"><a href="index.php?page=remindpassword">Forgot password?</a></p>
-	<p class="message">
-		<?php if(isset($_SESSION['message'])){
-			showMessage();
-			} ?>
-	</p>
+
 </div>

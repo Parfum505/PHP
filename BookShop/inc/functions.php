@@ -114,7 +114,7 @@ function login($email, $pass){
 		$_SESSION['username'] = $res[0]['user_name'];
 		setMessage("Nice to see you {$res[0]['user_name']}");
 	}
-	redirectBackward();
+//	redirectBackward();
 }
 function logOut(){
 	session_destroy();
@@ -140,7 +140,7 @@ function singup($firstName, $lastName, $email, $pass){
 			$_SESSION['username'] = $firstName;
 			setMessage("Nice to see you {$firstName}");
 		}
-	redirectBackward();
+//	redirectBackward();
 }
 function checkEmail($email){
 	return filter_var($email, FILTER_VALIDATE_EMAIL) ? $email : false;
@@ -152,7 +152,7 @@ function sendEmail($subject, $message, $email, $name){
 		if (!$res) {
 			setMessage("Sorry we couldn't send your message");
 		} else {
-			setMessage("Your Message has been sent sucsessfuly");
+			setMessage("Your message has been sent successfully");
 		}
 }
 function remindPassword($email){

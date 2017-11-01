@@ -8,16 +8,23 @@ Main idea of this project- to use on practice all I've learned on [Udemy](https:
   * Admin can add and del items to/from the catalog;
   * Admin can add users to DataBase;
   * Admin can see and del orders of users;
- 
+
 * You may stay just a **Guest** and:
   * choose books from catalogue by category;
   * see detailed description of the book;
   * add and del books to/from your cart;
   * change quantity of books in your cart;
   * make order by filling form;
- 
+
  I realise my shop is far from ideal and can be improved, but this is just first attempt :-).
- 
- 
 
+## Live demo <http://parfum505.000webhostapp.com/bookshop/>
 
+### Main page
+![Main page](img/main_page.jpg)
+
+### Login page
+![Main page](img/login.jpg)
+
+### Cart
+![Main page](img/cart.jpg)
