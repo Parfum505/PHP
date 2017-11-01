@@ -39,8 +39,8 @@ if (isset($_GET['page']) && ($_GET['page'] == 'search')){
 
 
 <ul class='product'>
-<?php if(!empty($items)){
-	foreach($items as $item): ?>
+<?php if(!empty($items)): ?>
+<?php foreach($items as $item): ?>
 	<li>
 	<a href="index.php?page=book&id=<?= $item['prod_id'];?>">
 		<img src="img/products_foto/<?= $item['prod_img']; ?>" alt="
@@ -56,7 +56,7 @@ if (isset($_GET['page']) && ($_GET['page'] == 'search')){
 		</form>
 		</div>
 	</li>
-<?php endforeach;} ?>
+<?php endforeach; ?>
 </ul>
 <div id='pagination'>
 	<?php
@@ -65,4 +65,5 @@ if (isset($_GET['page']) && ($_GET['page'] == 'search')){
 		}
 	?>
 	</div>
+<?php endif; ?>
 </div>

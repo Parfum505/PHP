@@ -14,7 +14,7 @@ Main idea of this project- to use on practice all I've learned on [Udemy](https:
   * see detailed description of the book;
   * add and del books to/from your cart;
   * change quantity of books in your cart;
-  * make order by filling form;
+  * make order by filling in the form;
 
  I realise my shop is far from ideal and can be improved, but this is just first attempt :-).
 

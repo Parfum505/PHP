@@ -73,14 +73,14 @@ function show_nav_categories(){
 }
 function show_all_items($limit = 12, $pageNumber = 1){
 	$startpoint = ($limit * $pageNumber) - $limit;
-	$startpoint = $startpoint > 0 ? $startpoint : 1;
+	$startpoint = $startpoint >= 0 ? $startpoint : 0;
 	$stmt = query("SELECT * FROM products LIMIT $startpoint, $limit");
 	$res = resultset($stmt);
 	return $res ? $res: false;
 }
 function show_category_items($cat_id, $limit, $pageNumber = 1){
 	$startpoint = ($limit * $pageNumber) - $limit;
-	$startpoint = $startpoint > 0 ? $startpoint : 1;
+	$startpoint = $startpoint >= 0 ? $startpoint : 0;
 	$stmt = query_prep("SELECT * , cat_title FROM products
 		JOIN categories ON prod_cat_id = cat_id
 		WHERE prod_cat_id = :cat_id LIMIT $startpoint, $limit");
@@ -96,13 +96,16 @@ function show_item_page($id){
 }
 function searchByTitle($title, $limit = 12, $pageNumber = 1){
 		$startpoint = ($limit * $pageNumber) - $limit;
-		$startpoint = $startpoint > 0 ? $startpoint : 1;
-		$title = '%'.$title.'%';
+		$startpoint = $startpoint >= 0 ? $startpoint : 0;
+		$title = '%' . $title . '%';
+	//	echo($title);
 		$stmt = query_prep("SELECT * FROM products WHERE prod_title LIKE :title LIMIT $startpoint, $limit");
 		bind($stmt, ':title', $title, PDO::PARAM_STR);
 		$res = resultset($stmt);
+	//	print_r($res);
 		return $res ? $res: false;
 }
+
 function login($email, $pass){
 	$stmt = query_prep("SELECT * FROM users WHERE user_email = :email AND user_password = :pass ");
 	bind($stmt, ':email', $email);
@@ -185,6 +188,7 @@ function totalProducts($prod_cat_id = 0, $prod_title = 0){
 
 	$res = resultset($stmt);
 	if($res){
+		// print_r($res);
 		return $totalItems = $res[0]["total"];
 	} else {
 		return false;
