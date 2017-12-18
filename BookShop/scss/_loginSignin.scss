@@ -1,11 +1,11 @@
 @import '_variables.scss';
 /* Login */
 .login,.singup,.contacts,.remindPassword{
-	input, textarea, select, label {
-		font-family: inherit;
-		font-size: 1em;
-		@include box-sizing(border-box);
-	}
+  input, textarea, select, label {
+    font-family: inherit;
+    font-size: 1em;
+    @include box-sizing(border-box);
+  }
 }
 .login,.singup,.contacts,.remindPassword{
   margin: 0 auto;
@@ -20,13 +20,13 @@
     text-align: center;
     text-shadow: 0 -1px rgba(black, .4);
     a{
-    	&:hover{
-    		text-decoration: underline;
-    		color: rgb(235, 110, 126);
-    	}
-    	&.active{
-  		color: rgb(235, 110, 126);
-  		}
+      &:hover{
+        text-decoration: underline;
+        color: rgb(235, 110, 126);
+      }
+      &.active{
+      color: rgb(235, 110, 126);
+      }
     }
   }
   input, textarea {
@@ -44,11 +44,14 @@
       background-color: #fff;
       @include box-shadow(inset 0 1px 2px rgba(black, .3), 0 0 4px 1px rgba(white, .6));
     }
-	}
+    &.formError{
+      border-color: red;
+    }
+  }
     textarea{
     height: 100px;
   }
-	.login-submit {
+  .login-submit {
   width: 100%;
   margin-bottom: 15px;
   text-shadow: 0 1px rgba(white, .3);
@@ -59,7 +62,7 @@
     @include box-shadow(inset 0 1px 5px rgba(black, .4), 0 1px rgba(white, .1));
   }
 }
-	.login-help {
+  .login-help {
   text-align: center;
   > a {
     font-size: 14px;
@@ -69,10 +72,10 @@
     &:hover { text-decoration: underline; }
   }
 }
-	.message{
-		text-align: center;
-		color: red;
-	}
+  .message{
+    text-align: center;
+    color: red;
+  }
   .error{
     color: red;
     font-size: 0.7em;

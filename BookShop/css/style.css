@@ -517,6 +517,8 @@ header .nav_btn_mobile {
       background-color: #fff;
       -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 0 4px 1px rgba(255, 255, 255, 0.6);
       box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 0 4px 1px rgba(255, 255, 255, 0.6); }
+    .login input.formError, .login textarea.formError, .singup input.formError, .singup textarea.formError, .contacts input.formError, .contacts textarea.formError, .remindPassword input.formError, .remindPassword textarea.formError {
+      border-color: red; }
   .login textarea, .singup textarea, .contacts textarea, .remindPassword textarea {
     height: 100px; }
   .login .login-submit, .singup .login-submit, .contacts .login-submit, .remindPassword .login-submit {

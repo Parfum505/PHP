@@ -41,18 +41,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['send'])) {
 			showMessage();
 			} ?>
 	</p>
-	<form action="" method="POST">
+	<form action="" method="POST" onSubmit="return validateContactsForm(this);">
 		<label for="name">Name </label>
-		<input type="text" name="name" id="name" value="<?= $name;?>" required="require">
+		<input type="text" name="name" id="name" value="<?= $name;?>" >
 		<span class="error"><?= $nameErr;?></span>
 		<label for="email">Email address </label>
-		<input type="email" name="email" id="email" value="<?= $email;?>" required="require">
+		<input type="email" name="email" id="email" value="<?= $email;?>" >
 		<span class="error"><?= $emailErr;?></span>
 		<label for="subject">Subject </label>
-		<input type="text" name="subject" id="subject" value="<?= $subject;?>" required="require">
+		<input type="text" name="subject" id="subject" value="<?= $subject;?>" >
 		<span class="error"><?= $subjectErr;?></span>
 		<label for="message">Message </label>
-		<textarea name="message" id="message" required="require"><?= $message;?></textarea>
+		<textarea name="message" id="message" ><?= $message;?></textarea>
 		<span class="error"><?= $messageErr;?></span>
 		<button type="submit" class="btn login-submit" name="send">Send</button>
 	</form>
