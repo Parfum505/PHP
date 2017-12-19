@@ -60,5 +60,26 @@ function validateContactsForm(form){
 		return false;
 	}else return true;
 }
-
-
+function validateSignUpForm(form){
+	removeClassFormError();
+	var errors = [];
+	validateText('firstName', errors);
+	validateText('lastName', errors);
+	validateEmail('email', errors);
+	validateText('password', errors);
+	validateText('confirmPassword', errors);
+	if(errors.length){
+		showFormErrors(errors);
+		return false;
+	}else return true;
+}
+function validateLoginForm(form){
+	removeClassFormError();
+	var errors = [];
+	validateText('password', errors);
+	validateEmail('email', errors);
+	if(errors.length){
+		showFormErrors(errors);
+		return false;
+	}else return true;
+}

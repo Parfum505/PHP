@@ -32,12 +32,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			} ?>
 	</p>
 	<h2><a class="active" href="index.php?page=login">Login</a> &Iota; <a href="index.php?page=singup">Sing Up</a></h2>
-	<form action="" method="POST">
+	<form action="" method="POST" onsubmit="return validateLoginForm();">
 		<label for="email">Email address</label>
-		<input type="email" name="email" id="email" value="<?= $email;?>" required="require">
+		<input type="email" name="email" id="email" value="<?= $email;?>">
 		<span class="error"><?= $emailErr;?></span>
 		<label for="password">Password</label>
-		<input type="password" name="password" id="password" required="require">
+		<input type="password" name="password" id="password">
 		<span class="error"><?= $passwordErr;?></span>
 		<button type="submit" class="btn login-submit" name="login">Login</button>
 	</form>

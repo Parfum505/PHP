@@ -59,21 +59,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['singup'])) {
 			showMessage();
 			} ?>
 	</p>
-	<form action="" method="POST">
+	<form action="" method="POST" onsubmit="return validateSignUpForm();">
 		<label for="firstName">First name</label>
-		<input type="text" name="firstName" id="firstName" required="require" value="<?= $fName;?>">
+		<input type="text" name="firstName" id="firstName" value="<?= $fName;?>">
 		<span class="error"><?= $firstNameErr;?></span>
 		<label for="lastName">Last name</label>
-		<input type="text" name="lastName" id="lastName" required="require" value="<?= $lName;?>">
+		<input type="text" name="lastName" id="lastName" value="<?= $lName;?>">
 		<span class="error"><?= $lastNameErr;?></span>
 		<label for="email">Email address</label>
-		<input type="email" name="email" id="email" required="require" value="<?= $email;?>">
+		<input type="email" name="email" id="email" value="<?= $email;?>">
 		<span class="error"><?= $emailErr;?></span>
 		<label for="password">Password</label>
-		<input type="password" name="password" id="password" required="require" >
+		<input type="password" name="password" id="password" >
 		<span class="error"><?= $passwordErr;?></span>
 		<label for="confirmPassword">Confirm password</label>
-		<input type="password" name="confirmPassword" id="confirmPassword" required="require">
+		<input type="password" name="confirmPassword" id="confirmPassword" ">
 		<span class="error"><?= $confirmPassErr;?></span>
 		<button type="submit" class="btn login-submit" name="singup">Sing up</button>
 	</form>
